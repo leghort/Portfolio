@@ -1,30 +1,35 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { ExternalLink } from 'react-external-link';
-import { SiLinux, SiVisualstudiocode, SiKeepassxc, SiIntellijidea } from "react-icons/si";
-import { DiGithubBadge, DiTrello, DiWindows } from "react-icons/di";
-import { GiAtom } from "react-icons/gi";
+import { DiWordpress, DiTrello, DiGithubBadge } from "react-icons/di"
+import { ExternalLink } from "react-external-link";
+import { SiAnsible, SiMariadbfoundation, SiNextcloud, SiKeepassxc, } from "react-icons/si";
+import { DiReact, DiNodejs } from "react-icons/di";
 
-function Toolstack() {
+function Otherstack() {
   return (
     <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
 
-      <ExternalLink href="https://www.microsoft.com/fr-fr/windows">
-
+      <ExternalLink href="https://nextcloud.com/">
         <Col xs={4} md={2} className="tech-icons">
-          <DiWindows />
-      </Col>
+          <SiNextcloud />
+        </Col>
       </ExternalLink>
 
-      <ExternalLink href="https://www.debian.org/index.fr.html">
+      <ExternalLink href="https://www.mysql.com/fr/">
         <Col xs={4} md={2} className="tech-icons">
-          <SiLinux />
-      </Col>
+          <SiMariadbfoundation />
+        </Col>
       </ExternalLink>
 
-      <ExternalLink href="https://code.visualstudio.com/">
+      <ExternalLink href="https://wordpress.com/fr/">
         <Col xs={4} md={2} className="tech-icons">
-          <SiVisualstudiocode />
+          <DiWordpress />
+        </Col>
+      </ExternalLink>
+      
+      <ExternalLink href="https://www.ansible.com/">
+        <Col xs={4} md={2} className="tech-icons">
+          <SiAnsible />
         </Col>
       </ExternalLink>
 
@@ -33,16 +38,9 @@ function Toolstack() {
           <DiGithubBadge />
         </Col>
       </ExternalLink>
-
       <ExternalLink href="https://trello.com/">
         <Col xs={4} md={2} className="tech-icons">
           <DiTrello />
-        </Col>
-      </ExternalLink>
-
-      <ExternalLink href="https://atom.io/">
-        <Col xs={4} md={2} className="tech-icons">
-          <GiAtom />
         </Col>
       </ExternalLink>
 
@@ -52,15 +50,19 @@ function Toolstack() {
         </Col>
       </ExternalLink>
 
-      <ExternalLink href="https://www.jetbrains.com/fr-fr/idea/">
+      <ExternalLink href="https://nodejs.org/fr/">
         <Col xs={4} md={2} className="tech-icons">
-          <SiIntellijidea />
+          <DiNodejs />
         </Col>
       </ExternalLink>
-
+      <ExternalLink href="https://fr.reactjs.org/">
+        <Col xs={4} md={2} className="tech-icons">
+          <DiReact />
+        </Col>
+      </ExternalLink>
+   
     </Row>
   );
 }
 
-export default Toolstack;
-
+export default Otherstack;

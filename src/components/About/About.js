@@ -1,50 +1,37 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Particle from "../Particle";
 import Github from "./Github";
-import Techstack from "./Techstack";
-import Aboutcard from "./AboutCard";
-import laptopImg from "../../Assets/about.png";
-import Toolstack from "./Toolstack";
+import Otherstack from "./Otherstack";
+import Virtualstack from "./Virtualstack";
+import Codestack from "./Codestack";
+import Osstack from "./Osstack";
+import Idestack from "./Idestack";
 
 function About() {
   return (
     <Container fluid className="about-section">
       <Particle />
       <Container>
-        <Row style={{ justifyContent: "center", padding: "10px" }}>
-          <Col
-            md={7}
-            style={{
-              justifyContent: "center",
-              paddingTop: "30px",
-              paddingBottom: "50px",
-            }}
-          >
-            <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Qui  <strong className="purple">suis-je ?</strong>
-            </h1>
-            <Aboutcard />
-          </Col>
-          <Col
-            md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
-            className="about-img"
-          >
-            <img src={laptopImg} alt="about" className="img-fluid" />
-          </Col>
-        </Row>
+        
         <h1 className="project-heading">
-          Mes <strong className="purple">Compétence </strong>
+         Les outils et technologie que <strong className="purple">j'utilisent </strong>
         </h1>
+        <br />
+        <br />
+        <h4 class="stack-title purple">Systéme d'explotation</h4>
+        <Osstack />
 
-        <Techstack />
+        <h4 class="stack-title purple">Solution de virtualisation</h4>
+        <Virtualstack />
 
-        <h1 className="project-heading">
-          <strong className="purple">Les Outils</strong> que j'utilise
-        </h1>
-        <Toolstack />
+        <h4 class="stack-title purple">Langage de programmation</h4>
+        <Codestack />
 
+        <h4 class="stack-title purple">Autre</h4>
+        <Otherstack />
+        <h5 class="stack-title">Environnement de développement</h5>
+        <Idestack />
         <Github />
       </Container>
     </Container>

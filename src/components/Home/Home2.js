@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
-import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
+import { AiFillGithub, } from "react-icons/ai";
 import { FaDiscord } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 
@@ -24,21 +24,21 @@ function Home2() {
               Les années qui ont suivi je m'amusais à démonter des appareils pour comprendre leur fonctionnement
               et à explorer l'informatique code, script, exploitation du cache etc...
               <br />
-              <br />Puis lors de mes 14 ans, un ami est venu me dire :
+              <br />Puis à mes 14 ans, un ami est venu me dire :
               <br />
-              <i><b className="purple">"Tiens voila une fenétre noir avec ça tu va gére notre serveur, si tu ne fait rien d'ici 1 mois il arréter de fonctionner, bon courage!"</b></i>
+              <i><b className="purple">"Voila une fenétre noir avec cela tu va gére notre serveur, si tu ne fait rien d'ici 1 mois il arréter de fonctionner, bon courage!"</b></i>
               <br />
               <br />
               Une fois la panique digèrée et les manches remonté. C'était parti pour comprendre comment fonctionnait
-              un serveur linux avec des services étranges comme <b className="purple"> ssh, sftp, apache2, teamspeak, ufw, et autre nom plus etrange les un que les autre</b>
+              un serveur linux avec des services étranges comme <b className="purple"> ssh, sftp, apache2, teamspeak, ufw, et autre nom plus etrange les un que les autres</b>
               <br />
               <br />
-              La mission fut accomplie avec succès, ce serveur resta <b className="purple">en ligne durant 9 ans</b> puis périt avec les honneurs suite à une fin de renouvellement. 😌
+              La mission fut accomplie avec succès, ce serveur resta <b className="purple">en ligne durant 9 ans</b> puis il périt avec les honneurs suite à une fin de renouvellement. 😌
               <br />
               <br />
               En parallèle j'ai également développé quelques compétences en
               <br />
-              <i><b className="purple"> Développement web, Script linux & Windows, virtualisation, etc... </b></i>
+              <i><b className="purple"> Développement web, Scripting Windows & linux, virtualisation, etc... </b></i>
               <br />
               <br />
               Une autre de mes passions est de créer des projets pour acquérir de
@@ -68,16 +68,6 @@ function Home2() {
                   className="icon-colour  home-social-icons"
                 >
                   <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://twitter.com/Medaey_"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
                 </a>
               </li>
               <li className="social-icons">

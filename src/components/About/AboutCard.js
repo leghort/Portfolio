@@ -8,21 +8,18 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Bonjour, je suis <span className="purple">Cossu Médéric </span> informaticien
-            <br />
-            j’habite en <span className="purple"> Seine-et-Marne, France. </span>
-            Actuellement en formation BTS Services Informatiques aux Organisations - Solutions d'Infrastructure, Systèmes et Réseaux
+            <span className="purple">Un passionné </span> d'informatique qui exerce <span className="purple"> en Île-de-France.</span><br />
+             Actuellement en formation BTS SIO - Administration des systèmes et des réseaux 
             <br />
             <br />
-            En dehors de l'informatique, j'aime aussi
-            <br />
+            J'aime aussi
           </p>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Sport
+              <ImPointRight /> Le Sport
             </li>
             <li className="about-activity">
-              <ImPointRight /> Gaming
+              <ImPointRight /> Les Jeux-Vidéo multijoueur
             </li>
           </ul>
           <footer className="blockquote-footer">"Un problème sans solution est un problème mal posé."</footer>

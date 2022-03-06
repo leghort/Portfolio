@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { ExternalLink } from 'react-external-link';
-import { DiPython, DiReact, DiRuby, DiHtml5, DiJava, DiCss3 } from "react-icons/di";
+import { DiPython, DiRuby, DiHtml5, DiJava, DiCss3 } from "react-icons/di";
 import { SiJavascript } from "react-icons/si";
 
 function Toolstack() {

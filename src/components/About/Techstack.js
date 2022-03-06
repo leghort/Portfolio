@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { DiCloud9, DiDocker, DiHtml5, DiMysql, DiNodejs, DiPython, DiRasberryPi, DiReact, DiRuby, DiWordpress, DiJava } from "react-icons/di"
+import { DiCloud9, DiDocker, DiHtml5, DiNodejs, DiPython, DiRasberryPi, DiReact, DiRuby, DiWordpress, DiJava } from "react-icons/di"
 import { ExternalLink } from "react-external-link";
 import { SiAnsible, SiMariadbfoundation } from "react-icons/si";
 

@@ -2,12 +2,9 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
+import { FaDiscord } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
 
 function Home2() {
   return (
@@ -16,40 +13,38 @@ function Home2() {
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              PERMETTEZ-MOI DE ME <span className="purple"> PRÉSENTER</span>
             </h1>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
-              <br />
-              <br />I am fluent in classics like
-              <i>
-                <b className="purple"> C++, Javascript and Python. </b>
-              </i>
+              Je suis un passionné d'informatique qui est tombé dedant en voyant du haut de ces 10 ans un <b className="purple">"magnifique"</b> écran d'allumage de <b className="purple">Windows 95</b> 🤦‍♂️.
+              Oui il m'en aura fallu de peu! Une question m'est alors venu à l'esprit
+              <b className="purple"> "Comment ça fonctionne ?"</b>
               <br />
               <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also in areas related to{" "}
-                <b className="purple">
-                  Deep Learning and Natural Launguage Processing.
-                </b>
-              </i>
+              Les années qui ont suivi je m'amusais à démonter des appareils pour comprendre leur fonctionnement
+              et à explorer l'informatique code, script, exploitation du cache etc...
+              <br />
+              <br />Puis lors de mes 14 ans, un ami est venu me dire :
+              <br />
+              <i><b className="purple">"Tiens voila une fenétre noir avec ça tu va gére notre serveur, si tu ne fait rien d'ici 1 mois il arréter de fonctionner, bon courage!"</b></i>
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
-              <i>
-                <b className="purple">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> React.js and Next.js</b>
-              </i>
+              Une fois la panique digèrée et les manches remonté. C'était parti pour comprendre comment fonctionnait
+              un serveur linux avec des services étranges comme <b className="purple"> ssh, sftp, apache2, teamspeak, ufw, et autre nom plus etrange les un que les autre</b>
+              <br />
+              <br />
+              La mission fut accomplie avec succès, ce serveur resta <b className="purple">en ligne durant 9 ans</b> puis périt avec les honneurs suite à une fin de renouvellement. 😌
+              <br />
+              <br />
+              En parallèle j'ai également développé quelques compétences en
+              <br />
+              <i><b className="purple"> Développement web, Script linux & Windows, virtualisation, etc... </b></i>
+              <br />
+              <br />
+              Une autre de mes passions est de créer des projets pour acquérir de
+              <b className="purple"> nouvelles compétences. </b>
+              Comme faire de la <b className="purple">traduction</b> de jeux vidéo pour <b className="purple">apprendre l'anglais</b>,
+              ou bien connecter un <b className="purple">raspberry pi</b> à un panneau solaire pour le rendre <b className="purple">autonome en énergie</b>.
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -60,14 +55,14 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h1>CONTACT</h1>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              N'hésitez pas à me <span className="purple">contacter </span>
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://github.com/soumyajit4419"
+                  href="https://github.com/leghort"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -77,7 +72,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://twitter.com/Soumyajit4419"
+                  href="https://twitter.com/Medaey_"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
@@ -87,22 +82,22 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/soumyajit4419/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.instagram.com/s.o.u.m.y.a_j.i.t/"
+                  href="https://discords.com/bio/p/medaey"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
-                  <AiFillInstagram />
+                  <FaDiscord />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="mailto:mederic@cossu.xyz"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour home-social-icons"
+                >
+                  <FiMail />
                 </a>
               </li>
             </ul>

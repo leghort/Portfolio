@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { Link } from 'react-router-dom';
 import { BiLinkExternal } from "react-icons/bi";
 
 function ProjectCards(props) {
@@ -12,12 +13,9 @@ function ProjectCards(props) {
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
-        <Button variant="primary" href={props.link} target="_blank">
-          <BiLinkExternal /> &nbsp;
-          {props.isBlog ? "View Blog" : "View Project"}
-        </Button>
+        {props.externalLink ? <Button href={props.externalLink ? props.externalLink : props.link}><BiLinkExternal/>{"Plus"}</Button> : <Link to={props.link}><Button>{"Plus"}</Button></Link>}
       </Card.Body>
     </Card>
-  );
-}
-export default ProjectCards;
+  );}
+
+  export default ProjectCards;

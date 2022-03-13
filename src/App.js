@@ -10,6 +10,7 @@ import Ansible from "./components/Projects/Card/Ansible";
 import bind9 from "./components/Projects/Card/bind9";
 import ssh from "./components/Projects/Card/ssh";
 import iscdhcp from "./components/Projects/Card/iscDhcp";
+import qemu from "./components/Projects/Card/qemu";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import "./App.css";
@@ -43,6 +44,7 @@ function App() {
           <Route path="/bind9" component={bind9} />
           <Route path="/ssh" component={ssh} />
           <Route path="/iscdhcp" component={iscdhcp} />
+          <Route path="/qemu" component={qemu} />
         </Switch>
         <Footer />
       </div>

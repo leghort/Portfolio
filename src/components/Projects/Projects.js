@@ -8,6 +8,7 @@ import bind9 from "../../Assets/Projects/bind9.png";
 import dhcp from "../../Assets/Projects/dhcp.jpeg";
 import sshKey from "../../Assets/Projects/create-ssh-key.png";
 import ansible from "../../Assets/Projects/ansible.png";
+import qemu from "../../Assets/Projects/qemu.jpg";
 import 'reactjs-popup/dist/index.css';
 
 function Projects() {
@@ -20,56 +21,66 @@ function Projects() {
           Les projets sur lesquels j'ai travaillé.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-           <Col md={4} className="project-card">
-          <ProjectCard
-            imgPath={ansible}
-            isBlog={false}
-            title="Ansible"
-            description="Ansible l'outils d'automatisation de deployment et de configuration"
-            link="/ansible"
-          />
-        </Col>
-
         <Col md={4} className="project-card">
-          <ProjectCard
-            imgPath={sshKey}
-            isBlog={false}
-            title="SSH via clef"
-            description="Procédure de mise en place d'une connexion ssh, via cle de chiffrement asyméttrique"
-            link="/ssh"
-          />
-        </Col>
+            <ProjectCard
+              imgPath={qemu}
+              isBlog={false}
+              title="QEMU"
+              description="Une solution de virtualisation opensource plus rapide et mieux intégrer que virtualbox au systeme Linux."
+              link="/qemu"
+            />
+          </Col>
+        
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={ansible}
+              isBlog={false}
+              title="Ansible"
+              description="Ansible est un outils d'automatisation de déploiement et de configuration"
+              link="/ansible"
+            />
+          </Col>
 
-        <Col md={4} className="project-card">
-          <ProjectCard
-            imgPath={dhcp}
-            isBlog={false}
-            title="DHCP linux"
-            description="Service dhcp pour fournir automatiquement des adresses ip a l'ensemble des machines sur le réseau."
-            link="/iscdhcp"
-          />
-        </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={sshKey}
+              isBlog={false}
+              title="SSH via clef"
+              description="Procédure de mise en place d'une connexion ssh, via cle de chiffrement asymétrique"
+              link="/ssh"
+            />
+          </Col>
 
-        <Col md={4} className="project-card">
-          <ProjectCard
-            imgPath={bind9}
-            isBlog={false}
-            title="Dns linux"
-            description="Service des résolution de nom (DNS) pour transformer les ip en nom."
-            link="/bind9"
-          />
-        </Col>
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={dhcp}
+              isBlog={false}
+              title="DHCP linux"
+              description="Service dhcp pour fournir automatiquement des adresses ip à l'ensemble des machines sur le réseau."
+              link="/iscdhcp"
+            />
+          </Col>
 
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={bind9}
+              isBlog={false}
+              title="Dns linux"
+              description="Service des résolution de nom (DNS) pour transformer les ip en nom."
+              link="/bind9"
+            />
+          </Col>
+        
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={improveyoutube}
               isBlog={false}
               title="Improve YouTube"
-              description="Une extension pour améliorer l'utilisation de YouTube. Lecteur de video plus grand et une interface personnalisable, rangée/cacher des élements comme les commentaire, les bouttons..."
+              description="Une extension pour améliorer l'utilisation de YouTube. Lecteur de vidéo plus grand et une interface personnalisable, rangée/cachée des élements comme les commentaire, les bouttons..."
               externalLink="https://chrome.google.com/webstore/detail/improve-youtube-video-you/bnomihfieiccainjcjblhegjgglakjdd"
             />
           </Col>
-
+          
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={dauntlessbuilder}

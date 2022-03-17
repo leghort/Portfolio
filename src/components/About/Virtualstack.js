@@ -15,13 +15,13 @@ function Toolstack() {
         </Col>
       </ExternalLink>
       
-      <ExternalLink href="https://www.vagrantup.com/">
+      <ExternalLink href="https://www.vmware.com/fr/products/workstation-pro.html">
         <Col xs={4} md={2} className="tech-icons">
           <SiVmware />
         </Col>
       </ExternalLink>
 
-      <ExternalLink href="https://www.virtualbox.org/">
+      <ExternalLink href="https://fr.wikipedia.org/wiki/Hyper-V">
         <Col xs={4} md={2} className="tech-icons">
           <TiVendorMicrosoft />
         </Col>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
-import Particle from "../../Particle";
 import pdf from "../../../Assets/pdf/iscDhcp.pdf";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -17,7 +16,6 @@ function Ansible() {
   return (
     <div>
     <Container fluid className="resume-section">
-      <Particle />
       <Row className="resume">
           <Document
     file={pdf}

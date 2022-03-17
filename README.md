@@ -47,9 +47,9 @@ Pour clonez ce dépôt. Vous aurez besoin de `node.js` et `git` d'installée sur
 
 ## 🛠 Instructions d'installation
 
-1. Installation: `npm install`
+1. Installation: `yarn`
 
-2. Dans le répertoire du projet, exécuter la commande: `npm start`
+2. Dans le répertoire du projet, exécuter la commande: `yarn start`
 
 Lance l'application en mode développement.\
 Ouvrir [http://localhost:3000](http://localhost:3000) pour l'afficher dans le navigateur.

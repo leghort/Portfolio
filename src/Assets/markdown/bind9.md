@@ -1,4 +1,10 @@
 [TOC]
+⏩ Par le temps ? Utilise mon role ansible bind9:smile:
+```bash
+git clone https://github.com/leghort/role-ansible.git
+```
+---
+
 # Présentation
 
 ## Qu'est-ce que le DNS ?
@@ -134,7 +140,7 @@ sudo nano /etc/bind/db.cossu.tech
 >                   86400       ; Temps entre les essais
 >                   2419200     ; Temps expiration
 >                   604800 )    ; Valeur TTL minimum
->@       IN NS dns.cossu.dev.
+>@       IN NS dns.cossu.tech.
 >
 >dns                     IN A 192.168.1.24
 >linux                   IN A 192.168.1.14

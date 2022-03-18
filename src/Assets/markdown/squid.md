@@ -1,137 +1,121 @@
 [TOC]
 
+# Présentation
+
+Un proxy ou serveur mandataire est un intermédiaire entre deux hôtes par exemple entre les machines de votre réseau et internet, Squid proxy très connu du monde Open Source permette de filtrer les sites internet accessible.
+
+Une autre utilité de squid est qu'il est "Cachant", c'est a dire qu'il va permettre une mise en cache des pages consulter afin qu'a la prochaine consultation cette page charge plus rapide.
+
+SquidGuard est add-on de Squid permettent un filtra encore plus précis.
+
 # Installation
 
-```bash
-sudo apt update &&  sudo apt upgrade # Mise a jour des dépo est des packet
-sudo apt install squid # Installation de du serveur mendataire Squid
-```
-
-##  Ouvrir le port 3128 du pare-feu
+Je commande par mettre à jour les dépôts et installation de squid avec `apt`
 
 ```bash
-sudo ufw allow 3128/tcp && sudo ufw status numbered | grep 3128 # Autoriser les port 3128 en TCP
+sudo apt update -y &&  sudo apt upgrade -y && sudo apt install squid -y
 ```
 
+##  Autorisation du pare-feu
 
-
-# Configuration
-
-Nous allons mettre en place une proxy par whitelist, c'est a dire que tout les site seront bloquer excepter les site que l'on va autoriser.
-
-## Faire une sauvegarde du fichier `squid.conf`
-
-Dans un premier temp il est préférable d'affecter une sauvegarde du fichier de configuration par default, pour revenir le cas échéent à la configuration initions.
+j'ai ufw en pare-feu il faut donc que j'autoriser le port 3128 en TCP
 
 ```bash
-sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.bak && ls -l /etc/squid/ # Crée une copie du fichier squid.conf
+sudo ufw allow 3128/tcp && sudo ufw status numbered | grep 3128
 ```
 
-## Rendre le fichier `squid.conf` plus lisible
+## Configuration de Squid
 
-Dans une optique de lisibilité du fichier de configuration nous allons retirer tout les ligne commenté et vides.
+Squid peut faire un blocage par WhiteList ou par BlackList.
+
+**WhiteList**: Bloque tout est autorise les sites de la liste
+**BlackList**: Autorise tout est bloque les sites de la liste
+
+J'ai choisi de faire un filtrage par whitelist.
+
+Je commence par sauvegarde le fichier de configuration par défault pour pouvoir revenir à la configuration initiale en cas de pépin.
+
+```bash
+sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.bak && ls -l /etc/squid/
+```
+
+Le fichier `squid.conf` n'est pas très lisible un bon vieux sed avec de l'expression régulière va rendre le fichier plus lisible.
 
 ```bash
 sudo sed -i '/^#/d' /etc/squid/squid.conf ; sudo sed -i '/^$/d' /etc/squid/squid.conf && head /etc/squid/squid.conf
 ```
 
-## Démarrer le service
-
-L'on démarre alors le service et l'on vérifie sont bon fonctionnement avec status
+Petite vérification de l'état du service.
 
 ```bash
-sudo service squid restart ; sudo service squid status # Démarrer le service squid & vérifier sont état de lancement
+sudo systemctl restart squid ; sudo systemctl status squid
 ```
 
-## Access Control List
+Bon le service fonctionne correctement. C'est l'heure de configurer les AccesControlList ou ACL
 
-Pour pourvoir appliquer des règles de filtrage avec squid, il va falloir dans un premier temp définir les éléments que l'on veut impacter. Dans notre cas ce sera le réseau compta qui à pour adresse IP 192.168.1.0/24. Ce sera nos ACL (Access Control List ou Liste de Contrôle d'Accès)
+Pour créer des règles de filtrage avec squid, il faut définir les éléments que l'on veut impacter. Dans mon cas ce sera le réseau compta qui à pour adressé IP 192.168.1.0/24. Ce sera nos ACL (Access Control Liste ou Liste de Contrôle d'Accès)
 
-```bash
-# Acl pour toutes les machine qui sont dans le réseau 192.168.1.0
-acl compta src 192.168.1.0/24
-```
+> acl compta src 192.168.1.0/24
 
-## Régle http_access
+Puis je rajout une règle http_access qui bloquera l'accès internet à tous les machines qui sont dans le groupe compta.
 
-```bash
-# Bloque tous les machines qui sont dans le group compta
-http_access deny compta
-```
+>http_access deny compta
 
+## Test du proxy
 
+Normalement si je définis le proxy sur un pc de la compta est que je faire une recherche internet la moindre recherche sera refusé par le proxy.
 
-# Test le proxy dans avec un navigateur web (Firefox)
+Par exemple quand je cherchais à accès au site http://cossu.tech/ cette erreur apparaît.
 
-Dans un navigateur web lancer à partir d'une machine qui appartiens au groupe ajouter l'@ ip du proxy que vous venais de configurer en temp que proxy, normalement la moindre recherche internet sera refuser par le proxy.
-
-Par exemple quand je chercher à accès au site http://cossu.xzy/ cette erreur apparait.
-
->```
 >ERREUR
 >L'URL demandée n'a pas pu être trouvée
 >
->L'erreur suivante s'est produite en essayant d'accéder à l'URL : http://cossu.xzy/
+>L'erreur suivante s'est produite en essayant d'accéder à l'URL : http://cossu.tech/
 >
 >    Accès interdit.
 >
 >La configuration du contrôle d'accès, empêche votre requête d'être acceptée. Si vous pensez >que c'est une erreur, contactez votre fournisseur d'accès.
 >
 >Votre administrateur proxy est webmaster.
->```
 
 Donc le proxy fonctionne !
 
+## Autoriser des sites pour le réseau compta
 
-
-# Autoriser le site http://cossu.xzy/ pour le réseau compta
-## Crée un fichier qui contiendra les sites que l'on veut autoriser
+Bon maintenant que le blocage fonctionne bien il est temps autoriser des sites internet. Pour cela il faut créé un fichier qui contiendra les sites autoriser
 
 ```bash
-sudo bash -c 'echo ".cossu.xzy" >> /etc/squid/liste-sites.txt' ; cat /etc/squid/liste-sites.txt
+sudo bash -c 'echo ".cossu.tech" >> /etc/squid/liste-sites.txt' ; cat /etc/squid/liste-sites.txt
 ```
 
-## Créer une acl qui fait référence au fichier
+enfin je crée un ACL qui autorise la liste qui est dans `/etc/squid/liste-sites.txt`.
 
 ```bash
 sudo nano /etc/squid/squid.conf
 ```
-Ajouter les ligne suivant au fichier `/etc/squid/squid.conf`
+>acl liste_url dstdomain "/etc/squid/liste-sites.txt"
+>http_access allow compta liste_url
 
-```bash
-# acl qui faire referance a la liste de site internet
-acl liste_url dstdomain "/etc/squid/liste-sites.txt"
-# autoriser les site de la liste pour les machine du réseau compta
-http_access allow compta liste_url
-```
+⚠️ L'ordre des lignes est important, car c'est un traité séquentiel !
 
-⚠️ L'ordre des lignes *http_access* est important, car elle seront traiter de manière séquentielle ⚠️
-
-## Redémarre le service squid
+Pour finir redémarrage du service pour que les modifications soient bien appliquées.
 
 ```bash
 sudo service squid restart ; sudo service squid status
 ```
 
-Les nome de domaine renseigner dans le fichier `/etc/squid/liste-sites.txt` est désormais autoriser pour le réseau compta.
+La liste des sites contenue dans le fichier `/etc/squid/liste-sites.txt` est désormais autorisée pour le réseau compta.
 
-
- # Note
-
-## Voir les logs
-
+# Note
+Voir les logs
 ```bash
 sudo tail -f /var/log/squid/access.log
 ```
 
-## Ajouter un site dans la liste 
-
+Ajouter un site dans la liste
 ```bash
 sudo bash -c 'echo ".ytimg.com" >> /etc/squid/liste-sites.txt' ; cat /etc/squid/liste-sites.txt && sudo service squid reload ; sudo service squid status
 ```
 
-
-
 ## Source
-
 https://www.ibisc.univ-evry.fr/~petit/Enseignement/AdminSystem/IUP-ASR/2007-2008-IUP-ASR-ADSY/Projet-2007-2008/squid.pdf

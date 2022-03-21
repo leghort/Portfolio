@@ -10,6 +10,10 @@ import Ansible from "./components/Projects/Card/Ansible";
 import bind9 from "./components/Projects/Card/bind9";
 import ssh from "./components/Projects/Card/ssh";
 import iscdhcp from "./components/Projects/Card/iscDhcp";
+import openVpn from "./components/Projects/Card/openVpn";
+import routerLinux from "./components/Projects/Card/routerLinux";
+import squid from "./components/Projects/Card/squid";
+import ipv6 from "./components/Projects/Card/ipv6";
 import qemu from "./components/Projects/Card/qemu";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
@@ -45,6 +49,10 @@ function App() {
           <Route path="/ssh" component={ssh} />
           <Route path="/iscdhcp" component={iscdhcp} />
           <Route path="/qemu" component={qemu} />
+          <Route path="/openVpn" component={openVpn} />
+          <Route path="/routerLinux" component={routerLinux} />
+          <Route path="/squid" component={squid} />
+          <Route path="/ipv6" component={ipv6} />
         </Switch>
         <Footer />
       </div>

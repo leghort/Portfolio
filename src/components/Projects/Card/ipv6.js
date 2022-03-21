@@ -5,7 +5,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-function ipv6() {
+function Ansible() {
   const [width, setWidth] = useState(1200);
   const [numPages, setNumPages] = useState(null);
 
@@ -33,4 +33,4 @@ function ipv6() {
   );
 }
 
-export default ipv6;
+export default Ansible;

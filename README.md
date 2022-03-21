@@ -1,6 +1,6 @@
 <h2 align="center">
   Portfolio Website - v2.0<br/>
-  <a href="http://cossu.xyz/" target="_blank">cossu.xyz</a>
+  <a href="http://cossu.tech/" target="_blank">cossu.tech</a>
 </h2>
 <br/>
 
@@ -22,7 +22,7 @@ yarn ; yarn build ; [System.Diagnostics.Process]::Start("chrome.exe","--incognit
 ```
 ## Construit avec
 
-Mon portfolio <a href="http://cossu.xyz/" target="_blank">cossu.xyz</a> certains de mes projets ainsi que mon CV et mes compétences techniques.<br/>
+Mon portfolio <a href="http://cossu.tech/" target="_blank">cossu.tech</a> certains de mes projets ainsi que mon CV et mes compétences techniques.<br/>
 
 Ce projet a été construit en utilisant ces technologies.
 

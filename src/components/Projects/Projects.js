@@ -1,18 +1,18 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
-import improveyoutube from "../../Assets/Projects/improveyoutube.png";
-import dauntlessbuilder from "../../Assets/Projects/dauntlessbuilder.png";
-import outilspdt from "../../Assets/Projects/outilspdt.png";
-import bind9 from "../../Assets/Projects/bind9.png";
-import dhcp from "../../Assets/Projects/dhcp.jpeg";
-import sshKey from "../../Assets/Projects/create-ssh-key.png";
-import ansible from "../../Assets/Projects/ansible.png";
-import qemu from "../../Assets/Projects/qemu.jpg";
-import ipv6 from "../../Assets/Projects/ipv6.png";
-import openvpn from "../../Assets/Projects/openvpn.png";
-import squid from "../../Assets/Projects/squid.png";
-import routerLinux from "../../Assets/Projects/routerLinux.jpeg";
+import improveyoutube from "../../Assets/Projects/improveyoutube.webp";
+import dauntlessbuilder from "../../Assets/Projects/dauntlessbuilder.webp";
+import outilspdt from "../../Assets/Projects/outilspdt.webp";
+import bind9 from "../../Assets/Projects/bind9.webp";
+import dhcp from "../../Assets/Projects/dhcp.webp";
+import sshKey from "../../Assets/Projects/create-ssh-key.webp";
+import ansible from "../../Assets/Projects/ansible.webp";
+import qemu from "../../Assets/Projects/qemu.webp";
+import ipv6 from "../../Assets/Projects/ipv6.webp";
+import openvpn from "../../Assets/Projects/openvpn.webp";
+import squid from "../../Assets/Projects/squid.webp";
+import routerLinux from "../../Assets/Projects/routerLinux.webp";
 
 import 'reactjs-popup/dist/index.css';
 

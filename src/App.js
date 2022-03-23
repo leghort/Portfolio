@@ -15,6 +15,7 @@ import routerLinux from "./components/Projects/Card/routerLinux";
 import squid from "./components/Projects/Card/squid";
 import ipv6 from "./components/Projects/Card/ipv6";
 import qemu from "./components/Projects/Card/qemu";
+import zabbix from "./components/Projects/Card/zabbix";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import "./App.css";
@@ -53,6 +54,7 @@ function App() {
           <Route path="/routerLinux" component={routerLinux} />
           <Route path="/squid" component={squid} />
           <Route path="/ipv6" component={ipv6} />
+          <Route path="/zabbix" component={zabbix} />
         </Switch>
         <Footer />
       </div>

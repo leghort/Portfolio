@@ -13,6 +13,7 @@ import ipv6 from "../../Assets/Projects/ipv6.webp";
 import openvpn from "../../Assets/Projects/openvpn.webp";
 import squid from "../../Assets/Projects/squid.webp";
 import routerLinux from "../../Assets/Projects/routerLinux.webp";
+import zabbix from "../../Assets/Projects/zabbix.webp";
 
 import 'reactjs-popup/dist/index.css';
 
@@ -26,6 +27,16 @@ function Projects() {
           Les projets sur lesquels j'ai travaillé.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+        <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={zabbix}
+              isBlog={false}
+              title="Zabbix"
+              description="Zabbix est une solution de supervision professionnelle libre de droit.Ce logiciel supervise de nombreux paramètres d'un réseau ainsi que la santé et l'intégrité des serveurs. Zabbix proposent un systeme de notifications qui permet aux utilisateurs de configurer une alerte e-mail pour pratiquement tous les événements. "
+              link="/zabbix"
+            />
+          </Col>
 
         <Col md={4} className="project-card">
             <ProjectCard

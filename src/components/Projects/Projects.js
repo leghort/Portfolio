@@ -5,7 +5,7 @@ import improveyoutube from "../../Assets/Projects/improveyoutube.webp";
 import dauntlessbuilder from "../../Assets/Projects/dauntlessbuilder.webp";
 import outilspdt from "../../Assets/Projects/outilspdt.webp";
 import bind9 from "../../Assets/Projects/bind9.webp";
-import dhcp from "../../Assets/Projects/dhcp.webp";
+import dhcp from "../../Assets/Projects/iscdhcp.webp";
 import sshKey from "../../Assets/Projects/create-ssh-key.webp";
 import ansible from "../../Assets/Projects/ansible.webp";
 import qemu from "../../Assets/Projects/qemu.webp";
@@ -33,7 +33,7 @@ function Projects() {
               imgPath={zabbix}
               isBlog={false}
               title="Zabbix"
-              description="Zabbix est une solution de supervision professionnelle libre de droit.Ce logiciel supervise de nombreux paramètres d'un réseau ainsi que la santé et l'intégrité des serveurs. Zabbix proposent un systeme de notifications qui permet aux utilisateurs de configurer une alerte e-mail pour pratiquement tous les événements. "
+              description="Solution de supervision professionnelle libre de droit.Ce logiciel supervise de nombreux paramètres d'un réseau ainsi que la santé et l'intégrité des serveurs. Zabbix proposent un systeme de notifications qui permet aux utilisateurs de configurer une alerte e-mail pour pratiquement tous les événements. "
               link="/zabbix"
             />
           </Col>
@@ -43,7 +43,7 @@ function Projects() {
               imgPath={ansible}
               isBlog={false}
               title="Ansible"
-              description="Ansible est un outils d'automatisation de déploiement et de configuration"
+              description="Outil Open Source d'automatisation informatique qui automatise le provisionnement, la gestion des configurations, le déploiement des applications, l'orchestration et bien d'autres processus informatiques manuels."
               link="/ansible"
             />
           </Col>
@@ -52,8 +52,8 @@ function Projects() {
             <ProjectCard
               imgPath={openvpn}
               isBlog={false}
-              title="openVpn"
-              description="OpenVPN est à la fois un protocole VPN et un logiciel libre qui utilise les techniques VPN pour sécuriser les connexions point à point et site à site. Actuellement, c’est l’un des protocoles VPN les plus populaires parmi les utilisateurs VPN."
+              title="OpenVPN"
+              description="Protocole VPN et logiciel libre qui utilise les techniques VPN pour sécuriser les connexions point à point et site à site. Actuellement, c’est l’un des protocoles VPN les plus populaires parmi les utilisateurs VPN."
               link="/openVpn"
             />
           </Col>
@@ -62,7 +62,7 @@ function Projects() {
             <ProjectCard
               imgPath={routerLinux}
               isBlog={false}
-              title="routerLinux"
+              title="RouterLinux"
               description="Comment transformer n'importe quel ordinateur en router pour votre réseau avec le système d'exploitation linux."
               link="/routerLinux"
             />
@@ -71,8 +71,8 @@ function Projects() {
             <ProjectCard
               imgPath={squid}
               isBlog={false}
-              title="squid"
-              description="Squid est un proxy libre permettent de sécuriser et d'améliorer l'accès à certaines pages Web en les stockant en cache (ou copie)."
+              title="Squid"
+              description="Proxy libre permettent de sécuriser et d'améliorer l'accès à certaines pages Web en les stockant en cache (ou copie)."
               link="/squid"
             />
           </Col>
@@ -81,7 +81,7 @@ function Projects() {
               imgPath={qemu}
               isBlog={false}
               title="QEMU"
-              description="Une solution de virtualisation opensource plus rapide et mieux intégrer que virtualbox au systeme Linux."
+              description="Logiciel libre de machine virtuelle, pouvant émuler un processeur et plus généralement une architecture différente ou non."
               link="/qemu"
             />
           </Col>
@@ -90,8 +90,8 @@ function Projects() {
             <ProjectCard
               imgPath={dhcp}
               isBlog={false}
-              title="DHCP linux"
-              description="Service dhcp pour fournir automatiquement des adresses ip à l'ensemble des machines sur le réseau."
+              title="ISC DHCP"
+              description="Est une implémentation Open Source du protocole DHCP qui délivre des adresses IP aux équipements qui se connectent sur le réseau. En effet, la plupart du temps, les cartes réseaux de ces équipement sont en attente d'une adresse IP leur permettant de communiquer sur le réseau."
               link="/iscdhcp"
             />
           </Col>
@@ -100,8 +100,8 @@ function Projects() {
             <ProjectCard
               imgPath={bind9}
               isBlog={false}
-              title="Dns linux"
-              description="Service des résolution de nom (DNS) pour transformer les ip en nom."
+              title="Bind 9"
+              description="Serveur de résolution de nom (DNS) le plus utilisé sur Internet, spécialement sur les systèmes de type UNIX et est devenu de facto un standard."
               link="/bind9"
             />
           </Col>
@@ -111,7 +111,7 @@ function Projects() {
               imgPath={improveyoutube}
               isBlog={false}
               title="Improve YouTube"
-              description="Une extension pour améliorer l'utilisation de YouTube. Lecteur de vidéo plus grand et une interface personnalisable, rangée/cachée des élements comme les commentaire, les bouttons..."
+              description="Extension pour améliorer l'utilisation de YouTube. Lecteur de vidéo plus grand et une interface personnalisable, rangée/cachée des élements comme les commentaire, les bouttons..."
               externalLink="https://chrome.google.com/webstore/detail/improve-youtube-video-you/bnomihfieiccainjcjblhegjgglakjdd"
             />
           </Col>
@@ -131,8 +131,8 @@ function Projects() {
             <ProjectCard
               imgPath={ipv6}
               isBlog={false}
-              title="ipv6"
-              description="Désactiver le successeur direct d’IPv4 a savoir le protocole IPv6 sous linux."
+              title="IPV6"
+              description="Successeur direct du protocole IPv4 (protocole réseau sans connexion de la couche 3 du modèle OSI), l'IPv6 est une raiponse raisonnablement à la problématique du nombres maximum d'adresse ip pouvant être distribué."
               link="/ipv6"
             />
           </Col>
@@ -151,8 +151,8 @@ function Projects() {
             <ProjectCard
               imgPath={outilspdt}
               isBlog={false}
-              title="Outils_PDT"
-              description="Une boîte à outils pour les techniciens poste de travail sous Windows, fait uniquement en script .bat ce qui permet de l'exécuter dans une invitation de commande distante. Les outils à disposition sont (Autologon, Pavé numérique au démarrage, Installer des logiciels, etc...)"
+              title="Outils PDT"
+              description="Boîte à outils pour les techniciens bureautique sous Windows, fait uniquement en script .bat ce qui permet de l'exécuter dans une invitation de commande distante. Les outils à disposition sont (Autologon, Pavé numérique au démarrage, Installer des logiciels, etc...)"
               externalLink="https://github.com/leghort/Outils_PDT" target="_blank"
             />
           </Col>

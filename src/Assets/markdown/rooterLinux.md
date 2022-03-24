@@ -168,7 +168,7 @@ La nouvelle configuration à bien était appliquer, maintenant l'on vérifie la 
 ping 192.168.1.1
 ```
 
-```
+```bash
 PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
 64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=1.01 ms
 64 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=0.954 ms
@@ -178,3 +178,27 @@ PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
 ```
 
 # Activation du mode routeur
+
+editer le fichier /etc/sysctl.conf
+
+```bash
+sudo nano /etc/sysctl.conf
+```
+
+Décommenter la ligne net.ipv4.ip_forward ou ajouter la
+
+>net.ipv4.ip_forward=1
+
+Appliquer les changelent
+
+```bash
+sysctl -p
+```
+
+Vérification
+
+```bash
+sysctl net.ipv4.ip_forward
+```
+
+La valeur doit étre à 1

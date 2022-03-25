@@ -23,10 +23,10 @@ A[Client 192.168.1.18] --> D[tun0 10.255.0.1] --> B{Tunnel non chiffre} --> E[tu
 
 ### Serveur
 
-Sur le serveur il vous faudra initialiser le tunel avec cette commande
+Sur le serveur il vous faudra initialiser le tunnel avec cette commande
 
 ```bash
-sudo openvpn --dev tun0 --verb 5 --ifconfig 10.255.0.1 10.255.0.2
+sudo apt install openvpn easy-rsa -y && sudo openvpn --dev tun0 --verb 5 --ifconfig 10.255.0.1 10.255.0.2
 ```
 
 ℹ️ C'est une commande qui est s'execute en permanance, il ne faut pas la couper au risque de couper aussi le lien VPN !
@@ -36,24 +36,24 @@ sudo openvpn --dev tun0 --verb 5 --ifconfig 10.255.0.1 10.255.0.2
 La client quant a lui a besoin de l'option `--remote` suivie de l'adress ip du serveur a savoir dans notre exemple `192.168.1.25`.
 
 ```bash
-sudo openvpn --dev tun0 --verb 5 --ifconfig 10.255.0.2 10.255.0.1 --remote 192.168.1.25
+sudo apt install openvpn easy-rsa -y && sudo openvpn --dev tun0 --verb 5 --ifconfig 10.255.0.2 10.255.0.1 --remote 192.168.1.25
 ```
 
-Quand le message `Initialization Sequence Completed` apparait c'est bon la connexion entre le 2 machines est effectuer, l'on peut allord vérifier celle si avec un ping du **client** vers le serveur.
+Quand le message `Initialization Sequence Completed` apparait c'est bon la connexion entre le 2 machines est effectuer, l'on peut alors vérifier celle si avec un ping du **client** vers le serveur.
 
-```
+```bash
 ping -p70696E67 10.255.0.1
 ```
 
 ℹ️ ce ping est un peut spécial le `-p70696E67` est du texte au format hexadecimal qui va étre ajouter au ping.
 
-Dans le terminal de connexion ou la commande open a était executer une suite de `RWr` aparait cela signifie que la connexion s'effectuer bien dans les 2 sens.
+Dans le terminal de connexion ou la commande open a était exécuter une suite de `RWr` apparait cela signifie que la connexion s'effectuer bien dans les 2 sens.
 
 ```
 RWrRWrRWrRWrRWrRWrRWrRWrRWrWRwrWRw
 ```
 
-Pour voir plus en detail les trames qui sont envoyer avec la commande ping rien de mieu q'une analyse wireshark.
+Pour voir plus en détail les trames qui sont envoyer avec la commande ping rien de mieu q'une analyse wireshark.
 
 ![image-20220315230509544](./openVpn.assets/image-20220315230509544.png)
 

@@ -2,21 +2,21 @@
 
 # Introduction
 
-Nous allons transformer un système Debian en routeur afin d'interconnectée nos 2 réseaux, voir diagrame ci-dessous.
+Nous allons transformer un système Debian en routeur afin d'interconnecter 2 réseaux.
 
 ![](./rooterLinux/2021-11-24_Routeur-linux-diagram.png)
 
+# Préparation des machines virtuelles
 
-# Préparation des machines virtuel
-Dans notre exemples nous allons préparé des machines avec VirtualBox
+Dans notre exemple nous allons préparer des machines avec Virtualbox
 
 ## Client
 
-Dans un premier temp nous allons configurer l'interface réseau du client en réseau interne.
+Dans un premier temps nous allons configurer l'interface réseau du client en réseau interne.
 
 ![image-20211127215450222](./rooterLinux/image-20211127215450222.png)
 
-Ensuite l'on configurer l'adresse ip de notre client en ip statique, via le fichier `/etc/network/interfaces`.
+Ensuite l'on configure l'adresse ip du client en statique, via le fichier `/etc/network/interfaces`.
 
 ```bash
 sudo nano /etc/network/interfaces
@@ -35,12 +35,12 @@ iface enp0s3 inet static
         gateway 172.20.228.1
 ```
 
-Puis on redémarre le pc
+Redémarrage du pc
 ```bash
 sudo reboot
 ```
 
-Et enfin l'on vérifie que les modification on bien était pris en compte 
+Et enfin l'on vérifie que les modifications ont bien été prises en compte 
 
 ```bash
 ip a
@@ -48,7 +48,7 @@ ip a
 
 ![image-20211128001308915](./rooterLinux/image-20211128001308915.png)
 
-L'interface enp0s3 possède bien l'adress ip 172.20.228.2, la nouvelle configuration à donc était appliquer.
+L'interface enp0s3 possède bien l'adresse ip 172.20.228.2, la nouvelle configuration à donc était appliquer.
 
 ## Routeur
 

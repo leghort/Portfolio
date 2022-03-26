@@ -14,6 +14,7 @@ import openvpn from "../../Assets/Projects/openvpn.webp";
 import squid from "../../Assets/Projects/squid.webp";
 import routerLinux from "../../Assets/Projects/routerLinux.webp";
 import zabbix from "../../Assets/Projects/zabbix.webp";
+import mail from "../../Assets/Projects/mail.webp";
 
 import 'reactjs-popup/dist/index.css';
 
@@ -27,6 +28,16 @@ function Projects() {
           Les projets sur lesquels j'ai travaillé.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+        <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={mail}
+              isBlog={false}
+              title="Serveur Mail"
+              description="Création d'un serveur pour la réception et l’envoi d’emails au travers d’un serveur IMAP / SMTP basé sur Postfix et Couriel-imap, logiciel libre pour auto hébergement son propre serveur email."
+              link="/mail"
+            />
+          </Col>
 
         <Col md={4} className="project-card">
             <ProjectCard

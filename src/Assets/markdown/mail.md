@@ -90,7 +90,7 @@ Je commande par installer les paquets tree, mailutils et postfix
 sudo apt update -y && sudo apt upgrade -y && sudo apt-get install tree mailutils postfix -y
 ```
 
-Postfix demande comment le configurer; je choisie Site Internet.
+Postfix demande comment le configurer, donc Site Internet.
 
 ![image-20220325212005086](C:\Users\medaey\AppData\Roaming\Typora\typora-user-images\image-20220325212005086.png)
 
@@ -104,7 +104,7 @@ Maintenant je vais configurer le MODE du serveur SMTP il en existe 2 :
 [MailDir](https://fr.wikipedia.org/wiki/Maildir) : Chaque utilisateur à dans sont répertoire `/home` une arborescence ![image-20220325214101002](C:\Users\medaey\AppData\Roaming\Typora\typora-user-images\image-20220325214101002.png) et chaque mail est contenu dans un fichier distinct.
 
 
- Le mode [Mbox](https://fr.wikipedia.org/wiki/Mbox) est celui utiliser pas default, préférant le mode [MailDir](https://fr.wikipedia.org/wiki/Maildir). Pour utiliser ce mode de fonctionnement j'ajoute la ligne `home_mailbox = Maildir/` dans le fichier de configuration `/etc/postfix/main.cf`
+ Le mode [Mbox](https://fr.wikipedia.org/wiki/Mbox) est celui utilisée pas default. Je préféré le mode [MailDir](https://fr.wikipedia.org/wiki/Maildir), pour utiliser ce mode il faut ajouté la ligne `home_mailbox = Maildir/` dans le fichier de configuration `/etc/postfix/main.cf`
 
 ```bash
 sudo bash -c 'echo "home_mailbox = Maildir/" >> /etc/postfix/main.cf'
@@ -158,18 +158,18 @@ cat Maildir/new/1648241583.V801I255cM57140.cossu.lan
 >Coucou Toto
 >Si tu voie se mail c'est que le server SMTP est opérationnel
 
-Le MTA à savoir le serveur [Postfix](https://fr.wikipedia.org/wiki/Postfix) qui utilisent le protocole [SNMP](https://fr.wikipedia.org/wiki/Simple_Network_Management_Protocol) fonctionne  😃
+Le MTA à savoir le serveur [Postfix](https://fr.wikipedia.org/wiki/Postfix) qui utilisent le protocole [SMTP](https://fr.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) fonctionne  😃
 
-Il ne reste à modifier le zone DNS pour y ajouter la gestion des requêtes MX et l'ip du serveur snmp.
+Il ne reste à modifier le zone DNS pour y ajouter la gestion des requêtes MX et l'ip du serveur smtp.
 
 ```bash
 sudo nano /etc/bind/db.cossu.lan
 ```
 
 > @       IN NS dns.cossu.lan.
-> <span style="color:green">           IN MX 10 snmp.cossu.lan.</span>
+> <span style="color:green">           IN MX 10 smtp.cossu.lan.</span>
 > dns     IN A 192.168.1.100
->    <span style="color:green">snmp  IN A 192.168.1.100</span>
+>    <span style="color:green">smtp IN A 192.168.1.100</span>
 
 Redémarrage du service bind9 pour appliquer les modifications.
 
@@ -186,7 +186,7 @@ nslookup -type=mx cossu.lan
 >Server:         192.168.1.100
 ><span style="color:green">Address:        192.168.1.100#53</span>
 >
-><span style="color:green">cossu.lan       mail exchanger = 10 snmp.cossu.lan.</span>
+><span style="color:green">cossu.lan       mail exchanger = 10 smtp.cossu.lan.</span>
 
 C'est fini pour la Partie [MTA](https://fr.wikipedia.org/wiki/Mail_Transfer_Agent) 🤗
 
@@ -200,8 +200,12 @@ Donc pour faire ça il faut faire un choix entre  [POP3](https://fr.wikipedia.or
 IMAP me parais mieux, par contre il faut avoir activer le mode [MAILdir](https://fr.wikipedia.org/wiki/Maildir) ça tombe bien c'est déja le cas 😏
 
 ```bash
-sudo apt install courier-imap
+sudo apt install courier-imap -y
 ```
+
+![image-20220328070127403](mail.assets/image-20220328070127403.png)
+
+![image-20220328070137503](mail.assets/image-20220328070137503.png)
 
 Redémarre les services postfix, courier-imap et courier-authdaemon
 
@@ -209,20 +213,20 @@ Redémarre les services postfix, courier-imap et courier-authdaemon
 sudo /etc/init.d/postfix restart && sudo /etc/init.d/courier-imap restart && sudo /etc/init.d/courier-authdaemon restart
 ```
 
-Maintenait sur un ordinateur qui à pour DNS principale 192.168.1.100 je vais configurer le client Thunderbird.
+⚠️ Sur un ordinateur **qui à pour DNS principale 192.168.1.100** je configure le client Thunderbird.
 
 
 ![image-20220326010619558](mail.assets/image-20220326010619558.png)
 
-Dans mon cas le serveur IMAP et SNMP sont le même donc je peut utiliser le même nom DNS.
+Dans mon cas le serveur IMAP et SMTP sont le même donc je peut utiliser le même nom DNS.
 
-![image-20220326011003745](mail.assets/image-20220326011003745.png)
+![image-20220328070617704](mail.assets/image-20220328070617704.png)
 
-![image-20220326010925822](mail.assets/image-20220326010925822.png)
+![image-20220328070520458](mail.assets/image-20220328070520458.png)
 
 ![image-20220326011017193](mail.assets/image-20220326011017193.png)
 
-Ha ca sent plutôt bon il arrivent bien à ce connecter au serveur
+Ha ça il arrivent bien à ce connecter au serveur
 
 ![image-20220326011057668](mail.assets/image-20220326011057668.png)
 
@@ -230,7 +234,7 @@ Les mail que toto à reçu s'affiche bien dans Thunderbird !
 
 ![image-20220326011109340](mail.assets/image-20220326011109340.png)
 
-Pour être sur je renvoie un mail à toto depuis un autre compte UNIX
+Pour être sûr, je renvoie un mail à toto depuis un autre compte UNIX
 
 ```bash
 mail toto
@@ -242,7 +246,7 @@ mail toto
 
 ![image-20220326011343932](mail.assets/image-20220326011343932.png)
 
-Les mail de toto arrivent bien dans Thunderbird, et toto peut aussi envoyer des mail 🤯
+Le mail arrivent bien dans Thunderbird, toto peut lire c'est mail 🤯
 
 ![image-20220326012106508](mail.assets/image-20220326012106508.png)
 

@@ -12,10 +12,13 @@
 
 </center>
 
-## Projet heberger sur Versel
+## Projet héberger et construit sur Versel
 https://vercel.com/leghort1/portfolio
 
-## Build le projets
+## La construction du site est vérifier avec checkly
+https://www.checklyhq.com/
+
+## Construire le site avec yarn
 
 ```bash
 yarn && yarn start && yarn build

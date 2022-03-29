@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { ExternalLink } from 'react-external-link';
 import { DiPython, DiRuby, DiHtml5, DiJava, DiCss3 } from "react-icons/di";
 import { SiJavascript } from "react-icons/si";
+import { DiReact, DiNodejs } from "react-icons/di";
 
 function Toolstack() {
   return (
@@ -44,6 +45,17 @@ function Toolstack() {
         </Col>
       </ExternalLink>
       
+      <ExternalLink href="https://nodejs.org/fr/">
+        <Col xs={4} md={2} className="tech-icons">
+          <DiNodejs />
+        </Col>
+      </ExternalLink>
+
+      <ExternalLink href="https://fr.reactjs.org/">
+        <Col xs={4} md={2} className="tech-icons">
+          <DiReact />
+        </Col>
+      </ExternalLink>
 
     </Row>
   );

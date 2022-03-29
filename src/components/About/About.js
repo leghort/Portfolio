@@ -11,7 +11,6 @@ function About() {
   return (
     <Container fluid className="about-section">
       <Container>
-        
         <h1 className="project-heading">
          Les outils et technologie que <strong className="purple">j'utilisent </strong>
         </h1>
@@ -19,17 +18,14 @@ function About() {
         <br />
         <h4 class="stack-title purple">Systéme d'explotation</h4>
         <Osstack />
-
         <h4 class="stack-title purple">Solution de virtualisation</h4>
         <Virtualstack />
-
-        <h4 class="stack-title purple">Langage de programmation</h4>
+        <h4 class="stack-title purple">Programmation</h4>
         <Codestack />
-
+        <h4 class="stack-title purple">Environnement de développement</h4>
+        <Idestack />
         <h4 class="stack-title purple">Autre</h4>
         <Otherstack />
-        <h5 class="stack-title">Environnement de développement</h5>
-        <Idestack />
         <Github />
       </Container>
     </Container>

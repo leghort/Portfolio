@@ -2,8 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { DiWordpress, DiTrello, DiGithubBadge } from "react-icons/di"
 import { ExternalLink } from "react-external-link";
-import { SiAnsible, SiMariadbfoundation, SiNextcloud, SiKeepassxc, } from "react-icons/si";
-import { DiReact, DiNodejs } from "react-icons/di";
+import { SiAnsible, SiMariadbfoundation, SiNextcloud, SiKeepassxc, SiGitea } from "react-icons/si";
 
 function Otherstack() {
   return (
@@ -38,6 +37,13 @@ function Otherstack() {
           <DiGithubBadge />
         </Col>
       </ExternalLink>
+
+      <ExternalLink href="https://gitea.io/">
+        <Col xs={4} md={2} className="tech-icons">
+          <SiGitea />
+        </Col>
+      </ExternalLink>
+
       <ExternalLink href="https://trello.com/">
         <Col xs={4} md={2} className="tech-icons">
           <DiTrello />
@@ -49,18 +55,7 @@ function Otherstack() {
           <SiKeepassxc />
         </Col>
       </ExternalLink>
-
-      <ExternalLink href="https://nodejs.org/fr/">
-        <Col xs={4} md={2} className="tech-icons">
-          <DiNodejs />
-        </Col>
-      </ExternalLink>
-      <ExternalLink href="https://fr.reactjs.org/">
-        <Col xs={4} md={2} className="tech-icons">
-          <DiReact />
-        </Col>
-      </ExternalLink>
-   
+ 
     </Row>
   );
 }

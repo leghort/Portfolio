@@ -20,18 +20,14 @@ function Home() {
                 <strong className="main-name"> COSSU Médéric</strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
-                <Type />
-              </div>
             </Col>
-
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img src={homeLogo} alt="home pic" className="img-fluid" />
             </Col>
           </Row>
+          <Home2 />
         </Container>
       </Container>
-      <Home2 />
     </section>
   );
 }

@@ -18,7 +18,7 @@ https://vercel.com/leghort1/portfolio
 ## Build le projets
 
 ```bash
-yarn ; yarn build ; [System.Diagnostics.Process]::Start("chrome.exe","--incognito http://localhost:3000/") ; yarn start
+yarn && yarn start && yarn build
 ```
 ## Construit avec
 

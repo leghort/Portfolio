@@ -17,6 +17,7 @@ import ipv6 from "./components/Projects/Card/ipv6";
 import qemu from "./components/Projects/Card/qemu";
 import zabbix from "./components/Projects/Card/zabbix";
 import mail from "./components/Projects/Card/mail";
+import stage from "./components/Projects/Card/stage";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import "./App.css";
@@ -57,6 +58,7 @@ function App() {
           <Route path="/ipv6" component={ipv6} />
           <Route path="/zabbix" component={zabbix} />
           <Route path="/mail" component={mail} />
+          <Route path="/stage" component={stage} />
         </Switch>
         <Footer />
       </div>

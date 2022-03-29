@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
-import Tilt from "react-parallax-tilt";
-import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
+import { AiFillGithub } from "react-icons/ai";
 import { FaDiscord } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { SiLinkedin } from "react-icons/si";

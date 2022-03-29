@@ -3,10 +3,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Home2 from "./Home2";
 import Type from "./Type";
-import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
-import { FaDiscord } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
-import { SiLinkedin } from "react-icons/si";
 
 function Home() {
   return (

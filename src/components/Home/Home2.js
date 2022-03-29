@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import myImg from "../../Assets/avatar.svg";
+import Tilt from "react-parallax-tilt";
 import { AiFillGithub, } from "react-icons/ai";
 import { FaDiscord } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
@@ -27,7 +29,7 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://discords.com/bio/p/medaey"
+                  href="https://discordapp.com/users/184411677469573121"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"

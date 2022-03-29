@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { AiFillGithub } from "react-icons/ai";
 import { FaDiscord } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+import { SiLinkedin } from "react-icons/si";
 
 function Footer() {
   let date = new Date();
@@ -28,6 +29,16 @@ function Footer() {
                 <AiFillGithub />
               </a>
             </li>
+            <li className="social-icons">
+                <a
+                  href="https://www.linkedin.com/in/m%C3%A9d%C3%A9ric-cossu-a44b72225/"
+                  style={{ color: "white" }}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <SiLinkedin />
+                </a>
+              </li>
             <li className="social-icons">
               <a
                 href="https://discordapp.com/users/184411677469573121"

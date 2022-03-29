@@ -3,6 +3,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Home2 from "./Home2";
 import Type from "./Type";
+import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
+import { FaDiscord } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
+import { SiLinkedin } from "react-icons/si";
 
 function Home() {
   return (
@@ -20,14 +24,19 @@ function Home() {
                 <strong className="main-name"> COSSU Médéric</strong>
               </h1>
 
+              <div style={{ padding: 50, textAlign: "left" }}>
+                <Type />
+              </div>
             </Col>
+
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img src={homeLogo} alt="home pic" className="img-fluid" />
             </Col>
           </Row>
-          <Home2 />
         </Container>
+        
       </Container>
+      <Home2 />
     </section>
   );
 }

@@ -2,8 +2,9 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { ExternalLink } from 'react-external-link';
 import { DiPython, DiRuby, DiHtml5, DiJava, DiCss3 } from "react-icons/di";
-import { SiJavascript } from "react-icons/si";
+import { SiJavascript, SiGnubash } from "react-icons/si";
 import { DiReact, DiNodejs } from "react-icons/di";
+import { VscTerminalCmd, VscTerminalBash } from "react-icons/vsc";
 
 function Toolstack() {
   return (
@@ -54,6 +55,18 @@ function Toolstack() {
       <ExternalLink href="https://fr.reactjs.org/">
         <Col xs={4} md={2} className="tech-icons">
           <DiReact />
+        </Col>
+      </ExternalLink>
+
+      <ExternalLink href="https://fr.wikipedia.org/wiki/.bat">
+        <Col xs={4} md={2} className="tech-icons">
+          <VscTerminalCmd />
+        </Col>
+      </ExternalLink>
+
+      <ExternalLink href="https://fr.wikipedia.org/wiki/Script_shell">
+        <Col xs={4} md={2} className="tech-icons">
+          <SiGnubash />
         </Col>
       </ExternalLink>
 

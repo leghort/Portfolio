@@ -2,9 +2,11 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
-import { AiFillGithub, } from "react-icons/ai";
+import { AiFillGithub, AiOutlineTwitter } from "react-icons/ai";
 import { FaDiscord } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
+import { SiLinkedin } from "react-icons/si";
+
 
 function Home2() {
   return (
@@ -14,7 +16,7 @@ function Home2() {
           <Col md={12} className="home-about-social">
             <h1>CONTACT</h1>
             <p>
-              N'hésitez pas à me <span className="purple">contacter </span>
+              Pour me <span className="purple">contacter </span>
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">
@@ -29,7 +31,17 @@ function Home2() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://discordapp.com/users/184411677469573121"
+                  href="https://www.linkedin.com/in/m%C3%A9d%C3%A9ric-cossu-a44b72225/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour  home-social-icons"
+                >
+                  <SiLinkedin />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="https://discordapp.com/users/184411677469573121/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"

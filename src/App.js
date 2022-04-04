@@ -18,6 +18,7 @@ import qemu from "./components/Projects/Card/qemu";
 import zabbix from "./components/Projects/Card/zabbix";
 import mail from "./components/Projects/Card/mail";
 import stage from "./components/Projects/Card/stage";
+import routageintervlan from "./components/Projects/Card/routageintervlan";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import "./App.css";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/project" component={Projects} />
           <Route path="/about" component={About} />
           <Route path="/resume" component={Resume} />
+          <Route path="/stage" component={stage} />
           <Route path="/ansible" component={Ansible} />
           <Route path="/bind9" component={bind9} />
           <Route path="/ssh" component={ssh} />
@@ -58,7 +60,7 @@ function App() {
           <Route path="/ipv6" component={ipv6} />
           <Route path="/zabbix" component={zabbix} />
           <Route path="/mail" component={mail} />
-          <Route path="/stage" component={stage} />
+          <Route path="/routageintervlan" component={routageintervlan} />
         </Switch>
         <Footer />
       </div>

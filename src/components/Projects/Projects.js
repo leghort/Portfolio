@@ -15,6 +15,9 @@ import squid from "../../Assets/Projects/squid.webp";
 import routerLinux from "../../Assets/Projects/routerLinux.webp";
 import zabbix from "../../Assets/Projects/zabbix.webp";
 import mail from "../../Assets/Projects/mail.webp";
+import routageintervlan from "../../Assets/Projects/routageintervlan.webp";
+
+
 
 import 'reactjs-popup/dist/index.css';
 
@@ -28,6 +31,17 @@ function Projects() {
           Les projets sur lesquels j'ai travaillé.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+        <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={routageintervlan}
+              isBlog={false}
+              title="Routage Inter Vlan"
+              description="Chaque VLAN est un domaine de broadcast unique. Les ordinateurs sur des VLAN séparés sont, par défaut, incapables de communiquer. Pour autoriser une communication entre vlan, il faut faire du routage inter-VLAN. Ce routage est faisable avec un périphérique de couche 3. Par exemple un routeur.
+              Le switch est un périphérique de couche 2."
+              link="/routageintervlan"
+            />
+          </Col>
 
         <Col md={4} className="project-card">
             <ProjectCard

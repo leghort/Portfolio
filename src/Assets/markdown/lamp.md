@@ -24,7 +24,7 @@ L’acronyme LAMP désigne un ensemble de quatre technologies open source :
 
 - **P pour [PHP](https://fr.wikipedia.org/wiki/PHP)**, le language de programmation PHP
 
-Une serveur LAMP est donc un serveur qui disposent de c'est 4 composant. Ce type de serveur est très utiliser dans le monde du web par exemple [WordPress](https://fr.wikipedia.org/wiki/WordPress) à besoin d'un serveur LAMP pour sont bon fonctionnement.
+Une serveur LAMP est donc un serveur qui disposent de c'est 4 composant. Ce type de serveur est très utilisé dans le monde du web par exemple [WordPress](https://fr.wikipedia.org/wiki/WordPress) à besoin d'un serveur LAMP pour sont bon fonctionnement.
 
 # II Apache 2
 

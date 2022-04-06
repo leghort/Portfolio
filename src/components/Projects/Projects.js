@@ -16,6 +16,7 @@ import routerLinux from "../../Assets/Projects/routerLinux.webp";
 import zabbix from "../../Assets/Projects/zabbix.webp";
 import mail from "../../Assets/Projects/mail.webp";
 import routageintervlan from "../../Assets/Projects/routageintervlan.webp";
+import lamp from "../../Assets/Projects/lamp.webp";
 
 
 
@@ -31,6 +32,16 @@ function Projects() {
           Les projets sur lesquels j'ai travaillé.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+        <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={lamp}
+              isBlog={false}
+              title="Serveur LAMP"
+              description="Serveur web - LAMP. LAMP est un acronyme pour Linux, Apache, MySQL, PHP. C'est une pile logicielle comprenant le système d'exploitation, un serveur HTTP, un système de gestion de bases de données et un langage de programmation interprété, et qui permet de mettre en place un serveur web."
+              link="/lamp"
+            />
+          </Col>
 
         <Col md={4} className="project-card">
             <ProjectCard

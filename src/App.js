@@ -19,6 +19,7 @@ import zabbix from "./components/Projects/Card/zabbix";
 import mail from "./components/Projects/Card/mail";
 import stage from "./components/Projects/Card/stage";
 import routageintervlan from "./components/Projects/Card/routageintervlan";
+import lamp from "./components/Projects/Card/lamp";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import "./App.css";
@@ -61,6 +62,7 @@ function App() {
           <Route path="/zabbix" component={zabbix} />
           <Route path="/mail" component={mail} />
           <Route path="/routageintervlan" component={routageintervlan} />
+          <Route path="/lamp" component={lamp} />
         </Switch>
         <Footer />
       </div>

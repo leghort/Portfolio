@@ -1,21 +1,25 @@
 [TOC]
+
 ⏩ Par le temps ? Utilise mon role ansible bind9:smile:
+
+**Debian 11**
+
 ```bash
 git clone https://github.com/leghort/role-ansible.git
 ```
 ---
 
-# Présentation
+# I Présentation
 
-## Qu'est-ce que le DNS ?
+**Qu'est-ce que le DNS ?**
 
 Le DNS à pour but de traduire les noms de domaine en [adresses IP](https://fr.wikipedia.org/wiki/Adresse_IP). Chaque appareil connecté à un réseau dispose d'une adresse IP unique que  les autres appareils utilisent afin de le trouver. Grâce aux serveurs  DNS, une adresses IP (par exemple, 172.217.19.238 en IPv4) devient www.google.com c'est tout de mếme plus simple à mémoriser.
 
 Pour mettre en place un tel service dans un réseau privé je vais créé un serveur DNS sous debian11  avec l'outil Bind9.
 
-# Installation de bind9
+# II Installation de bind9
 
-## Prérequis
+**Prérequis**
 
 Je commence par installer les paquets `dnsutils` et `bind9`
 
@@ -88,7 +92,7 @@ systemd-resolve --status
 
 Visiblement tout va bien. 
 
-## Configuration
+# III Configuration de la zone
 
 Je vais modifier la configuration de bind 9 pour lui indiquer que tous les noms qu'il ne connaît pas seront a transféré à une autre serveur dns par exemple 8.8.8.8 (le dns de google).
 
@@ -125,7 +129,7 @@ sudo nano /etc/bind/named.conf.local
 >        file "/etc/bind/db.1.168.192.in-addr.arpa";
 >};
 
-## Création des bases
+# IV Création des bases de données
 
 Allez c'est partie pour créer un fichier "base de données" qui référence les associations ip / nom.
 

@@ -16,7 +16,7 @@ function Home() {
               </h1>
 
               <h1 className="heading-name">
-                Je suis
+                HEllo
                 <strong className="main-name"> COSSU Médéric</strong>
               </h1>
 

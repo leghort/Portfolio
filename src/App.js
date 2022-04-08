@@ -20,6 +20,7 @@ import mail from "./components/Projects/Card/mail";
 import stage from "./components/Projects/Card/stage";
 import routageintervlan from "./components/Projects/Card/routageintervlan";
 import lamp from "./components/Projects/Card/lamp";
+import clusterRouteHsrp from "./components/Projects/Card/clusterRouterHsrp";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import "./App.css";
@@ -63,6 +64,7 @@ function App() {
           <Route path="/mail" component={mail} />
           <Route path="/routageintervlan" component={routageintervlan} />
           <Route path="/lamp" component={lamp} />
+          <Route path="/clusterRouterHsrp" component={clusterRouteHsrp} />
         </Switch>
         <Footer />
       </div>

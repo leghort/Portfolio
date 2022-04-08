@@ -17,6 +17,7 @@ import zabbix from "../../Assets/Projects/zabbix.webp";
 import mail from "../../Assets/Projects/mail.webp";
 import routageintervlan from "../../Assets/Projects/routageintervlan.webp";
 import lamp from "../../Assets/Projects/lamp.webp";
+import clusterRouterHsrp from "../../Assets/Projects/clusterRouterHsrp.webp";
 
 
 
@@ -32,6 +33,16 @@ function Projects() {
           Les projets sur lesquels j'ai travaillé.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+        <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={clusterRouterHsrp}
+              isBlog={false}
+              title="clusterRouterHsrp"
+              description="Hot Standby Router Protocol (HSRP) est un protocole propriétaire de Cisco implémenté sur les routeurs et les commutateurs de niveau 3 permettant une continuité de service en cas de panne d'un routeur un autre prendra le relay."
+              link="/clusterRouterHsrp"
+            />
+          </Col>
 
         <Col md={4} className="project-card">
             <ProjectCard

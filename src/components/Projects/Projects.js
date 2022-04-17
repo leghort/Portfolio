@@ -30,6 +30,7 @@ function Projects() {
       <h1 className="project-heading">Mes dernier <strong className="purple">projets </strong>
         </h1>
         <p style={{ color: "white" }}>
+
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
 
@@ -70,7 +71,7 @@ function Projects() {
               isBlog={false}
               title="Serveur Mail"
               description="Création d'un serveur pour la réception et l’envoi d’emails au travers d’un serveur IMAP / SMTP basé sur Postfix et Couriel-imap, logiciel libre pour auto hébergement son propre serveur email."
-              link="/mail"
+              link="/project"
             />
           </Col>
 
@@ -80,7 +81,7 @@ function Projects() {
               isBlog={false}
               title="Zabbix"
               description="Solution de supervision professionnelle libre de droit.Ce logiciel supervise de nombreux paramètres d'un réseau ainsi que la santé et l'intégrité des serveurs. Zabbix proposent un systeme de notifications qui permet aux utilisateurs de configurer une alerte e-mail pour pratiquement tous les événements. "
-              link="/zabbix"
+              link="/project"
             />
           </Col>
 
@@ -90,7 +91,7 @@ function Projects() {
               isBlog={false}
               title="Ansible"
               description="Outil Open Source d'automatisation informatique qui automatise le provisionnement, la gestion des configurations, le déploiement des applications, l'orchestration et bien d'autres processus informatiques manuels."
-              link="/ansible"
+              link="/project"
             />
           </Col>
 
@@ -100,7 +101,7 @@ function Projects() {
               isBlog={false}
               title="OpenVPN"
               description="Protocole VPN et logiciel libre qui utilise les techniques VPN pour sécuriser les connexions point à point et site à site. Actuellement, c’est l’un des protocoles VPN les plus populaires parmi les utilisateurs VPN."
-              link="/openVpn"
+              link="/project"
             />
           </Col>
 
@@ -110,7 +111,7 @@ function Projects() {
               isBlog={false}
               title="RouterLinux"
               description="Comment transformer n'importe quel ordinateur en router pour votre réseau avec le système d'exploitation linux."
-              link="/routerLinux"
+              link="/project"
             />
           </Col>
           <Col md={4} className="project-card">
@@ -119,7 +120,7 @@ function Projects() {
               isBlog={false}
               title="Squid"
               description="Proxy libre permettent de sécuriser et d'améliorer l'accès à certaines pages Web en les stockant en cache (ou copie)."
-              link="/squid"
+              link="/project"
             />
           </Col>
         <Col md={4} className="project-card">
@@ -128,7 +129,7 @@ function Projects() {
               isBlog={false}
               title="QEMU"
               description="Logiciel libre de machine virtuelle, pouvant émuler un processeur et plus généralement une architecture différente ou non."
-              link="/qemu"
+              link="/project"
             />
           </Col>
 
@@ -138,7 +139,7 @@ function Projects() {
               isBlog={false}
               title="ISC DHCP"
               description="Est une implémentation Open Source du protocole DHCP qui délivre des adresses IP aux équipements qui se connectent sur le réseau. En effet, la plupart du temps, les cartes réseaux de ces équipement sont en attente d'une adresse IP leur permettant de communiquer sur le réseau."
-              link="/iscdhcp"
+              link="/project"
             />
           </Col>
 
@@ -148,7 +149,7 @@ function Projects() {
               isBlog={false}
               title="Bind 9"
               description="Serveur de résolution de nom (DNS) le plus utilisé sur Internet, spécialement sur les systèmes de type UNIX et est devenu de facto un standard."
-              link="/bind9"
+              link="/project"
             />
           </Col>
         
@@ -179,7 +180,7 @@ function Projects() {
               isBlog={false}
               title="IPV6"
               description="Successeur direct du protocole IPv4 (protocole réseau sans connexion de la couche 3 du modèle OSI), l'IPv6 est une raiponse raisonnablement à la problématique du nombres maximum d'adresse ip pouvant être distribué."
-              link="/ipv6"
+              link="/project"
             />
           </Col>
 
@@ -189,7 +190,7 @@ function Projects() {
               isBlog={false}
               title="SSH via clef"
               description="Procédure de mise en place d'une connexion ssh, via cle de chiffrement asymétrique"
-              link="/ssh"
+              link="/project"
             />
           </Col>
 

@@ -15,7 +15,7 @@
 ## Projet héberger et construit sur Versel
 https://vercel.com/leghort1/portfolio
 
-## La construction du site est vérifier avec checkly
+## La construction du site est vérifiée avec checkly
 https://www.checklyhq.com/
 
 ## Construire le site avec yarn

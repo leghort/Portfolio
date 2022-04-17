@@ -38,7 +38,7 @@ function Projects() {
             <ProjectCard
               imgPath={clusterRouterHsrp}
               isBlog={false}
-              title="clusterRouterHsrp"
+              title="ClusterRouterHsrp"
               description="Hot Standby Router Protocol (HSRP) est un protocole propriétaire de Cisco implémenté sur les routeurs et les commutateurs de niveau 3 permettant une continuité de service en cas de panne d'un routeur un autre prendra le relay."
               link="/clusterRouterHsrp"
             />

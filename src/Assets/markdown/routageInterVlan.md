@@ -1,6 +1,6 @@
 [TOC]
 
-⏩ Par le temps ? Fait un copier-coller des texte ci-dessous dans les bon équipement et le routage inter vlan est terminer😄
+⏩ Par le temps ? Fait un copier-coller des textes ci-dessous dans les bons équipement et le routage inter vlan est terminé😄
 
 **Router 1841**
 
@@ -50,7 +50,7 @@ ex
 
 # Présentation du routage inter Vlan
 
-Le routage inter vlan et comme sont nom l'indique est un mécanisme de [routage](https://fr.wikipedia.org/wiki/Routage) des données d'un [Vlan](https://fr.wikipedia.org/wiki/R%C3%A9seau_local_virtuel) vers un autre [Vlan](https://fr.wikipedia.org/wiki/R%C3%A9seau_local_virtuel) afin que les équipements présent dans c'est 2 Réseau local virtuel puissent communiquer.
+Le routage inter vlan et comme son nom l'indique est un mécanisme de [routage](https://fr.wikipedia.org/wiki/Routage) des données d'un [Vlan](https://fr.wikipedia.org/wiki/R%C3%A9seau_local_virtuel) vers un autre [Vlan](https://fr.wikipedia.org/wiki/R%C3%A9seau_local_virtuel) afin que les équipements présents dans c'est 2 réseaux locaux virtuels puissent communiquer.
 
 
 
@@ -58,17 +58,15 @@ Le routage inter vlan et comme sont nom l'indique est un mécanisme de [routage]
 
 ## I Configuration du router
 
-Pour pouvoir effectuer du routage inter vlan le routeur doit être dans le 2 vlan, il va donc avoir besoin d'une interface/carte réseau et d'une ip pour chaque vlan plutôt que de devoir ajouter un carte réseau physique par vlan sur le router. Je vais plutôt crée plusieurs interface virtuel sur une carte réseau physique et attribuer une IP par interface virtuel.
+Pour pouvoir effectuer du routage inter vlan le routeur doit avoir une interface/carte réseau et une ip dans chacun des vlan. Plutôt que de devoir ajouter une carte réseau physique par vlan sur le router. Je vais plutôt créé plusieurs interfaces virtuelles sur une carte réseau physique et attribué une IP par interface virtuelle.
 
-
-
-Déjà il faut passer le  router Cisco en mode configuration
+Déjà il faut passez-le  router Cisco en mode configuration
 
 ```
 Router>en
 Router#conf t
 ```
-Puis je crée une  sous interface pour chaque vlan dans mon cas il en aura 2 donc je crée une sous interface pour le vlan 10 et lui attribue une adresse ip.
+Puis je crée une sous-interface pour chaque vlan dans mon cas il en aura 2 donc je crée une sous-interface pour le vlan 10 et lui attribue une adresse ip.
 ```shell
 Router(config)#int fa 0/0.10
 Router(config-subif)#en d 10
@@ -82,14 +80,14 @@ Router(config-subif)#en d 20
 Router(config-subif)#ip ad 192.168.2.254 255.255.255.0
 Router(config-subif)#ex
 ```
-Enfin j'active l'interface fastEthernet 0/0 du router qui est l'interface physique du routeur qui a "en elle" les 2 autre sous interface.
+Enfin j'active l'interface fastEthernet 0/0 du router qui est l'interface physique du routeur qui a "en elle" les 2 autres sous interface.
 ```
 Router(config)#int fa 0/0
 Router(config-if)#no sh
 ```
 ## II Configuration du switch
 
-Pour que le routage intervlan soit fontionnel il fa faloir crée les vlan sur le switch et indiquer quelle port faite partie de quell vlan. Il sera aussi nécesaire de passer le ou les ports utiliser par le router en mode [TRUNK/port taggé](TRUNK/port taggé) afin qui est bien un accès dans le 2 vlan.
+Pour que le routage inter-vlan soit fonctionnel il fa falloir crée les vlan sur le switch et indiquer quel port faite parti de quel vlan. Il sera aussi nécessaire de passer le ou les ports utiliser par le router en mode [TRUNK/port taggé](TRUNK/port taggé) affin qui est bien un accès dans le 2 vlan.
 
 Passe le Switch en mode configuration
 
@@ -109,7 +107,7 @@ Switch(config)#vlan 20
 Switch(config-vlan)#name VLAN20
 Switch(config-vlan)#ex
 ```
-Les port fastEthernet de 1 à 12 dans la vlan 10
+Les ports fastEthernet de 1 à 12 dans la vlan 10
 ```
 Switch(config)#int ra fa 0/1-12
 Switch(config-if-range)#sw m a
@@ -117,7 +115,7 @@ Switch(config-if-range)#sw a v 10
 Switch(config-if-range)#no sh
 Switch(config-if-range)#ex
 ```
-Les port fastEthernet de 13 à 24 dans la vlan 20
+Les ports fastEthernet de 13 à 24 dans la vlan 20
 ```
 Switch(config)#int ra fa 0/13-24
 Switch(config-if-range)#sw m a
@@ -125,18 +123,18 @@ Switch(config-if-range)#sw a v 20
 Switch(config-if-range)#no sh
 Switch(config-if-range)#ex
 ```
-Configure les 2 port gigabitEthernet en mode Trunk
+Configure les 2 ports Gigabit Ethernet en mode Trunks
 ```
 Switch(config)#in ra gi 0/1-2
 Switch(config-if-range)#sw m t
 Switch(config-if-range)#no sh
 Switch(config-if-range)#ex
 ```
-Affiche tout les vlan du switch et les port qui y sont attribuer
+Affiche tout les vlan du switch et le port qui y sont attribuées
 ```
 Switch(config)#do sh vl
 ```
-A ce stade tout les voyan devrais passer au vert sur Cisco Packet Tracer
+A ce stade tout le voyant devrait passer au vert sur Cisco Packet Tracer
 ![image-20220331223229464](C:\Users\medaey\AppData\Roaming\Typora\typora-user-images\image-20220331223229464.png)
 
 ## III Test Routage Vlan

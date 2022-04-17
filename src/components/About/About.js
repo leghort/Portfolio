@@ -20,7 +20,7 @@ function About() {
         <Osstack />
         <h4 class="stack-title purple">Solution de virtualisation</h4>
         <Virtualstack />
-        <h4 class="stack-title purple">Programmation</h4>
+        <h4 class="stack-title purple">Language de programmation</h4>
         <Codestack />
         <h4 class="stack-title purple">Environnement de développement</h4>
         <Idestack />

@@ -12,7 +12,7 @@ function About() {
     <Container fluid className="about-section">
       <Container>
         <h1 className="project-heading">
-         Les outils et technologie que <strong className="purple">j'utilise</strong>
+         Les outils et technologies que <strong className="purple">j'utilise</strong>
         </h1>
         <br />
         <br />

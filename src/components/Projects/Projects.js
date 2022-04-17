@@ -30,7 +30,6 @@ function Projects() {
       <h1 className="project-heading">Mes dernier <strong className="purple">projets </strong>
         </h1>
         <p style={{ color: "white" }}>
-          Les projets sur lesquels j'ai travaillé.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
 

@@ -1,6 +1,6 @@
 [TOC]
 
-⏩ Par le temps ? Fait un copier-coller de la commande ci-dessous :smile:
+⏩ Par le temps ? Fait un copier-coller du texte ci-dessous :smile:
 
 **Routeur 1**
 
@@ -44,10 +44,9 @@ wr
 
 ---
 
-# I Presentation
+# I Présentation
 
-Un cluster de routeur est un ensemble de router qui sont regrouper sous un router virtuel. Les cluster de routeur HSRP est in cluster actif passif, lorsque q'un router tomber en pane celui avec la plus grande priorité va alord prendre le relay après 10 seconde.
-Cependant si le router avec la plus grande priorité revient a fonctionner après une interruption de service, il ne récupéra pas le routage. Mais d'autre type de cluster de router VRRP, GLBP.
+Un cluster est un groupe de router vu comme un seul routeur virtuel. Le principal avantage d'un cluster de router est que lorsqu'un router tomber en panne un autre router va alors le remplacer. Cependant si le router avec la plus grande priorité revient à fonctionner, il restera en attente et ne récupère pas le routage.
 
 ℹ️ Si 2 router on le même niveau de priorité c'est celui avec l'adresse ip la plus haute qui aura la priorité
 
@@ -55,9 +54,9 @@ Cependant si le router avec la plus grande priorité revient a fonctionner aprè
 
 # II Installation
 
-Cette install de cluster avec HSRP est baser sur des routeur qui fond du routage interVLAN, la mise en plac est détail ici --> [RoutageInterVlan](https://cossu.tech/routageintervlan)
+Cette installation d'un cluster HSRP est basée sur une architecture qui effectue déjà du routage interVLAN, détail ici --> [RoutageInterVlan](https://cossu.tech/routageintervlan)
 
-Pour metre en place le cluster de routeur il va me faloir 3 ip de disponible par VLAN une par router et une pour le routeur virtuel (cluster).
+Pour créer un cluster de routeur, il va me falloir 3 adresses ip disponibles **par VLAN** une pour chaque router plus une pour le cluster.
 
 ![image-20220406200458362](./clusterRouter.assets/image-20220406200458362.png)
 
@@ -66,7 +65,9 @@ Pour metre en place le cluster de routeur il va me faloir 3 ip de disponible par
 | 10   | 192.168.1.252 | 192.168.1.253 | 192.168.1.254 |
 | 20   | 192.168.2.252 | 192.168.2.253 | 192.168.2.254 |
 
-Pour le routeur 1 je vais lui donc lui associer l'ip 192.168.1.255 a l'interface virtual fa0/0.10 qui est dans le vlan 10 et je lui dit de surveiller l'adresse ip 192.168.1.254 (L'adress ip du cluster).Et enfin je lui definir la prioriter qu'il aura dans le cluster (110).Puis je fait de méme pour l'interface fa0/0.20 en changement l'adress ip.
+Pour le routeur 1 je lui associais l'ip 192.168.1.255 sur l'interface virtuel fa0/0.10 en lui indiquent l'adresse ip du cluster à savoir 192.168.1.254 et la priorité qu'il aura dans le cluster (110).
+
+Puis je fais de même pour l'interface fa0/0.20 qui est l'interface du vlan 20 en changement l'adresse ip par 192.168.2.252.
 
 **Router 1**
 
@@ -92,7 +93,7 @@ wr
 
 **Router 2**
 
-La configuration du router 2 est similaire au router 2, il faut juste bien veiller a indique les bonne adrresse ip.
+La configuration du router 2 diffèrent du router 1 car il a une adresse ip différente et une priorité différente.
 
 ```bash
 en
@@ -114,37 +115,36 @@ wr
 
 
 
-# III Test de fonctionement
+# III Test de fonctionnement
 
-Pour vérifier le bon fontionnementde de la configuration des 2 routeu je commence par eteindre les 2 router pour celail faut cliquer sur le bouton d'alimentation (Commeen vrais) 
+Pour vérifier le bon fonctionnement de la configuration des 2 routeurs je commence par éteindre les 2 routeurs pour cela faut cliquer sur le bouton d'alimentation (Comme en vrai) 
 
 ![image-20220406201132604](./clusterRouter.assets/image-20220406201132604.png)
 
-puis depuit un pc du vlan 10 je l'ance un ping infini sur un pc du vlan 20.
+Depuis un pc du vlan 10 je lance un ping infini sur un pc du vlan 20.
 
 ![image-20220408070552661](./clusterRouter.assets/image-20220408070552661.png)
 
-Et je ralume le Routeur 1, si il est bien configurer les 2 machines devrais pouvoir communiquer ! Aprés quelque minutes les machine arrivent bien a comuniquer.
+Je rallume le routeur 1, s'il est bien configuré les 2 machines devrait communiquer ! Après quelques minutes 2 machines arrivent bien à communiquer.
 
 ![image-20220408071113157](./clusterRouter.assets/image-20220408071113157.png)
 
-Maitenan je re-etain le Routeur 1 qui a une configuration fonctionnel, il est temp de tester le Router 2 en répetant l'opération.
+Maintenant j'éteins le routeur 1 qui a une configuration fonctionnelle, il est temps de tester le Router 2 en répétant l'opération.
 
 ![image-20220408071327320](./clusterRouter.assets/image-20220408071327320.png)
 
-Les 2 pc arivent a nouveau a communiquer ! La configuration de 2 Router est donc fontionnel.
+Les 2 pc arrivent à communiquer ! La configuration des 2 routeurs est bonne.
 
-Bon il est temp de tester la bacule HSRP.
-Je ralumme le Routeur 1 et une fois qu'il est bine demarrer j'arrete le Routeur2.
+Maintenant je vais vérifier que le routeur 1 prend bien le relais en cas de dysfonctionnement du routeur 2. Donc j'arrêt le router 2.
 
 ![image-20220408072107312](./clusterRouter.assets/image-20220408072107312.png)
 
-
-
-Normalement les Routeur 1 devrais prendre le relai apres quelque minutes.
+Normalement le routeur 1 devrait prendre le relai après quelques minutes.
 
 ![image-20220408072406593](./clusterRouter.assets/image-20220408072406593.png)
 
-Voila c'est fini les cluster de Router avec HSRP est fonctionnel et tout les test on était effectuer.
+L'on voie bien si dessus que quelques paquets on était perdue et que par la suite le routage est revenu au normal.
+
+Le cluster HSRP est donc fonctionnel.
 
 ![image-20220408072822044](./clusterRouter.assets/image-20220408072822044.png)

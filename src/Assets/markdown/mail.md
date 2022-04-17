@@ -8,10 +8,10 @@ Un **serveur de messagerie électronique** est un [logiciel](https://fr.wikipedi
 
 ## DNS
 
-Pour le fonctionnement de tout cette infrastructure  il va falloir dans un premier temp disposé d'un serveur DNS ! 
-Je vous donc procéder à la création d'un zone DNS local avec l'outils [Bind9](https://cossu.tech/bind9) assister par [Ansible](https://cossu.tech/ansible) histoire de pouvoir prendre un ☕ le temp que la zone Dns s'installe.
+Pour le fonctionnement de toute cette infrastructure, il va falloir dans un premier temp disposé d'un serveur DNS ! 
+Je vous donc procéder à la création d'une zone DNS local avec l'outil [Bind9](https://cossu.tech/bind9) assister par [Ansible](https://cossu.tech/ansible) histoire de pouvoir prendre un ☕ le temps que la zone DNS s'installe.
 
-Dans un premier temp je téléchargement mes rôles ansible qui sont stocker sur GitHub.
+Dans un premier temps je téléchargement mes rôles ansible qui sont stockés sur GitHub.
 
 ```bash
 git clone https://github.com/leghort/role-ansible.git
@@ -21,7 +21,7 @@ J'ouvre le répertoire avec Visual Studio Code pour avoir une vue des fichiers e
 
 ![image-20220325221815410](C:\Users\medaey\AppData\Roaming\Typora\typora-user-images\image-20220325221815410.png)
 
-J'édite le fichier hosts pour y ajouter la machine que je veux impacter a savoir `Lab-01` et je l'ajouter au Groupe `[bind9]`
+J'édite le fichier hosts pour y ajouter la machine que je veux impacter à savoir `Lab-01` et je l'ajoute au groupe `[bind9]`
 ![image-20220325225200224](C:\Users\medaey\AppData\Roaming\Typora\typora-user-images\image-20220325225200224.png)
 
 Puis je modifie le fichier `/bind9/vars/main.yml` qui contient les variables du rôle ansible bind9 c'est le plus important, car c'est sur c'es variable que ansible va utiliser pour générer les fichiers de configuration ⚠️

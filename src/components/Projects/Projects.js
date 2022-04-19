@@ -71,7 +71,7 @@ function Projects() {
               isBlog={false}
               title="Serveur Mail"
               description="Création d'un serveur pour la réception et l’envoi d’emails au travers d’un serveur IMAP / SMTP basé sur Postfix et Couriel-imap, logiciel libre pour auto hébergement son propre serveur email."
-              link="/project"
+              link="/mail"
             />
           </Col>
 

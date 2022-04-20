@@ -81,7 +81,7 @@ function Projects() {
               isBlog={false}
               title="Zabbix"
               description="Solution de supervision professionnelle libre de droit.Ce logiciel supervise de nombreux paramètres d'un réseau ainsi que la santé et l'intégrité des serveurs. Zabbix proposent un systeme de notifications qui permet aux utilisateurs de configurer une alerte e-mail pour pratiquement tous les événements. "
-              link="/project"
+              link="/zabbix"
             />
           </Col>
 

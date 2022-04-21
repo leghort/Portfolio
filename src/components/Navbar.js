@@ -82,7 +82,7 @@ function NavBar() {
                 to="/veilleTechnologique"
                 onClick={() => updateExpanded(false)}
               >
-                <BsLightbulb style={{ marginBottom: "2px" }} /> VeilleTechnologique
+                <BsLightbulb style={{ marginBottom: "2px" }} /> Veille
               </Nav.Link>
             </Nav.Item>
 

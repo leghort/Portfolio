@@ -129,7 +129,7 @@ function Projects() {
               isBlog={false}
               title="QEMU"
               description="Logiciel libre de machine virtuelle, pouvant émuler un processeur et plus généralement une architecture différente ou non."
-              link="/project"
+              link="/qemu"
             />
           </Col>
 
@@ -180,7 +180,7 @@ function Projects() {
               isBlog={false}
               title="IPV6"
               description="Successeur direct du protocole IPv4 (protocole réseau sans connexion de la couche 3 du modèle OSI), l'IPv6 est une raiponse raisonnablement à la problématique du nombres maximum d'adresse ip pouvant être distribué."
-              link="/project"
+              link="/ipv6"
             />
           </Col>
 

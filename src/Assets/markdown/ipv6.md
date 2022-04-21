@@ -36,11 +36,7 @@ Enfin il suffira d'appliquer les modifications
 sudo sysctl -p
 ```
 
-Pour s'assurer que la modification est bien efféctivent rien de mieu qu'une vérification à l'oeil en affichent les adresse ip.
-
-```bash
-ip a
-```
+Pour s'assurer que la modification est bien efféctivent rien de mieux qu'une vérification à l'oeil en affichent les adresses Ip.`ip a`
 
 📝https://www.memoinfo.fr/tutoriels-linux/desactiver-ipv6-sur-debian/
 📝https://www.itzgeek.com/how-tos/linux/debian/how-to-disable-ipv6-on-debian-9-ubuntu-16-04.html

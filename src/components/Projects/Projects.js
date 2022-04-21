@@ -91,7 +91,7 @@ function Projects() {
               isBlog={false}
               title="Ansible"
               description="Outil Open Source d'automatisation informatique qui automatise le provisionnement, la gestion des configurations, le déploiement des applications, l'orchestration et bien d'autres processus informatiques manuels."
-              link="/project"
+              link="/ansible"
             />
           </Col>
 

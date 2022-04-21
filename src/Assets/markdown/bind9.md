@@ -13,9 +13,7 @@ git clone https://github.com/leghort/role-ansible.git
 
 **Qu'est-ce que le DNS ?**
 
-Le DNS à pour but de traduire les noms de domaine en [adresses IP](https://fr.wikipedia.org/wiki/Adresse_IP). Chaque appareil connecté à un réseau dispose d'une adresse IP unique que  les autres appareils utilisent afin de le trouver. Grâce aux serveurs  DNS, une adresses IP (par exemple, 172.217.19.238 en IPv4) devient www.google.com c'est tout de mếme plus simple à mémoriser.
-
-Pour mettre en place un tel service dans un réseau privé je vais créé un serveur DNS sous debian11  avec l'outil Bind9.
+Le DNS à pour but de traduire les noms de domaines en [adresses IP](https://fr.wikipedia.org/wiki/Adresse_IP). Chaque appareil connecté à un réseau dispose d'une adresse IP unique. Grâce aux serveurs  DNS, une adresses IP (par exemple, 172.217.19.238 en IPv4) devient www.google.com c'est tout de même plus simple à mémoriser pour nous autre humain. Pour mettre en place un tel service  je vais créé un serveur DNS sous debian11  avec l'outil Bind9 dans un réseau privé.
 
 # II Installation de bind9
 
@@ -27,17 +25,17 @@ Je commence par installer les paquets `dnsutils` et `bind9`
 sudo apt-get install dnsutils bind9 -y
 ```
 
-Bien maintenant je vais pouvoir crée une zone par exemple **cossu.tech**
+Maintenant je crée une zone par exemple **cossu.tech**
 
-ℹ️ Uniquement les machines qui ont pour dns principale notre serveur bind 9 utilliseront notre zone.
+ℹ️ Uniquement les machines qui ont pour dns principale le serveur bind 9 utiliseront notre zone.
 
-Déjà il fait change le nom du serveur par le nom à diffuser dans mon cas `cossu.tech`
+Déjà il est préférable que le nom du serveur porte le même nom que la zone qu'il diffuser dans mon cas `cossu.tech`
 
 ```bash
 sudo hostnamectl set-hostname cossu.tech
 ```
 
-Il faut également changer la résolution de nom local pour cela il va falloir connaitre l'addresse ip du serveur j'utiliser la commande
+Puis changer la résolution de nom local pour cela il va falloir connaitre l'adresse ip du serveur j'utiliser la commande.
 
 ```bash
 ip a
@@ -52,7 +50,7 @@ ip a
 >inet 192.168.1.24/24 brd 192.168.1.255 scope global dynamic enp0s3
 >valid_lft 84835sec preferred_lft 84835sec
 
-192.168.1.24 est donc l'adresse ip du serveur il ne reste plus qu'a la renseigner dans le fichier.
+192.168.1.24 est donc l'adresse ip du serveur il ne reste plus qu'a la renseigné dans le fichier.
 
 ```bash
 sudo nano /etc/hosts
@@ -67,7 +65,7 @@ Pour effectuer des tests j'indique au serveur de faire appel à lui mếme "192.
 sudo nano /etc/resolv.conf
 ```
 
-ℹ️ Cette modification disparaitra après le redémarrage du serveur.
+ℹ️ Cette modification disparaîtra après le redémarrage du serveur.
 
 >domain cossu.tech
 >search cossu.tech
@@ -78,7 +76,7 @@ Je redémarre le service resolved pour appliquer les modifications.
 sudo systemctl restart systemd-resolved
 sudo systemctl enable systemd-resolved
 ```
-Petite vérification
+Petite vérification du bon fonctionnement du service resolved
 ```bash
 systemd-resolve --status
 ```
@@ -111,9 +109,9 @@ Ce fichier contient les options de configuration du serveur DNS.
 >        listen-on-v6 { any; };
 >     };
 
-Dans un autre  fichier je déclare les noms de domaines et le chemin vers un fichier qui servira de "base de données".
+Dans un autre fichier, je déclare les noms de domaines et le chemin vers un fichier qui servira de "base de données".
 
-ℹ️ Les infos `in-addr.arpa` sont à modifier en fonction du réseau, je suis dans un réseau `192.168.1.0/24`
+ℹ️ Les infos `in-addr.arpa` sont à modifié en fonction du réseau, étant dans le réseau `192.168.1.0/24`
 
 ```bash
 sudo nano /etc/bind/named.conf.local
@@ -205,7 +203,7 @@ nslookup linux.cossu.tech
 >Name:	linux.cossu.tech
 >Address: 192.168.1.14
 
-Le serveur dns 192.168.1.24 dit que le nom `linux.cossu.tech` est égale à l'adresse `192.168.1.14`, ça fonctionne ! Aller au tout de la zone inverse
+Le serveur dns 192.168.1.24 dit que le nom `linux.cossu.tech` est égale à l'adresse `192.168.1.14`, ça fonctionne ! Aller au tour de la zone inverse
 
 ```bash
 nslookup 192.168.1.14

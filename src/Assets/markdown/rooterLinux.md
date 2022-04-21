@@ -8,7 +8,7 @@ Nous allons transformer un système Debian en routeur afin d'interconnecter 2 r�
 
 # Préparation des machines virtuelles
 
-Dans notre exemple nous allons préparer des machines avec Virtualbox
+Pour effectuer ce routage nous allons prépare un environement virtuel composer des 2 machines à l'aide de l'outil Virtualbox.
 
 ## Client
 
@@ -48,17 +48,17 @@ ip a
 
 ![image-20211128001308915](./rooterLinux/image-20211128001308915.png)
 
-L'interface enp0s3 possède bien l'adresse ip 172.20.228.2, la nouvelle configuration à donc était appliquer.
+Ici l'interface enp0s3 possède bien l'adresse ip 172.20.228.2, la nouvelle configuration à donc été appliquée.
 
 ## Routeur
 
-Le routeur va avoir besoin de 2 cartes réseau, dans les paramètres réseau de la machine virtuel il va falloir activer 2 Adapter
+Le routeur va avoir besoin de 2 cartes réseau, une pare réseau il faut donc activer 2 cartes réseau.
 
-Adapter 1 en Réseau interne
+Adapter 1 en réseau interne cette interface est dans un réseau isolé avec les clients
 
 ![image-20211128013050819](./rooterLinux/image-20211128013050819.png)
 
-Adapter 2 en Accès par pont
+Adapter 2 en accès par pont qui est notre réseau local "classique".
 
 ![image-20211128013155747](./rooterLinux/image-20211128013155747.png)
 
@@ -66,7 +66,7 @@ Adapter 2 en Accès par pont
 
 ## Configuration des interfaces réseau du routeur
 ### Identifier les interfaces
-Nous allons commencer par configurer les 2 interface réseau en IP fixes. Dans un premier temp nous il va falloir lister les interface
+Nous allons commencer par configurer les 2 interfaces réseau en IP fixes, en listant les interfaces réseau.
 
 ```bash
 ip a # Lister les interfaces réseau
@@ -89,19 +89,17 @@ ip a # Lister les interfaces réseau
       link/ether 08:00:27:02:eb:38 brd ff:ff:ff:ff:ff:ff
 ```
 
-Le résultat de la commande ip a nous informe qu'il y a 3 interface réseau (lo, enp0s3, enp0s8)
+Le résultat de la commande `ip a` nous informe qu'il y a 3 interface réseau (lo, enp0s3, enp0s8)
 
-lo = la boucle local du système
+- lo = La boucle locale du système
+- enp0s3 = Cette interface à récupérer une adresse ip 192.168.1.26 c'est donc l'interface en accès par pont  (Adapter 1)
+- enp0s8 = C'est donc l'interfacer configurer en réseau interne
 
-enp0s3 = Cette interface à récupérer un adresse ip 192.168.1.26 c'est dont l'interface en Accès par pont  (Adapter 1)
-
-enp0s8 = Vu que l'on a identifié l'Adapter 1 enp0s8 est donc l' Adapter 2 configurer en Réseau interne
-
-*Dans notre exemple l'identification des interfaces est simple car un serveur DHCP à fournie une adresse ip à l'interface en accès pas pont.*
+*Dans notre exemple l'identification des interfaces est simple car un serveur DHCP à fourni une adresse ip à l'interface en accès par pont.*
 
 ### Définir une adresse ip statique pour les 2 interfaces
 
-Pour pouvoir attribuer des adresse ip statique à nos 2 interface nous allons éditer les fichier `/etc/network/interfaces`.
+Pour pouvoir attribuer des adresses ip statique à nos 2 interfaces nous allons éditer les fichiers `/etc/network/interfaces`.
 
 ```bash
 sudo nano /etc/network/interfaces
@@ -135,11 +133,7 @@ On redémarre la machine
 sudo reboot
 ```
 
-Maintenant l'on va vérifié que la nouvelle configuration a bien était prise en compte, pour cela on va listant les interfaces.
-
-```bash
-ip a
-```
+Maintenant l'on va vérifié que la nouvelle configuration a bien était prise en compte, pour cela on va listant les interfaces. `ip a`
 
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -162,7 +156,7 @@ ip a
        valid_lft forever preferred_lft forever
 ```
 
-La nouvelle configuration à bien était appliquer, maintenant l'on vérifie la bonne communication de l'interface enp0s3 avec la passerelle. Pour cela on lance un ping depuis le router.
+La nouvelle configuration à bien était appliqué, maintenant l'on vérifie la bonne communication de l'interface enp0s3 avec la passerelle. Pour cela on lance un ping depuis le router.
 
 ```bash
 ping 192.168.1.1
@@ -179,7 +173,7 @@ PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
 
 # Activation du mode routeur
 
-editer le fichier /etc/sysctl.conf
+éditer le fichier /etc/sysctl.conf
 
 ```bash
 sudo nano /etc/sysctl.conf
@@ -189,16 +183,15 @@ Décommenter la ligne net.ipv4.ip_forward ou ajouter la
 
 >net.ipv4.ip_forward=1
 
-Appliquer les changelent
+Appliquer les changements
 
 ```bash
 sysctl -p
 ```
 
-Vérification
+Vérification que la valeur de net.ipv4.ip_forward est bien à 1
 
 ```bash
 sysctl net.ipv4.ip_forward
 ```
 
-La valeur doit étre à 1

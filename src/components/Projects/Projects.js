@@ -111,7 +111,7 @@ function Projects() {
               isBlog={false}
               title="RouterLinux"
               description="Comment transformer n'importe quel ordinateur en router pour votre réseau avec le système d'exploitation linux."
-              link="/project"
+              link="/routerLinux"
             />
           </Col>
           <Col md={4} className="project-card">
@@ -139,7 +139,7 @@ function Projects() {
               isBlog={false}
               title="ISC DHCP"
               description="Est une implémentation Open Source du protocole DHCP qui délivre des adresses IP aux équipements qui se connectent sur le réseau. En effet, la plupart du temps, les cartes réseaux de ces équipement sont en attente d'une adresse IP leur permettant de communiquer sur le réseau."
-              link="/project"
+              link="/iscdhcp"
             />
           </Col>
 
@@ -149,7 +149,7 @@ function Projects() {
               isBlog={false}
               title="Bind 9"
               description="Serveur de résolution de nom (DNS) le plus utilisé sur Internet, spécialement sur les systèmes de type UNIX et est devenu de facto un standard."
-              link="/project"
+              link="/bind9"
             />
           </Col>
         

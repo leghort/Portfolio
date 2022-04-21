@@ -6,7 +6,8 @@ import { FcCircuit } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
-import { BsBuilding } from "react-icons/bs";
+import { BsBuilding,BsLightbulb } from "react-icons/bs";
+
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -71,6 +72,17 @@ function NavBar() {
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Projets
+              </Nav.Link>
+            </Nav.Item>
+            
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/veilleTechnologique"
+                onClick={() => updateExpanded(false)}
+              >
+                <BsLightbulb style={{ marginBottom: "2px" }} /> VeilleTechnologique
               </Nav.Link>
             </Nav.Item>
 

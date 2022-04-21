@@ -4,19 +4,19 @@
 
 **Ansible c'est quoi ?**
 
-Ansible est un outils qui permet d'installer et de configurer un ou plusieurs serveurs au travers de recettes écrites en YAML. Ces recettes contiennent une série de tâches qui seront lancées séquentiellement. Elles utilisent des modules internes à Ansible qui permettent de décrire les opérations à effectuer et leur conditions de lancement.
+Ansible est un outil qui permet d'installer et de configurer un ou plusieurs serveurs au travers de recettes écrites en YAML. Ces recettes contiennent une série de tâches qui seront lancées séquentiellement. Elles utilisent des modules internes à Ansible qui permettent de décrire les opérations à effectuer et leur conditions de lancement.
 
 L'une des force d'Ansible et qui n'est pas nécessaire d'installer un agent sur les serveurs à administrer une connexion ssh et python3 suffise. Bref ansible est vraiment trés pratique pour pouvoir installer et configurer un serveur voir tout une architecture en un temps record !!
 
-ℹ️  *Info : Il existe d'autre outils similaire (Chef, Puppet, SaltStack, Fabric)*
+ℹ️  *Info : Il existe d'autre outils similaires (Chef, Puppet, SaltStack, Fabric)*
 
 # II Installer Ansible sur votre poste
 C'est bien beau tout ça mais comment ça fonctionne ?
-Déja il ma fallut installer Ansible sur mon ordinateur qui sera le pc qui va orchestré tout ça, "node master" en anglais.
+Déjà il m'a fallu installer Ansible sur mon ordinateur qui sera le pc qui va orchestrer tout ça, "node master" en anglais.
 
-Puis il ma fallut ajouter le dépôt officiel d'ansible adapter au system d'exploitation en l'occurrence debian_11 (bullseye).
+Puis il m'a fallu ajouter le dépôt officiel d'ansible adapter au system d'exploitation en l'occurrence debian_11 (bullseye).
 
-⚠️ La doc officiel c'est toujours une alliée de qualité pour trouver se genre d'information ;)
+⚠️ Le doc officiel c'est toujours une alliée de qualité pour trouver ce genre d'information ;)
 [Doc officiel](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
 Voila la commande pour ajouter le dépôt ;)
@@ -24,29 +24,29 @@ Voila la commande pour ajouter le dépôt ;)
 echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu focal main" | sudo tee -a /etc/apt/sources.list.d/ansible.list
 ```
 
-Puis il ne faut pas oublier le paquet gnupg2, qui est très utile pour ajouter des clef du dépôt.(Oui pour ajouter un dépôt il faut une clef, c'est une question de sécurité histoire de vérifier l'authenticité du paquets)
+Puis il ne faut pas oublier le paquet gnupg2, qui est très utile pour ajouter des clefs du dépôt.(Oui pour ajouter un dépôt il faut une clef, c'est une question de sécurité histoire de vérifier l'authenticité du paquet)
 
 ```bash
 sudo apt-get install gnupg2
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 ```
 
-Maintenant que les préparatif sont fini c'est le moment d'installer Ansible 🥳
+Maintenant que les préparatifs sont finis c'est le moment d'installer Ansible 🥳
 ```bash
 sudo apt-get update -y && sudo apt-get install ansible -y
 ```
 
 **Vérifier l'installation**
 
-Aller une petite vérifie histoire d'étre sur à 100% d'Ansible est bien installer.
+Aller une petite vérifie histoire d'être sur à 100% d'Ansible est bien installé.
 ```bash
 ansible --version
 ```
 
-Incroyable la version 2.12.2 est installer ! Le plus facile est passer c'est l'heure de comprendre ansible et de crée des Playbooks 😈
+Incroyable la version 2.12.2 est installé ! Le plus facile est passé c'est l'heure de comprendre ansible et de créer des playbooks 😈
 
 # III Création d'une recette & du fichier inventaire
-Quelques lien vers les vidéos/site que j'ai consulter pour comprendre Ansible.
+Quelques liens vers les vidéos/site que j'ai consultées pour comprendre Ansible.
 
 [⏯️ Découvrir Ansible (4min)](https://youtu.be/prtO-Ox8LW8)
 
@@ -64,19 +64,19 @@ Quelques lien vers les vidéos/site que j'ai consulter pour comprendre Ansible.
 
 Bon après quelques heures de documentation et d'inspection de playbook existant voici un résumer.
 
-- **Playbook :** Un fichier YAML qui va contenir les action à effectuer, par exemple install le packet wget, copie un fichier etc...
+- **Playbook :** Un fichier YAML qui va contenir les actions à effectuer, par exemple install le paquet wget, copie un fichier etc...
 
-- **Inventaire :** Un fichier qui contient les information relative au machines à administrer ip, hostname, shell, username, etc...
+- **Inventaire :** Un fichier qui contient les informations relatives aux machines à administrer ip, hostname, shell, username, etc...
 
 - **Clef ssh :** Par défaut l'authentification ssh s'effectue par clefs, c'est d’ailleurs recommander. (il est cependant possible de forcer la connexion par mot de passe avec le fichier Inventaire)
 
-- **Templates jinja :** Un fichier Jinja2 c'est le modèle d'un fichier de configuration, qui intègre la notion de variable, list, boucle et condition.
+- **Templates jinja :** Un fichier Jinja2 c'est le modèle d'un fichier de configuration, qui intègre la notion de variable, liste, boucle et condition.
 
-Et enfin il est préférable de crée une arborescence par playbook avec la commande ansible-galaxy histoire d'organiser les fichiers qui constitue un Role Ansible (Playbook, Templates, script, etc..)
+Et enfin il est préférable de créer une arborescence par playbook avec la commande ansible-galaxy histoire d'organiser les fichiers qui constituent un rôle Ansible (Playbook, Templates, script, etc..)
 ```
 ansible-galaxy init zabbix
 ```
-Ansible galaxy va alors générer cette arborescence.
+Ansible galaxie va alors générer cette arborescence.
 ```bash
 ├── defaults
 │   └── main.yml
@@ -96,7 +96,7 @@ Ansible galaxy va alors générer cette arborescence.
     └── main.yml
 ```
 **Fichier Playbook**
-Voici un extrais de l'un de mes 1er rôle Ansible qui permet d’installé l'agent zabbix sur toutes les machines qui sont dans le groupe [Zabbix] du fichier **Inventaire**
+Voici un extrait de l'un de mes 1ers rôles Ansible qui permet d’installer l'agent Zabbix sur toutes les machines qui sont dans le groupe [Zabbix] du fichier **Inventaire**
 
 (Il fait appel à des fichiers pour configurer l'agent que je ne vais pas détailler ici.)
 
@@ -122,9 +122,9 @@ Voici un extrais de l'un de mes 1er rôle Ansible qui permet d’installé l'age
 ```
 
 **Fichier d'inventaire**
-Voila la tête de mon fichier inventaire, la connexion ssh ce fait par mot de passe et binaire python3 sont indiquer en chemin absolut vu que c'est un environnement de test virtuel.
+Voilà la tête de mon fichier inventaire, la connexion ssh ce fait par mot de passe et binaire python3 sont indiqués en chemin absolut vu que c'est un environnement de test virtuel.
 
-⚠️ En production il faut utiliser des clef ssh et non des mot de passe pour des questions de sécurité.
+⚠️ En production il faut utiliser des clefs ssh et non des mots de passe pour des questions de sécurité.
 
 ```bash
 [Zabbix]
@@ -133,10 +133,10 @@ client-zabbix ansible_host=192.168.1.10 ansible_user=toor ansible_ssh_pass=passw
 server-web ansible_host=192.168.1.32 ansible_user=toor ansible_ssh_pass=password ansible_sudo_pass=password ansible_python_interpreter=/usr/bin/python3
 ```
 
-Aprés plusieur test en environment virtuel et quelque cheveux arracher le rôle fonctionne !!
+Après plusieurs tests en environnement virtuel et quelques cheveux arrachés le rôle fonctionne !!
 
 Il m'est enfin possible:
-- Installer le paquets zabbix_agent depuit le dépôt officiel
+- Installer le paquet zabbix_agent depuis le dépôt officiel
 - Configurer zabbix_agent
 - Exécuter quelle script .sh
 

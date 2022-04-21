@@ -21,6 +21,7 @@ import stage from "./components/Projects/Card/stage";
 import routageintervlan from "./components/Projects/Card/routageintervlan";
 import lamp from "./components/Projects/Card/lamp";
 import clusterRouteHsrp from "./components/Projects/Card/clusterRouterHsrp";
+import veilleTechnologique from "./components/Projects/Veille/veilleTechnologique";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import "./App.css";
@@ -65,6 +66,7 @@ function App() {
           <Route path="/routageintervlan" component={routageintervlan} />
           <Route path="/lamp" component={lamp} />
           <Route path="/clusterRouterHsrp" component={clusterRouteHsrp} />
+          <Route path="/veilleTechnologique" component={veilleTechnologique} />
         </Switch>
         <Footer />
       </div>

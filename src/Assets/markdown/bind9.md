@@ -1,6 +1,6 @@
 [TOC]
 
-⏩ Par le temps ? Utilise mon role ansible bind9:smile:
+⏩ Par le temps ? Utilise mon rôle Ansible bind9:smile:
 
 **Debian 11**
 
@@ -13,7 +13,7 @@ git clone https://github.com/leghort/role-ansible.git
 
 **Qu'est-ce que le DNS ?**
 
-Le DNS à pour but de traduire les noms de domaines en [adresses IP](https://fr.wikipedia.org/wiki/Adresse_IP). Chaque appareil connecté à un réseau dispose d'une adresse IP unique. Grâce aux serveurs  DNS, une adresses IP (par exemple, 172.217.19.238 en IPv4) devient www.google.com c'est tout de même plus simple à mémoriser pour nous autre humain. Pour mettre en place un tel service  je vais créé un serveur DNS sous debian11  avec l'outil Bind9 dans un réseau privé.
+Le DNS à pour but de traduire les noms de domaines en [adresses IP](https://fr.wikipedia.org/wiki/Adresse_IP). Chaque appareil connecté à un réseau dispose d'une adresse IP unique. Grâce aux serveurs  DNS, une adresse IP (par exemple, 172.217.19.238 en IPv4) devient www.google.com c'est tout de même plus simple à mémoriser pour nous autres humain. Pour mettre en place un tel service  je vais créer un serveur DNS sous debian11  avec l'outil Bind9 dans un réseau privé.
 
 # II Installation de bind9
 
@@ -27,9 +27,9 @@ sudo apt-get install dnsutils bind9 -y
 
 Maintenant je crée une zone par exemple **cossu.tech**
 
-ℹ️ Uniquement les machines qui ont pour dns principale le serveur bind 9 utiliseront notre zone.
+ℹ️ Uniquement les machines qui ont pour DNS principal le serveur bind 9 utiliseront notre zone.
 
-Déjà il est préférable que le nom du serveur porte le même nom que la zone qu'il diffuser dans mon cas `cossu.tech`
+Déjà il est préférable que le nom du serveur porte le même nom que la zone qu'il diffusera dans mon cas `cossu.tech`
 
 ```bash
 sudo hostnamectl set-hostname cossu.tech
@@ -50,7 +50,7 @@ ip a
 >inet 192.168.1.24/24 brd 192.168.1.255 scope global dynamic enp0s3
 >valid_lft 84835sec preferred_lft 84835sec
 
-192.168.1.24 est donc l'adresse ip du serveur il ne reste plus qu'a la renseigné dans le fichier.
+192.168.1.24 est donc l'adresse ip du serveur, il ne reste plus qu'à la renseigné dans le fichier.
 
 ```bash
 sudo nano /etc/hosts
@@ -92,7 +92,7 @@ Visiblement tout va bien.
 
 # III Configuration de la zone
 
-Je vais modifier la configuration de bind 9 pour lui indiquer que tous les noms qu'il ne connaît pas seront a transféré à une autre serveur dns par exemple 8.8.8.8 (le dns de google).
+Je vais modifier la configuration de bind 9 pour lui indiquer que tous les noms qu'il ne connait pas seront à transférer à une autre serveur DNS par exemple 8.8.8.8 (le DNS de google).
 
 ```bash
 sudo nano /etc/bind/named.conf.options
@@ -111,7 +111,7 @@ Ce fichier contient les options de configuration du serveur DNS.
 
 Dans un autre fichier, je déclare les noms de domaines et le chemin vers un fichier qui servira de "base de données".
 
-ℹ️ Les infos `in-addr.arpa` sont à modifié en fonction du réseau, étant dans le réseau `192.168.1.0/24`
+ℹ️ Les infos `in-addr.arpa` sont à modifier en fonction du réseau, étant dans le réseau `192.168.1.0/24`
 
 ```bash
 sudo nano /etc/bind/named.conf.local
@@ -129,7 +129,7 @@ sudo nano /etc/bind/named.conf.local
 
 # IV Création des bases de données
 
-Allez c'est partie pour créer un fichier "base de données" qui référence les associations ip / nom.
+Allez c'est parti pour créer un fichier "base de données" qui référence les associations ip / nom.
 
 ```bash
 sudo nano /etc/bind/db.cossu.tech
@@ -144,12 +144,12 @@ sudo nano /etc/bind/db.cossu.tech
 >                   604800 )    ; Valeur TTL minimum
 >@       IN NS dns.cossu.tech.
 >
->dns                     IN A 192.168.1.24
+>DNS                     IN A 192.168.1.24
 >linux                   IN A 192.168.1.14
 >linuxPortable           IN A 192.168.1.18
 >win10                   IN A 192.168.1.45
 
-Maintenant il faut s'assurer qu'il n'y a pas d'erreur dans les fichiers *db.cossu.tech*
+Maintenant, il faut s'assurer qu'il n'y a pas d'erreurs dans les fichiers *db.cossu.tech*
 
  ```bash
 sudo named-checkzone cossu.tech /etc/bind/db.cossu.tech
@@ -191,7 +191,7 @@ Tout va bien, il est temps de redémarrer le service bind9
 ```bash
 sudo systemctl restart bind9
 ```
-Le moment fatidique est arrivé, voir si la résolution de nom fonctionne. Pour cela la commande *nslookup* est un allié de choix.
+Le moment fatidique est arrivé, voire si la résolution de nom fonctionne. Pour cela, la commande *nslookup* est un allié de choix.
 
 ```bash
 nslookup linux.cossu.tech
@@ -203,7 +203,7 @@ nslookup linux.cossu.tech
 >Name:	linux.cossu.tech
 >Address: 192.168.1.14
 
-Le serveur dns 192.168.1.24 dit que le nom `linux.cossu.tech` est égale à l'adresse `192.168.1.14`, ça fonctionne ! Aller au tour de la zone inverse
+Le serveur DNS 192.168.1.24 dit que le nom `linux.cossu.tech` est égal à l'adresse `192.168.1.14`, ça fonctionne ! Aller au tour de la zone inverse.
 
 ```bash
 nslookup 192.168.1.14

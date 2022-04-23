@@ -2,16 +2,16 @@
 
 # Mise en place d'un serveur de messagerie électronique.
 
-Un **serveur de messagerie électronique** est un [logiciel](https://fr.wikipedia.org/wiki/Logiciel) [serveur](https://fr.wikipedia.org/wiki/Serveur_informatique) de [courrier électronique](https://fr.wikipedia.org/wiki/Courrier_électronique). Il a pour vocation de transférer les messages électroniques d'un  serveur à un autre. Un utilisateur n'est jamais en contact direct avec ce serveur mais utilise soit un [client de messagerie](https://fr.wikipedia.org/wiki/Client_de_messagerie) installé sur son ordinateur ou smartphone, soit une [messagerie web](https://fr.wikipedia.org/wiki/Messagerie_web) (Webmail), qui se charge de contacter le serveur pour envoyer ou recevoir les  messages. On parle dans le premier cas de client lourd, dans le deuxième cas de client léger.
+Un **serveur de messagerie électronique** est un [logiciel](https://fr.wikipedia.org/wiki/Logiciel) [serveur](https://fr.wikipedia.org/wiki/Serveur_informatique) de [courrier électronique](https://fr.wikipedia.org/wiki/Courrier_électronique). Il a pour vocation de transférer les messages électroniques d'un  serveur à un autre. Un utilisateur n'est jamais en contact direct avec ce serveur, mais utilise soit un [client de messagerie](https://fr.wikipedia.org/wiki/Client_de_messagerie) installé sur son ordinateur ou smartphone, soit une [messagerie web](https://fr.wikipedia.org/wiki/Messagerie_web) (Webmail), qui se charge de contacter le serveur pour envoyer ou recevoir les  messages. On parle dans le premier cas de client lourd, dans le deuxième cas de client léger.
 
 ![image-20220325233117294](mail.assets/image-20220325233117294.png)
 
 ## DNS
 
-Pour le fonctionnement de toute cette infrastructure, il va falloir dans un premier temps disposé d'un serveur DNS ! 
-Je vous donc procéder à la création d'une zone DNS local avec l'outil [Bind9](https://cossu.tech/bind9) assister par [Ansible](https://cossu.tech/ansible) histoire de pouvoir prendre un ☕ le temps que la zone DNS s'installe.
+Pour le fonctionnement de toute cette infrastructure, il va falloir dans un premier temps disposer d'un serveur DNS ! 
+Je vous donc procéder à la création d'une zone DNS locale avec l'outil [Bind9](https://cossu.tech/bind9) assister par [Ansible](https://cossu.tech/ansible) histoire de pouvoir prendre un ☕ le temps que la zone DNS s'installe.
 
-Dans un premier temps je téléchargement mes rôles ansible qui sont stockés sur GitHub.
+Dans un premier temps je téléchargement mes rôles Ansible qui sont stockés sur GitHub.
 
 ```bash
 git clone https://github.com/leghort/role-ansible.git
@@ -24,19 +24,19 @@ J'ouvre le répertoire avec Visual Studio Code pour avoir une vue des fichiers e
 Puis j'édite le fichier hosts pour y ajouter la machine que je veux impacter à savoir `Lab-01` et enfin je la rajoute au groupe `[bind9]`
 ![image-20220325225200224](mail.assets/image-20220325225200224.png)
 
-Au tour du fichier `/bind9/vars/main.yml` qui contient les variables du rôle ansible bind9 c'est le plus important, car ansible va utiliser c'est variable pour générer les fichiers de configuration ⚠️
+Au tour du fichier `/bind9/vars/main.yml` qui contient les variables du rôle Ansible bind9, c'est le plus important, car Ansible va utiliser ces variables pour générer les fichiers de configuration ⚠️
 
 > dnsName = Nom de domaine local qui va être configuré
-> forwardDns = Le serveur DNS qui va récupérer les requetés que notre DNS ne gère pas, par default c'est le DNS de Google 8.8.8.8
+> forwardDns = Le serveur DNS qui va récupérer les requêtes que notre DNS ne gère pas, par défaut c'est le DNS de Google 8.8.8.8
 
 ![image-20220325223202017](mail.assets/image-20220325223202017.png)
 
-Maintenant j'exécuté le rôle ansible et je pars prendre un ☕. 
+Maintenant j'exécuté le rôle Ansible et je pars prendre un ☕. 
 ```bash
 ansible-playbook bind9.yml -i hosts
 ```
 
-Alors ansible dit qu'il a fait 10 changements est que tout est OK pour lui.
+Alors Ansible dit qu'il a fait 10 changements est que tout est OK pour lui.
 
 ![image-20220325224038153](mail.assets/image-20220325224038153.png)
 
@@ -58,7 +58,7 @@ nslookup dns.cossu.lan
 >Name:   <span style="color:green">dns.cossu.lan</span>
 >Address: <span style="color:green">192.168.1.100</span>
 
-Ok c'est bien server dns `192.168.1.100` qui nous répond !
+OK c'est bien notre serveur DNS `192.168.1.100` qui nous répond !
 
 Maintenant au tour d'un nom qui n'est pas dans notre zone locale pour tester le forwarddns.
 
@@ -76,7 +76,7 @@ nslookup irp.nain-t.net
 >Name:   vps.nain-t.net
 >Address: 2001:41d0:305:2100::2cd5
 
-Alors  le server `192.168.1.100` dit que `irp.nain-t.net = 51.68.121.59` la résolution de nom ce fait donc bien pour le nom de domaine externe. BIND est fonctionnel !
+Alors  le serveur `192.168.1.100` dit que `irp.nain-t.net = 51.68.121.59` la résolution de nom se fait donc bien pour le nom de domaine externe. BIND est fonctionnel !
 
 
 
@@ -84,7 +84,7 @@ Alors  le server `192.168.1.100` dit que `irp.nain-t.net = 51.68.121.59` la rés
 
 Maintenant que le serveur DNS est configuré, il est temps de créer le serveur SMTP son travail va être de transmettre les mails c'est un ([MTA](https://fr.wikipedia.org/wiki/Mail_Transfer_Agent)) par exemple Postfix.
 
-Je commande par installer les paquets tree, mailutils et postfix
+Je commande par installer les paquets tree, mailutils, et postfix
 
 ```bash
 sudo apt update -y && sudo apt upgrade -y && sudo apt-get install tree mailutils postfix -y
@@ -103,8 +103,8 @@ Maintenant je vais configurer le MODE du serveur SMTP il en existe 2 :
 [Mbox](https://fr.wikipedia.org/wiki/Mbox) : Chaque utilisateur à un gros fichier dans `/var/mail` qui contient tous ces mails.
 [MailDir](https://fr.wikipedia.org/wiki/Maildir) : Chaque utilisateur a dans son répertoire `/home` une arborescence ![image-20220325214101002](mail.assets/image-20220325214101002.png) et chaque mail est contenu dans un fichier distinct.
 
-ℹ️ Le mode [Mbox](https://fr.wikipedia.org/wiki/Mbox) est celui utilisée pas default.
-Je préfère le mode [MailDir](https://fr.wikipedia.org/wiki/Maildir), pour l'utiliser il faut ajouté la ligne `home_mailbox = Maildir/` dans le fichier de configuration `/etc/postfix/main.cf`
+ℹ️ Le mode [Mbox](https://fr.wikipedia.org/wiki/Mbox) est celui utilisé pas défaut.
+Je préfère le mode [MailDir](https://fr.wikipedia.org/wiki/Maildir), pour l'utiliser il faut ajouter la ligne `home_mailbox = Maildir/` dans le fichier de configuration `/etc/postfix/main.cf`
 
 ```bash
 sudo bash -c 'echo "home_mailbox = Maildir/" >> /etc/postfix/main.cf'
@@ -125,7 +125,7 @@ mail toto
 >Cc:
 ><span style="color:green">Subject: Wow un mail</span>
 >Coucou Toto
->Si tu voie ce mail c'est que le server SMTP est opérationnel
+>Si tu vois ce mail, c'est que le serveur SMTP est opérationnel
 
 Pour finir l'écriture du mail **CTRL + D** et je me connecte en tant que toto.
 
@@ -156,9 +156,9 @@ cat Maildir/new/1648241583.V801I255cM57140.cossu.lan
 >From: root <root@cossu.lan>
 >
 >Coucou Toto
->Si tu voie se mail c'est que le server SMTP est opérationnel
+>Si tu vois ce mail, c'est que le serveur SMTP est opérationnel
 
-Le MTA à savoir le serveur [Postfix](https://fr.wikipedia.org/wiki/Postfix) qui utilisent le protocole [SMTP](https://fr.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) fonctionne  😃
+Le MTA à savoir le serveur [Postfix](https://fr.wikipedia.org/wiki/Postfix) qui utilise le protocole [SMTP](https://fr.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) fonctionne  😃
 
 Il reste à modifier la zone DNS pour y ajouter les requêtes MX et l'ip du serveur smtp.
 
@@ -177,7 +177,7 @@ Redémarrage du service bind9 pour appliquer les modifications.
 sudo systemctl restart bind9
 ```
 
-Comme toujours il faut vérifier donc j'envoy une requête MX au serveur DNS.
+Comme toujours il faut vérifier donc j'envoyer une requête MX au serveur DNS.
 
 ```bash
 nslookup -type=mx cossu.lan
@@ -199,7 +199,7 @@ Donc pour faire ça il faut faire un choix entre  [POP3](https://fr.wikipedia.or
 
 IMAP me semble le plus adapter, par contre il faut activé le mode [MAILdir](https://fr.wikipedia.org/wiki/Maildir) ça tombe bien c'est déjà le cas 😏
 
-Donc c'est partie installation de courriel-imap
+Donc ces parties installation de courriel-imap
 
 ```bash
 sudo apt install courier-imap -y
@@ -215,7 +215,7 @@ Redémarre les services postfix, courier-imap et courier-authdaemon
 sudo /etc/init.d/postfix restart && sudo /etc/init.d/courier-imap restart && sudo /etc/init.d/courier-authdaemon restart
 ```
 
-⚠️ Sur un ordinateur **qui a pour DNS principale 192.168.1.100** je configure le client Thunderbird.
+⚠️ Sur un ordinateur **qui a pour DNS principal 192.168.1.100** je configure le client Thunderbird.
 
 
 ![image-20220326010619558](mail.assets/image-20220326010619558.png)
@@ -244,7 +244,7 @@ mail toto
 
 >Cc:
 >Subject: Mail a voir sur thunderbird
->Ho tu consulte ce mail avec thunderbird ?
+>Ho tu consultes ce mail avec thunderbird ?
 
 ![image-20220326011343932](mail.assets/image-20220326011343932.png)
 

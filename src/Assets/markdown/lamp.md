@@ -18,13 +18,13 @@ L’acronyme LAMP désigne un ensemble de quatre technologies open source :
 
 - **L pour [Linux](https://www.it-connect.fr/cours-tutoriels/administration-systemes/linux/)**, le système d'exploitation (Debian, dans notre cas)
 
-- **A pour [Apache](https://www.it-connect.fr/cours-tutoriels/administration-systemes/serveur-web/apache/)**, le serveur Web
+- **À pour [Apache](https://www.it-connect.fr/cours-tutoriels/administration-systemes/serveur-web/apache/)**, le serveur Web
 
 - **M pour [MySQL/MariaDB](MySQL/MariaDB)** le système de gestion de bases de données
 
-- **P pour [PHP](https://fr.wikipedia.org/wiki/PHP)**, le language de programmation PHP
+- **P pour [PHP](https://fr.wikipedia.org/wiki/PHP)**, le langage de programmation PHP
 
-Un serveur LAMP est donc un serveur qui dispose de c'est 4 composants. Ce type de serveur est très utilisé dans le monde du web par exemple [WordPress](https://fr.wikipedia.org/wiki/WordPress) à besoin d'un serveur LAMP pour son bon fonctionnement.
+Un serveur LAMP est donc un serveur qui dispose de ces 4 composants. Ce type de serveur est très utilisé dans le monde du web par exemple [WordPress](https://fr.wikipedia.org/wiki/WordPress) à besoin d'un serveur LAMP pour son bon fonctionnement.
 
 # II Apache 2
 
@@ -34,7 +34,7 @@ Je commande par mettre à jour le cache des paquets et les paquets :
 sudo apt upodate -y && sudo apt upgrade -y
 ```
 
-Puis j'install le paquet apache 2
+Puis j'installe le paquet apache 2
 
 ```bash
 sudo apt-get install -y apache2
@@ -46,7 +46,7 @@ Ensuite il faut démarrer le service apache2 et le rajouter au démarrage histoi
 sudo systemctl restart apache2 && sudo systemctl enable apache2
 ```
 
-A ce state le serveur web apache 2 devrait être opérationnel je vais vérifier cela avec la commande
+À ce stade le serveur web apache 2 devrait être opérationnel je vais vérifier cela avec la commande
 
 ```bash
 sudo systemctl status apache2
@@ -69,7 +69,7 @@ sudo systemctl status apache2
 >avril 05 20:52:28 Lab-01 apachectl[821]: AH00558: apache2: Could not reliably determine the server's fully qualified do>
 >avril 05 20:52:28 Lab-01 systemd[1]: Started The Apache HTTP Server.
 
-Je vérifie également la version Installée
+Je vérifie également la version installée
 
 ```bash
 sudo apache2ctl -v
@@ -78,9 +78,9 @@ sudo apache2ctl -v
 >Server version: <span style="color:green">Apache/2.4.53 (Debian)</span>
 >Server built:   2022-03-14T16:28:35
 
-Dans mon cas c'est la version **2.4.53** qui a été installer.
+Dans mon cas c'est la version **2.4.53** qui a été installée.
 
-je vais également consulter le serveur avec un navigateur web par exemple [Mozilla Firefox](https://www.mozilla.org/fr/firefox/new/), déjà il faut récupérer l'adresse ip du serveur pour pouvoir y accéder en http.
+Je vais également consulter le serveur avec un navigateur web par exemple [Mozilla Firefox](https://www.mozilla.org/fr/firefox/new/), déjà il faut récupérer l'adresse IP du serveur pour pouvoir y accéder en http.
 
 ```bash
 ip a
@@ -101,13 +101,13 @@ ip a
 >inet6 fe80::a00:27ff:fece:2a8e/64 scope link
 > valid_lft forever preferred_lft forever
 
-Donc en consultant l'adresse ip du serveur, je devrais tomber sur la page par défaut d'apache2.
+Donc en consultant l'adresse IP du serveur, je devrais tomber sur la page par défaut d'apache2.
 
 ![image-20220405213632771](C:\Users\medaey\AppData\Roaming\Typora\typora-user-images\image-20220405213632771.png)
 
 Parfait Apache 2 c'est fini
 
-# III php
+# III PHP
 
 Au tour du PHP, donc installation du paquet
 
@@ -115,7 +115,7 @@ Au tour du PHP, donc installation du paquet
 sudo apt install -y php
 ```
 
-puis vérification de la version qui vient d'être installé
+puis vérification de la version qui vient d'être installée
 
 ```
 php -v
@@ -126,7 +126,7 @@ php -v
 >Zend Engine v3.4.0, Copyright (c) Zend Technologies
 >with Zend OPcache v7.4.28, Copyright (c), by Zend Technologies
 
-Bon la version **7.4.28** semble installer je vais vérifier cela en crée une page web avec du code php pour être sûr !
+Bon la version **7.4.28** semble installer je vais vérifier cela en crée une page web avec du code PHP pour être sûr !
 
 ```bash
 sudo nano /var/www/html/phpinfo.php
@@ -138,10 +138,10 @@ ce fichier `phpinfo.php` contiendra les 3 lignes ci-dessous
 >phpinfo();
 >?>
 
-Maintenant je retourne consulter le serveur en web a la différence que je rajouter `/phpinfo.php` après l'adresse ip pour consulter le fichier fraichement crée.
+Maintenant je retourne consulter le serveur en web à la différence que je rajouter `/phpinfo.php` après l'adresse IP pour consulter le fichier fraichement crée.
 ![image-20220405214617141](C:\Users\medaey\AppData\Roaming\Typora\typora-user-images\image-20220405214617141.png)
 
-OK php à bien interpréter le code en crée cette magnifique page.
+OK PHP à bien interpréter le code en crée cette magnifique page.
 
 # IV Mysql/Mariadb
 
@@ -167,7 +167,7 @@ sudo mysql
 >
 >MariaDB [(none)]>
 
-Ok la version 10.5.15 est installée, je vais vérifier que les 3 bases ont bien été créées.
+OK la version 10.5.15 est installée, je vais vérifier que les 3 bases ont bien été créées.
 
 ```mysql
 show databases;
@@ -182,20 +182,20 @@ show databases;
 >+--------------------+
 >3 rows in set (0.000 sec)
 
-Ca semble correct je quitte donc mariadb.
+Ça semble correct, je quitte donc mariadb.
 
 ```mysql
 exit;
 ```
 
-Pour finir j'ajoutais le service mariaDB au démarrage du serveur.
+Pour finir, j'ajoute le service mariaDB au démarrage du serveur.
 
 ```bash
 sudo systemctl enable mariadb
 ```
 
 **Voilà, un serveur LAMP basique est installé !** 
-⚠️ Pour pouvoir gérer le https ou la mise en cache il faudra activer des modules complémentaires d'apache avec [a2enmod](https://technique.arscenic.org/lamp-linux-apache-mysql-php/apache-le-serveur-http/article/la-gestion-des-modules).
+⚠️ Pour pouvoir gérer le https ou la mise en cache, il faudra activer des modules complémentaires d'apache avec [a2enmod](https://technique.arscenic.org/lamp-linux-apache-mysql-php/apache-le-serveur-http/article/la-gestion-des-modules).
 
 📝 https://www.it-connect.fr/installer-un-serveur-lamp-linux-apache-mariadb-php-sous-debian-11/
 

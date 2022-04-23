@@ -2,15 +2,15 @@
 
 # Présentation
 
-Un proxy ou serveur mandataire est un intermédiaire entre deux hôtes par exemple entre les machines de votre réseau et internet, Squid proxy très connu du monde Open Source permette de filtrer les sites internet accessible.
+Un proxy ou serveur mandataire est un intermédiaire entre deux hôtes par exemple entre les machines de votre réseau et internet, Squid proxy très connu du monde Open Source permette de filtrer les sites internet accessibles.
 
-Une autre utilité de squid est qu'il est "Cachant", c'est a dire qu'il va permettre une mise en cache des pages consulter afin qu'a la prochaine consultation cette page charge plus rapide.
+Une autre utilité de squid est qu'il est "Cachant", c'est-à-dire qu'il va permettre une mise en cache des pages consultées afin qu'a la prochaine consultation cette page charge plus rapide.
 
-SquidGuard est add-on de Squid permettent un filtra encore plus précis.
+SquidGuard est add-on de Squid qui permet un filtrage encore plus précis.
 
 # Installation
 
-Je commande par mettre à jour les dépôts et installation de squid avec `apt`
+Je commande par mettre à jour les dépôts et installations de squid avec `apt`
 
 ```bash
 sudo apt update -y &&  sudo apt upgrade -y && sudo apt install squid -y
@@ -28,18 +28,18 @@ sudo ufw allow 3128/tcp && sudo ufw status numbered | grep 3128
 
 Squid peut faire un blocage par WhiteList ou par BlackList.
 
-**WhiteList**: Bloque tout est autorise les sites de la liste
+**WhiteList**: Bloque tout est autorisé les sites de la liste
 **BlackList**: Autorise tout est bloque les sites de la liste
 
 J'ai choisi de faire un filtrage par whitelist.
 
-Je commence par sauvegarde le fichier de configuration par défault pour pouvoir revenir à la configuration initiale en cas de pépin.
+Je commence par sauvegarde le fichier de configuration par défaut pour pouvoir revenir à la configuration initiale en cas de pépin.
 
 ```bash
 sudo cp /etc/squid/squid.conf /etc/squid/squid.conf.bak && ls -l /etc/squid/
 ```
 
-Le fichier `squid.conf` n'est pas très lisible un bon vieux sed avec de l'expression régulière va rendre le fichier plus lisible.
+Le fichier `squid.conf` n'est pas très lisible, un bon vieux sed avec de l'expression régulière va rendre le fichier plus lisible.
 
 ```bash
 sudo sed -i '/^#/d' /etc/squid/squid.conf ; sudo sed -i '/^$/d' /etc/squid/squid.conf && head /etc/squid/squid.conf
@@ -57,13 +57,13 @@ Pour créer des règles de filtrage avec squid, il faut définir les éléments 
 
 > acl compta src 192.168.1.0/24
 
-Puis je rajout une règle http_access qui bloquera l'accès internet à tous les machines qui sont dans le groupe compta.
+Puis je rajout une règle http_access qui bloquera l'accès internet à toutes les machines qui sont dans le groupe compta.
 
 >http_access deny compta
 
 ## Test du proxy
 
-Normalement si je définis le proxy sur un pc de la compta est que je faire une recherche internet la moindre recherche sera refusé par le proxy.
+Normalement si je définis le proxy sur un pc de la compta est que je faire une recherche internet la moindre recherche sera refusée par le proxy.
 
 Par exemple quand je cherchais à accès au site http://cossu.tech/ cette erreur apparaît.
 
@@ -74,7 +74,7 @@ Par exemple quand je cherchais à accès au site http://cossu.tech/ cette erreur
 >
 >    Accès interdit.
 >
->La configuration du contrôle d'accès, empêche votre requête d'être acceptée. Si vous pensez >que c'est une erreur, contactez votre fournisseur d'accès.
+>La configuration du contrôle d'accès empêche votre requête d'être acceptée. Si vous pensez >que c'est une erreur, contactez votre fournisseur d'accès.
 >
 >Votre administrateur proxy est webmaster.
 
@@ -82,13 +82,13 @@ Donc le proxy fonctionne !
 
 ## Autoriser des sites pour le réseau compta
 
-Bon maintenant que le blocage fonctionne bien il est temps autoriser des sites internet. Pour cela il faut créé un fichier qui contiendra les sites autoriser
+Bon maintenant que le blocage fonctionne bien il est temps autoriser des sites internet. Pour cela il faut créé un fichier qui contiendra les sites autorisés.
 
 ```bash
 sudo bash -c 'echo ".cossu.tech" >> /etc/squid/liste-sites.txt' ; cat /etc/squid/liste-sites.txt
 ```
 
-enfin je crée un ACL qui autorise la liste qui est dans `/etc/squid/liste-sites.txt`.
+Enfin je crée un ACL qui autorise la liste qui est dans `/etc/squid/liste-sites.txt`.
 
 ```bash
 sudo nano /etc/squid/squid.conf
@@ -98,7 +98,7 @@ sudo nano /etc/squid/squid.conf
 
 ⚠️ L'ordre des lignes est important, car c'est un traité séquentiel !
 
-Pour finir redémarrage du service pour que les modifications soient bien appliquées.
+Pour finir, redémarrer le service pour que les modifications soient bien appliquées.
 
 ```bash
 sudo service squid restart ; sudo service squid status

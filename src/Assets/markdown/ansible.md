@@ -128,11 +128,11 @@ ansible-playbook main.yml -i inventory --limite server-zabbix:client-zabbix
 
 ℹ️ *--limite permet de limiter l'exécution du* **Playbook** *à certaines machines*
 
-Quelques liens vers les vidéo et site que j'ai consultées pour comprendre Ansible.
+Quelques liens vers les vidéo et site que j'ai consultés pour comprendre Ansible.
 
 [⏯️ Découvrir Ansible (4min)](https://youtu.be/prtO-Ox8LW8)
 
-[⏯️ Mettre en place un serveur web avec ansible (56min) ](https://youtu.be/DwNapBHypE8)
+[⏯️ Mettre en place un serveur web avec Ansible (56min) ](https://youtu.be/DwNapBHypE8)
 
 [⏯️ Fichier YAML (14min)](https://youtu.be/7gmW6vxgsRQ)
 

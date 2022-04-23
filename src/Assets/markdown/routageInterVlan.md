@@ -1,6 +1,6 @@
 [TOC]
 
-⏩ Par le temps ? Fait un copier-coller des textes ci-dessous dans les bons équipement et le routage inter vlan est terminé😄
+⏩ Par le temps ? Fait un copier-coller des textes ci-dessous dans les bons équipements et le routage inter vlan est terminé😄
 
 **Router 1841**
 
@@ -58,7 +58,7 @@ Le routage inter vlan et comme son nom l'indique est un mécanisme de [routage](
 
 ## I Configuration du router
 
-Pour pouvoir effectuer du routage inter vlan le routeur doit avoir une interface/carte réseau et une ip dans chacun des vlan. Plutôt que de devoir ajouter une carte réseau physique par vlan sur le router. Je vais plutôt créé plusieurs interfaces virtuelles sur une carte réseau physique et attribué une IP par interface virtuelle.
+Pour pouvoir effectuer du routage inter vlan le routeur doit avoir une interface/carte réseau et une ip dans chacun des vlan. Plutôt que de devoir ajouter une carte réseau physique par vlan sur le router. Je vais plutôt créer plusieurs interfaces virtuelles sur une carte réseau physique et attribué une IP par interface virtuelle.
 
 Déjà il faut passez-le  router Cisco en mode configuration
 
@@ -87,7 +87,7 @@ Router(config-if)#no sh
 ```
 ## II Configuration du switch
 
-Pour que le routage inter-vlan soit fonctionnel il fa falloir crée les vlan sur le switch et indiquer quel port faite parti de quel vlan. Il sera aussi nécessaire de passer le ou les ports utiliser par le router en mode [TRUNK/port taggé](TRUNK/port taggé) affin qui est bien un accès dans le 2 vlan.
+Pour que le routage inter-vlan soit fonctionnel il fa falloir crée les vlan sur le switch et indiquer quel port faite partie de quel vlan. Il sera aussi nécessaire de passer le ou les ports utiliser par le router en mode [TRUNK/port tagué](TRUNK/port taggé) affin qui est bien un accès dans le 2 vlan.
 
 Passe le Switch en mode configuration
 
@@ -198,7 +198,7 @@ Un dernier test depuis un ordinateur du VLAN 10 je ping un ordinateur du VLAN20
 >
 >C:\>
 
-Le routage inter vlan est donc fonctionnel
+Le routage intervlan est donc fonctionnel
 
 ▶️ https://youtu.be/pVA9Fy-UXjg
 

@@ -16,7 +16,7 @@ function About() {
         </h1>
         <br />
         <br />
-        <h4 class="stack-title purple">Systéme d'explotation</h4>
+        <h4 class="stack-title purple">Systéme d'exploitation</h4>
         <Osstack />
         <h4 class="stack-title purple">Solution de virtualisation</h4>
         <Virtualstack />

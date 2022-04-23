@@ -13,7 +13,7 @@ git clone https://github.com/leghort/role-ansible.git
 
 **Qu'est-ce que le DNS ?**
 
-Le DNS à pour but de traduire les noms de domaines en [adresses IP](https://fr.wikipedia.org/wiki/Adresse_IP). Chaque appareil connecté à un réseau dispose d'une adresse IP unique. Grâce aux serveurs  DNS, une adresse IP (par exemple, 172.217.19.238 en IPv4) devient www.google.com c'est tout de même plus simple à mémoriser pour nous autres humain. Pour mettre en place un tel service  je vais créer un serveur DNS sous debian11  avec l'outil Bind9 dans un réseau privé.
+Le DNS à pour but de traduire les noms de domaines en [adresses IP](https://fr.wikipedia.org/wiki/Adresse_IP). Chaque appareil connecté à un réseau dispose d'une adresse IP unique. Grâce aux serveurs  DNS, une adresse IP (par exemple, 172.217.19.238 en IPv4) devient www.google.com c'est tout de même plus simple à mémoriser pour nous autres humain. Pour mettre en place un tel service,  je vais créer un serveur DNS sous debian11  avec l'outil Bind9 dans un réseau privé.
 
 # II Installation de bind9
 

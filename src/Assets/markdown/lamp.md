@@ -1,6 +1,6 @@
 [TOC]
 
-⏩ Par le temps ? Fait un copier-coller de la commande ci-dessous 😄
+⏩ Tu n'a pas le temps ? Fait un copier-coller du texte ci-dessous :smile:
 
 **Debian 11**
 

@@ -3,7 +3,7 @@
 
 **Ansible c'est quoi ?**
 
-Ansible est un outil qui permet d'installer et de configurer un ou plusieurs serveurs au travers de recettes écrites en YAML. Ces recettes contiennent une série de tâches qui seront lancées séquentiellement. Elles utilisent des modules internes à Ansible qui permettent de décrire les opérations à effectuer et leurs conditions de lancement.
+Ansible est un outil qui permet d'installer et de configuré   un ou plusieurs serveurs au travers de recettes écrites en YAML. Ces recettes contiennent une série de tâches qui seront lancées séquentiellement. Elles utilisent des modules internes à Ansible qui permettent de décrire les opérations à effectuer et leurs conditions de lancement.
 
 L'une des forces d'Ansible et qui n'est pas nécessaire d'installer un agent sur les serveurs à administrer une connexion ssh et python3 suffit. Bref ansible est vraiment très pratique pour pouvoir installer et configurer un serveur voire toute une architecture en un temps-record !!
 

@@ -8,6 +8,7 @@ function Type() {
         strings: [
           "Technicien bureautique",
           "Administrateur système",
+          "Administrateur réseau",
           "Développeur",
         ],
         autoStart: true,

@@ -8,7 +8,7 @@ Nous allons transformer un système Debian en routeur afin d'interconnecter 2 r�
 
 # Préparation des machines virtuelles
 
-Pour effectuer ce routage nous allons prépare un environement virtuel composer des 2 machines à l'aide de l'outil Virtualbox.
+Pour effectuer ce routage nous allons prépare un environnement virtuel composé de 2 machines à l'aide de l'outil Virtualbox.
 
 ## Client
 
@@ -16,7 +16,7 @@ Dans un premier temps nous allons configurer l'interface réseau du client en r�
 
 ![image-20211127215450222](./rooterLinux/image-20211127215450222.png)
 
-Ensuite l'on configure l'adresse ip du client en statique, via le fichier `/etc/network/interfaces`.
+Ensuite l'on configure l'adresse IP du client en statique, via le fichier `/etc/network/interfaces`.
 
 ```bash
 sudo nano /etc/network/interfaces
@@ -48,11 +48,11 @@ ip a
 
 ![image-20211128001308915](./rooterLinux/image-20211128001308915.png)
 
-Ici l'interface enp0s3 possède bien l'adresse ip 172.20.228.2, la nouvelle configuration à donc été appliquée.
+Ici l'interface enp0s3 possède bien l'adresse IP 172.20.228.2, la nouvelle configuration à donc été appliquée.
 
 ## Routeur
 
-Le routeur va avoir besoin de 2 cartes réseau, une pare réseau il faut donc activer 2 cartes réseau.
+Le routeur va avoir besoin de 2 cartes réseau, une pare réseau, il faut donc activer 2 cartes réseau.
 
 Adapter 1 en réseau interne cette interface est dans un réseau isolé avec les clients
 
@@ -89,17 +89,17 @@ ip a # Lister les interfaces réseau
       link/ether 08:00:27:02:eb:38 brd ff:ff:ff:ff:ff:ff
 ```
 
-Le résultat de la commande `ip a` nous informe qu'il y a 3 interface réseau (lo, enp0s3, enp0s8)
+Le résultat de la commande `ip a` nous informe qu'il y a 3 interfaces réseau (lo, enp0s3, enp0s8)
 
 - lo = La boucle locale du système
-- enp0s3 = Cette interface à récupérer une adresse ip 192.168.1.26 c'est donc l'interface en accès par pont  (Adapter 1)
-- enp0s8 = C'est donc l'interfacer configurer en réseau interne
+- enp0s3 = Cette interface à récupérer une adresse IP 192.168.1.26 c'est donc l'interface en accès par pont  (adapter 1)
+- enp0s8 = C'est donc l'interface configurer en réseau interne
 
-*Dans notre exemple l'identification des interfaces est simple car un serveur DHCP à fourni une adresse ip à l'interface en accès par pont.*
+*Dans notre exemple l'identification des interfaces est simple, car un serveur DHCP a fourni une adresse IP à l'interface en accès par pont.*
 
-### Définir une adresse ip statique pour les 2 interfaces
+### Définir une adresse IP statique pour les 2 interfaces
 
-Pour pouvoir attribuer des adresses ip statique à nos 2 interfaces nous allons éditer les fichiers `/etc/network/interfaces`.
+Pour pouvoir attribuer des adresses IP statiques à nos 2 interfaces nous allons éditer les fichiers `/etc/network/interfaces`.
 
 ```bash
 sudo nano /etc/network/interfaces
@@ -156,7 +156,7 @@ Maintenant l'on va vérifié que la nouvelle configuration a bien était prise e
        valid_lft forever preferred_lft forever
 ```
 
-La nouvelle configuration à bien était appliqué, maintenant l'on vérifie la bonne communication de l'interface enp0s3 avec la passerelle. Pour cela on lance un ping depuis le router.
+La nouvelle configuration à bien était appliquée, maintenant l'on vérifie la bonne communication de l'interface enp0s3 avec la passerelle. Pour cela on lance un ping depuis le router.
 
 ```bash
 ping 192.168.1.1

@@ -1,17 +1,17 @@
 [TOC]
 
-# DHCP sous linux
+# DHCP sous Linux
 
 ## Préparation
 
-### installation des packets
+### installation des rackets
 
 ```bash
 # Installe le server dhcp via apt
 sudo apt-get install isc-dhcp-server
 ```
 
-### Autoriser les port sur le firewall (si besoin)
+### Autoriser les ports sur le firewall (si besoin)
 
 ```bash
 # Autoriser les port 67 & 68 en /udp
@@ -66,7 +66,7 @@ subnet 192.168.5.0 netmask 255.255.255.0 {
 }
 ```
 
-### Ecoutes sur plusieurs interfaces (ou une interface spécifique)
+### Écoutes sur plusieurs interfaces (ou une interface spécifique)
 
 ```bash
 # Lister vos interface réseau
@@ -104,12 +104,12 @@ INTERFACESv4="eno1"
 INTERFACESv6=""
 ```
 
-### Ouvrir un terminal avec les log en continue
+### Ouvrir un terminal avec les logs en continu
 
 ```bash
 sudo tail -f /var/log/syslog
 ```
-## Demarer le serveur
+## Démarrer le serveur
 
 ```bash
 # Rédémarer le services isc-dhcp-server

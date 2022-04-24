@@ -101,7 +101,7 @@ function Projects() {
               isBlog={false}
               title="OpenVPN"
               description="Protocole VPN et logiciel libre qui utilise les techniques VPN pour sécuriser les connexions point à point et site à site. Actuellement, c’est l’un des protocoles VPN les plus populaires parmi les utilisateurs VPN."
-              link="/project"
+              link="/openVpn"
             />
           </Col>
 
@@ -120,7 +120,7 @@ function Projects() {
               isBlog={false}
               title="Squid"
               description="Proxy libre permettent de sécuriser et d'améliorer l'accès à certaines pages Web en les stockant en cache (ou copie)."
-              link="/project"
+              link="/squid"
             />
           </Col>
         <Col md={4} className="project-card">
@@ -138,7 +138,7 @@ function Projects() {
               imgPath={dhcp}
               isBlog={false}
               title="ISC DHCP"
-              description="Est une implémentation Open Source du protocole DHCP qui délivre des adresses IP aux équipements qui se connectent sur le réseau. En effet, la plupart du temps, les cartes réseaux de ces équipement sont en attente d'une adresse IP leur permettant de communiquer sur le réseau."
+              description="Est une implémentation Open Source du protocole DHCP qui délivre des adresses IP aux équipements qui se connectent sur le réseau. En effet, la plupart du temps, les cartes réseau de ces équipements sont en attente d'une adresse IP leur permettant de communiquer sur le réseau."
               link="/iscdhcp"
             />
           </Col>
@@ -158,7 +158,7 @@ function Projects() {
               imgPath={improveyoutube}
               isBlog={false}
               title="Improve YouTube"
-              description="Extension pour améliorer l'utilisation de YouTube. Lecteur de vidéo plus grand et une interface personnalisable, rangée/cachée des élements comme les commentaire, les bouttons..."
+              description="Extension pour améliorer l'utilisation de YouTube. Lecteur de vidéo plus grand et une interface personnalisable, rangée/cachée des éléments comme les commentaires, les boutons..."
               externalLink="https://chrome.google.com/webstore/detail/improve-youtube-video-you/bnomihfieiccainjcjblhegjgglakjdd"
             />
           </Col>
@@ -168,7 +168,7 @@ function Projects() {
               imgPath={dauntlessbuilder}
               isBlog={false}
               title="Dauntless Builder"
-              description="Site internet fait en react, pour créer des ensemble d’équipements sur le jeu vidéo Dauntless."
+              description="Site Internet fait en react, pour créer des ensembles d’équipements sur le jeu vidéo Dauntless."
               externalLink="https://dauntless-builder.fr/"
             />
           </Col>
@@ -179,7 +179,7 @@ function Projects() {
               imgPath={ipv6}
               isBlog={false}
               title="IPV6"
-              description="Successeur direct du protocole IPv4 (protocole réseau sans connexion de la couche 3 du modèle OSI), l'IPv6 est une raiponse raisonnablement à la problématique du nombres maximum d'adresse ip pouvant être distribué."
+              description="Successeur direct du protocole IPv4 (protocole réseau sans connexion de la couche 3 du modèle OSI), l'IPv6 est une réponse raisonnablement à la problématique du nombre maximum d'adresses IP pouvant être distribuées."
               link="/ipv6"
             />
           </Col>
@@ -189,7 +189,7 @@ function Projects() {
               imgPath={sshKey}
               isBlog={false}
               title="SSH via clef"
-              description="Procédure de mise en place d'une connexion ssh, via cle de chiffrement asymétrique"
+              description="Procédure de mise en place d'une connexion SSH, via cle de chiffrement asymétrique"
               link="/project"
             />
           </Col>
@@ -199,7 +199,7 @@ function Projects() {
               imgPath={outilspdt}
               isBlog={false}
               title="Outils PDT"
-              description="Boîte à outils pour les techniciens bureautique sous Windows, fait uniquement en script .bat ce qui permet de l'exécuter dans une invitation de commande distante. Les outils à disposition sont (Autologon, Pavé numérique au démarrage, Installer des logiciels, etc...)"
+              description="Boîte à outils pour les techniciens bureautiques sous Windows, faits uniquement en script .bat ce qui permet de l'exécuter dans une invitation de commande distante. Les outils à disposition sont (Autologon, Pavé numérique au démarrage, installé des logiciels, etc...)"
               externalLink="https://github.com/leghort/Outils_PDT" target="_blank"
             />
           </Col>

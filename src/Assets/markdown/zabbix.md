@@ -4,7 +4,7 @@
 
 **ZABBIX** est un logiciel libre permettant de surveiller l'état de  divers services réseau, serveurs et autres matériels réseau et  produisant des graphiques dynamiques de consommation des ressources.
 
-⏩ Par le temps ? Fait un copier-coller du texte ci-dessous et le serveur zabbix est installer 😄
+⏩ Par le temps ? Faire un copier-coller du texte ci-dessous et le serveur zabbix est installé.
 
 ```bash
 cd /tmp/ && wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-1+debian11_all.deb
@@ -24,7 +24,7 @@ Téléchargement du fichier Debian Software package
 cd /tmp/ && wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-1+debian11_all.deb
 ```
 
-Install le uniquement paquet Zabbix est mise à jour des dépôts.
+Installe le uniquement paquet Zabbix est mise à jour des dépôts.
 ```bash
 sudo dpkg -i zabbix-release_6.0-1+debian11_all.deb && sudo apt update -y
 ```
@@ -55,7 +55,7 @@ Redémarre et active les services Zabbix
 sudo systemctl restart zabbix-server zabbix-agent apache2 && sudo systemctl enable zabbix-server zabbix-agent apache2
 ```
 
-## Connexion a la mire WEB
+## Connexion à la mire WEB
 
 Pour finaliser l'installation il faut se connecter en http sur le serveur avec un navigateur web dans mon cas l'URL est  http://192.168.1.26/zabbix. Il reste à suivre les étapes d'installation.
 
@@ -63,7 +63,7 @@ Pour finaliser l'installation il faut se connecter en http sur le serveur avec u
 
 ![image-20220323002715191](./zabbix.assets/image-20220323002715191.png)
 
-À cette étape les identifiant de la base de données sont demandes.
+À cette étape les identifiants de la base de données sont demandes.
 >Utilisateur : zabbix
 >Mot de passe : zabbix
 
@@ -75,13 +75,13 @@ Pour finaliser l'installation il faut se connecter en http sur le serveur avec u
 
 ![image-20220323002809709](./zabbix.assets/image-20220323002809709.png)
 
-Pour la connexion à la mire web les identifiant par défault sont,
+Pour la connexion à la mire web les identifiants par défaut sont,
 >Nom utilisateur : Admin
 >Mot de passe : zabbix
 
 ![image-20220323002826461](./zabbix.assets/image-20220323002826461.png)
 
-Une fois arriver sur cette mire web, reste à ajouter les machine à supervisé via l'agent Zabbix ou par le protocole SNMP.
+Une fois arriver sur cette mire web, reste à ajouter les machines à superviser via l'agent Zabbix ou par le protocole SNMP.
 
 ![image-20220323002847932](./zabbix.assets/image-20220323002847932.png)
 

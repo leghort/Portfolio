@@ -1,20 +1,19 @@
 [TOC]
-
 # I Présentation
 
 **Ansible c'est quoi ?**
 
 Ansible est un outil qui permet d'installer et de configurer un ou plusieurs serveurs au travers de recettes écrites en YAML. Ces recettes contiennent une série de tâches qui seront lancées séquentiellement. Elles utilisent des modules internes à Ansible qui permettent de décrire les opérations à effectuer et leurs conditions de lancement.
 
-L'une des forces d'Ansible et qui n'est pas nécessaire d'installer un agent sur les serveurs à administrer une connexion ssh et python3 suffit. Bref ansible est vraiment très pratique pour pouvoir installer et configurer un serveur voire tous une architecture en un temps-record !!
+L'une des forces d'Ansible et qui n'est pas nécessaire d'installer un agent sur les serveurs à administrer une connexion ssh et python3 suffit. Bref ansible est vraiment très pratique pour pouvoir installer et configurer un serveur voire toute une architecture en un temps-record !!
 
-ℹ️  *Info : Il existe des outils similaires (Chef, Puppet, SaltStack, Fabric)*
+ℹ️ *Info : il existe des outils similaires (Chef, Puppet, SaltStack, Fabric)*
 
 # II Installer Ansible sur votre poste
 
-Déjà il faut installer Ansible sur l'ordinateur qui sera le pc orchestrateur, "node master" en anglais. Puis il m'a fallu ajouter le dépôt officiel d'ansible adapter au system d'exploitation en l'occurrence debian_11 (bullseye).
+Il faut installer Ansible sur l'ordinateur qui sera le pc orchestrateur, "node master" en anglais. Puis il m'a fallu ajouter le dépôt officiel d'ansible adapter au system d'exploitation en l'occurrence debian_11 (bullseye).
 
-⚠️ Le doc officiel est toujours une alliée de qualité pour trouver ce genre d'information.
+⚠️ La documentation officiel est toujours une alliée de qualité pour trouver ce genre d'information.
 [Doc officiel](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 
 Voilà la commande pour ajouter le dépôt
@@ -29,14 +28,14 @@ sudo apt-get install gnupg2
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 ```
 
-Maintenant que les préparatifs sont finis c'est le moment d'installée Ansible 🥳
+Maintenant, que les préparatifs sont finis c'est le moment d'installée Ansible 🥳
 ```bash
 sudo apt-get update -y && sudo apt-get install ansible -y
 ```
 
 **Vérifier l'installation**
 
-Aller une petite vérifie histoire d'être sur à 100% d'Ansible est bien installée.
+Petite vérifie, pour être que Ansible est bien installée.
 ```bash
 ansible --version
 ```
@@ -44,17 +43,17 @@ ansible --version
 Incroyable la version 2.12.2 est installé ! Le plus facile est passé c'est l'heure de comprendre ansible et de créer des playbooks 😈
 
 # III Création d'une recette & du fichier inventaire
-Bon après quelques heures de documentation et d'inspection de playbook existant voici un résumer des élement majeurs à connaitre pour utiliser ansible.
+Bon après quelques heures de documentation et d'inspection de playbook existant voici un résumer des éléments majeurs à connaître pour utiliser ansible.
 
-- **Playbook :** Un fichier YAML qui va contenir les actions à effectuer, par exemple install le paquet wget, copie un fichier etc...
+- **Playbook :** Fichier YAML qui va contenir les actions à effectuer, par exemple install le paquet wget, copie un fichier etc...
 
-- **Inventaire :** Un fichier qui contient les informations relatives aux machines à administrer ip, hostname, shell, username, etc...
+- **Inventaire :** Fichier qui contient les informations relatives aux machines à administrer ip, hostname, shell, username, etc...
 
 - **Clef ssh :** Par défaut l'authentification ssh s'effectue par clefs, c'est d’ailleurs recommander. (il est cependant possible de forcer la connexion par mot de passe avec le fichier Inventaire)
 
-- **Templates jinja :** Un fichier Jinja2 c'est le modèle d'un fichier de configuration, qui intègre la notion de variable, liste, boucle et condition.
+- **Templates jinja :** Fichier Jinja2 c'est le modèle d'un fichier de configuration, qui intègre la notion de variable, liste, boucle et condition.
 
-Et enfin il est préférable de générer une arborescence par défault pour chaque playbook avec la commande ansible-galaxy (Playbook, Templates, script, etc..) cette arborescense permet de standardiser c'est playbook.
+Et enfin, il est préférable de générer une arborescence par défaut pour chaque playbook avec la commande ansible-galaxy (Playbook, Templates, script, etc..) cette arborescence permet de standardiser, c'est playbook.
 ```
 ansible-galaxy init zabbix
 ```
@@ -117,23 +116,23 @@ server-web ansible_host=192.168.1.32 ansible_user=toor ansible_ssh_pass=password
 
 Après plusieurs tests en environnement virtuel et quelques cheveux arrachés le rôle fonctionne !!
 
-Il m'est enfin possible:
+Il m'est enfin possible :
 - Installer le paquet zabbix_agent depuis le dépôt officiel
 - Configurer zabbix_agent
 - Exécuter quelle script .sh
 
-le tout en une seule commande qui peut être scale sur une multitude de machines 😍
+Le tout en une seule commande qui peut être scale sur une multitude de machines 😍
 ```bash
 ansible-playbook main.yml -i inventory --limite server-zabbix:client-zabbix
 ```
 
 ℹ️ *--limite permet de limiter l'exécution du* **Playbook** *à certaines machines*
 
-Quelques liens vers les vidéos/site que j'ai consultées pour comprendre Ansible.
+Quelques liens vers les vidéo et site que j'ai consultés pour comprendre Ansible.
 
 [⏯️ Découvrir Ansible (4min)](https://youtu.be/prtO-Ox8LW8)
 
-[⏯️ Mettre en place un serveur web avec ansible (56min) ](https://youtu.be/DwNapBHypE8)
+[⏯️ Mettre en place un serveur web avec Ansible (56min) ](https://youtu.be/DwNapBHypE8)
 
 [⏯️ Fichier YAML (14min)](https://youtu.be/7gmW6vxgsRQ)
 

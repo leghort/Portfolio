@@ -1,18 +1,18 @@
 [TOC]
 
-# Veille Technologique
+# Veille technologique
 
 Pour effectuer cette veille j'ai utilisé l'agrégateur de flux rss **[inoreader](https://www.inoreader.com/)** afin d'être informé des derniers articles des sites comme **[Le journal du hacker](https://www.journalduhacker.net/)** ou **[korben.info](https://korben.info/)**. J'ai également utilisé l'outil de **[recherche avancer google](https://www.google.com/advanced_search)** pour obtenir de résultats plus pertinent.
 
-## Qu’est-ce qu’une veille Technologique ?
+## Qu’est-ce qu’une veille technologique ?
 
-La veille technologique est le fait de se tenir informé des nouveautées d'un secteur d'activité, que ce soit les inventions des concurrents ou des nouvelles techniques afin de performer dans son domaine. L'informatique étant un secteur d'activité qui évolue rapidement, la veille technologique est un composant important pour tous professionnels du secteur. Elle permet également de prendre de meilleur décision et de gagner en compétense.
+La veille technologique est le fait de se tenir informé des nouveautés d'un secteur d'activité, que ce soit les inventions des concurrents ou des nouvelles techniques afin de performer dans son domaine. L'informatique étant un secteur d'activité qui évolue rapidement, la veille technologique est un composant important pour tous professionnels du secteur. Elle permet également de prendre de meilleur décision et de gagner en compétence.
 
-Ma veille technologique va porter sur les systèmes de stockage et plus particulièrement sur les disques durs SSD qui sont les suceseurs directes des disques durs HDD.
+Ma veille technologique va porter sur les systèmes de stockage et plus particulièrement sur les disques durs SSD qui sont les successeurs directes des disques durs HDD.
 
 ## Qu’est-ce qu'un SSD ?
 
-Un SSD est un disque dur de stockage qui utilise des puces électroniques et non un disque rotatif pour stocker les informations comme une carte SD ou une clef USB. C'est disque dur ont une vitesse de lecteur/écriture de loin supérieure aux HDD, il résiste mieux au choques et ils sont également plus silencieux.
+Un SSD est un disque dur de stockage qui utilise des puces électroniques et non un disque rotatif pour stocker les informations comme une carte SD ou une clé USB. Ces disques durs ont une vitesse de lecteur/écriture de loin supérieure aux HDD, il résiste mieux aux choque et ils sont également plus silencieux.
 
 L'information stockée dans le SSD persiste électriquement au sein des composant électronique même en l'absence d'alimentation électrique contrairement à la mémoire vive (RAM). Cette exploi est dut à l'ajout d'une grille flottante sur [des transistors **MOSFET**](https://fr.wikipedia.org/wiki/Transistor_%C3%A0_effet_de_champ_%C3%A0_grille_m%C3%A9tal-oxyde) cette grille flottante en noir sur les schémas ci-dessous va permettre ou non aux électrons de passer quand une tension est appliquer au transistor. Pour en savoir plus sur le fonctionnement fondamental du SSD je ne peux que recommande l'article de [www.couleur-science.eu](https://couleur-science.eu/?d=b3cf17--comment-fonctionne-la-memoire-flash-dun-lecteur-ssd)
 
@@ -20,7 +20,7 @@ L'information stockée dans le SSD persiste électriquement au sein des composan
 
 ## Quand utiliser un SSD ?
 
-Utiliser ce type de disque dur sur un **ordinateur portable** est particulièrement pertinent il permet d'accélérer le temps de démarrage et de réduire les risques de perte de donné, car si l'ordinateur portable venait à être brutalisé le fait de ne plus avoir de composant mécanique dans le disque dur le rend plus robust au choc.
+Utiliser ce type de disque dur sur un **ordinateur portable** est particulièrement pertinent, il permet d'accélérer le temps de démarrage et de réduire les risques de perte de donné, car si l'ordinateur portable venait à être brutalisé le fait de ne plus avoir de composant mécanique dans le disque dur le rend plus robuste au choc.
 
 Le SSD a également une place privilégier dans les matériels dédiés aux **jeux vidéo** que ce soit un **ordinateur** ou une **console de jeux**, c'est d'ailleurs ce choix que **SONY** a fait pour ça toute dernière console la Playstation 5. Choix qui se comprend vu le gain de performance apporté que ce soit en temps de chargement des modèles 3D des textures ou bien sur le démarrage de l'appareil. L'on parle ici d'un gain qui est de **4 fois plus rapide** qu'un HDD.
 
@@ -35,12 +35,12 @@ Voici un tableau synoptique des différences entre les disques HDD et SSD
 | Peu coûteux *(2To = 60€)*                                    | Très coûteux *(2To = 220€)*                                 |
 | Pas rapide *(0,1 à 1,7 Mo/s)*                                | Plus rapide *(50 à 250 Mo/s)*                               |
 | Consomme plus d'énergie électrique (10Watt)                  | Utilise moins d’énergie électrique *(5 Watt)*               |
-| Les rotations des disque magnétique en aluminum/verre et les clics de la téte de lecture sont audibles *(27 à 48 dB)* | Aucun son, en raison de l'absence de pièces mobiles *(1dB)* |
+| Les rotations des disques magnétiques en aluminium/verre et les clics de la tête de lecture sont audibles *(27 à 48 dB)* | aucun son, en raison de l'absence de pièces mobiles *(1dB)* |
 | Capacité de stockage par disque très grande  *(Max 20 To)*   | Limité en capacité de stockage par disque *(Max 8 To)*      |
 
 ## Les types de cellules
 
-Tous les ssd ne se valent pas les cellules de mémoire d'un disque SSD peut-être de type:
+Tous les SSD ne se valent pas les cellules de mémoire d'un disque SSD peut-être de type:
 
 - **SLC** pour Single Level Cell.
 
@@ -55,7 +55,7 @@ Tous les ssd ne se valent pas les cellules de mémoire d'un disque SSD peut-êtr
   
 - **TLC** pour Triple Level Cell. 
 
-  3 bits par cellules le prix baisse et les performances également. Pour autant, les SSD qui en sont équipés restent plus que  suffisants pour les utilisateurs netbook et tablette.
+  3 bits par cellules, le prix baisse et les performances également. Pour autant, les SSD qui en sont équipés restent plus que  suffisants pour les utilisateurs netbook et tablettes.
 
   500 à 1000 cycles de lectures/écritures
 

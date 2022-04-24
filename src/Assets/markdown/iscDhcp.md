@@ -4,10 +4,10 @@
 
 ## Préparation
 
-### installation des rackets
+### installation des paquets
 
 ```bash
-# Installe le server dhcp via apt
+# Installer le serveur dhcp via apt
 sudo apt-get install isc-dhcp-server
 ```
 
@@ -20,7 +20,7 @@ Rule added
 Rule added (v6)
 Rule added
 Rule added (v6)
-# Vérifier que les régle on bien était ajouter
+# Vérifier que les régle on bien était ajouté
 (base) toor@debian:~$ sudo ufw status numbered
 Status: active
 
@@ -66,7 +66,7 @@ subnet 192.168.5.0 netmask 255.255.255.0 {
 }
 ```
 
-### Écoutes sur plusieurs interfaces (ou une interface spécifique)
+### Écoute sur plusieurs interfaces (ou une interface spécifique)
 
 ```bash
 # Lister vos interface réseau
@@ -93,13 +93,13 @@ ip a
 ```
 
 ```bash
-# Editer les ficher /etc/default/isc-dhcp-server
+# Editer le ficher /etc/default/isc-dhcp-server
  sudo nano /etc/default/isc-dhcp-server
 ```
 `/etc/default/isc-dhcp-server`
 
 ```bash
-# Spécifier les interface
+# Spécifier les interfaces
 INTERFACESv4="eno1"
 INTERFACESv6=""
 ```
@@ -112,9 +112,9 @@ sudo tail -f /var/log/syslog
 ## Démarrer le serveur
 
 ```bash
-# Rédémarer le services isc-dhcp-server
+# Rédémarrer le services isc-dhcp-server
 sudo service isc-dhcp-server restart
-# Vérifier que le bon fonctionement du serveur dhcp
+# Vérifier le bon fonctionement du serveur dhcp
 (base) toor@debian:~$ sudo service isc-dhcp-server status
 ● isc-dhcp-server.service - LSB: DHCP server
      Loaded: loaded (/etc/init.d/isc-dhcp-server; generated)

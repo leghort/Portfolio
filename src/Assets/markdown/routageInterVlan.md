@@ -58,15 +58,15 @@ Le routage inter vlan et comme son nom l'indique est un mécanisme de [routage](
 
 ## I Configuration du router
 
-Pour pouvoir effectuer du routage inter vlan le routeur doit avoir une interface/carte réseau et une ip dans chacun des vlan. Plutôt que de devoir ajouter une carte réseau physique par vlan sur le router. Je vais plutôt créer plusieurs interfaces virtuelles sur une carte réseau physique et attribué une IP par interface virtuelle.
+Pour pouvoir effectuer du routage inter vlan le routeur doit avoir une interface/carte réseau et une ip dans chacun des vlan. Plutôt que de devoir ajouter une carte réseau physique par vlan sur le router. Je vais plutôt créer plusieurs interfaces virtuelles sur une carte réseau physique et attribuer une IP par interface virtuelle.
 
-Déjà il faut passez-le  router Cisco en mode configuration
+Déjà il faut mettre le router Cisco en mode configuration
 
 ```
 Router>en
 Router#conf t
 ```
-Puis je crée une sous-interface pour chaque vlan dans mon cas il en aura 2 donc je crée une sous-interface pour le vlan 10 et lui attribue une adresse ip.
+Puis je crée une sous-interface pour chaque vlan dans mon cas il en aura 2 donc je créer une sous-interface pour le vlan 10 et lui donne l'adresse IP 192.168.1.254.
 ```shell
 Router(config)#int fa 0/0.10
 Router(config-subif)#en d 10
@@ -80,14 +80,14 @@ Router(config-subif)#en d 20
 Router(config-subif)#ip ad 192.168.2.254 255.255.255.0
 Router(config-subif)#ex
 ```
-Enfin j'active l'interface fastEthernet 0/0 du router qui est l'interface physique du routeur qui a "en elle" les 2 autres sous interface.
+Enfin j'active l'interface fastEthernet 0/0 du router qui est l'interface physique qui a "en elle" les 2 autres sous interface.
 ```
 Router(config)#int fa 0/0
 Router(config-if)#no sh
 ```
 ## II Configuration du switch
 
-Pour que le routage inter-vlan soit fonctionnel il fa falloir crée les vlan sur le switch et indiquer quel port faite partie de quel vlan. Il sera aussi nécessaire de passer le ou les ports utiliser par le router en mode [TRUNK/port tagué](TRUNK/port taggé) affin qui est bien un accès dans le 2 vlan.
+Pour que le routage inter-vlan soit fonctionnel il va falloir créer les vlan sur le switch et indiquer quel port fait parti de quel vlan. Il sera aussi nécessaire de passer le ou les ports utilisé par le router en mode [TRUNK/port tagué](TRUNK/port taggé) affin qui est bien un accès dans le 2 vlan.
 
 Passe le Switch en mode configuration
 
@@ -95,13 +95,13 @@ Passe le Switch en mode configuration
 Switch>en
 Switch#conf t
 ```
-Crée le vlan 10 sur le Switch
+Créer le vlan 10 sur le Switch
 ```
 Switch(config)#vlan 10
 Switch(config-vlan)#name VLAN10
 Switch(config-vlan)#ex
 ```
-Crée le vlan 20  sur le Switch
+Créer le vlan 20  sur le Switch
 ```
 Switch(config)#vlan 20
 Switch(config-vlan)#name VLAN20
@@ -123,14 +123,14 @@ Switch(config-if-range)#sw a v 20
 Switch(config-if-range)#no sh
 Switch(config-if-range)#ex
 ```
-Configure les 2 ports Gigabit Ethernet en mode Trunks
+Configurer les 2 ports Gigabit Ethernet en mode Trunks
 ```
 Switch(config)#in ra gi 0/1-2
 Switch(config-if-range)#sw m t
 Switch(config-if-range)#no sh
 Switch(config-if-range)#ex
 ```
-Affiche tout les vlan du switch et le port qui y sont attribuées
+Afficher tout les vlan du switch et le port qui y sont attribué
 ```
 Switch(config)#do sh vl
 ```

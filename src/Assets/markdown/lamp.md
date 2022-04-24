@@ -18,7 +18,7 @@ L’acronyme LAMP désigne un ensemble de quatre technologies open source :
 
 - **L pour [Linux](https://www.it-connect.fr/cours-tutoriels/administration-systemes/linux/)**, le système d'exploitation (Debian, dans notre cas)
 
-- **À pour [Apache](https://www.it-connect.fr/cours-tutoriels/administration-systemes/serveur-web/apache/)**, le serveur Web
+- **A pour [Apache](https://www.it-connect.fr/cours-tutoriels/administration-systemes/serveur-web/apache/)**, le serveur Web
 
 - **M pour [MySQL/MariaDB](MySQL/MariaDB)** le système de gestion de bases de données
 
@@ -28,7 +28,7 @@ Un serveur LAMP est donc un serveur qui dispose de ces 4 composants. Ce type de 
 
 # II Apache 2
 
-Je commande par mettre à jour le cache des paquets et les paquets :
+Je commence par mettre à jour les paquets :
 
 ```bash
 sudo apt upodate -y && sudo apt upgrade -y
@@ -46,7 +46,7 @@ Ensuite il faut démarrer le service apache2 et le rajouter au démarrage histoi
 sudo systemctl restart apache2 && sudo systemctl enable apache2
 ```
 
-À ce stade le serveur web apache 2 devrait être opérationnel je vais vérifier cela avec la commande
+À ce stade le serveur web apache 2 devrait être opérationnel, je vais vérifier cela avec la commande
 
 ```bash
 sudo systemctl status apache2
@@ -69,7 +69,7 @@ sudo systemctl status apache2
 >avril 05 20:52:28 Lab-01 apachectl[821]: AH00558: apache2: Could not reliably determine the server's fully qualified do>
 >avril 05 20:52:28 Lab-01 systemd[1]: Started The Apache HTTP Server.
 
-Je vérifie également la version installée
+Je vérifie également la version installé
 
 ```bash
 sudo apache2ctl -v
@@ -78,7 +78,7 @@ sudo apache2ctl -v
 >Server version: <span style="color:green">Apache/2.4.53 (Debian)</span>
 >Server built:   2022-03-14T16:28:35
 
-Dans mon cas c'est la version **2.4.53** qui a été installée.
+Dans mon cas c'est la version **2.4.53** qui a été installé.
 
 Je vais également consulter le serveur avec un navigateur web par exemple [Mozilla Firefox](https://www.mozilla.org/fr/firefox/new/), déjà il faut récupérer l'adresse IP du serveur pour pouvoir y accéder en http.
 
@@ -101,7 +101,7 @@ ip a
 >inet6 fe80::a00:27ff:fece:2a8e/64 scope link
 > valid_lft forever preferred_lft forever
 
-Donc en consultant l'adresse IP du serveur, je devrais tomber sur la page par défaut d'apache2.
+En consultant l'adresse IP du serveur, je devrais tomber sur la page par défaut d'apache2.
 
 ![image-20220405213632771](C:\Users\medaey\AppData\Roaming\Typora\typora-user-images\image-20220405213632771.png)
 
@@ -115,7 +115,7 @@ Au tour du PHP, donc installation du paquet
 sudo apt install -y php
 ```
 
-puis vérification de la version qui vient d'être installée
+Puis vérification de la version qui vient d'être installée
 
 ```
 php -v
@@ -126,7 +126,7 @@ php -v
 >Zend Engine v3.4.0, Copyright (c) Zend Technologies
 >with Zend OPcache v7.4.28, Copyright (c), by Zend Technologies
 
-Bon la version **7.4.28** semble installer je vais vérifier cela en crée une page web avec du code PHP pour être sûr !
+La version **7.4.28** est installé je vais vérifier cela en créant une page web avec du code PHP pour être sûr !
 
 ```bash
 sudo nano /var/www/html/phpinfo.php
@@ -138,20 +138,20 @@ ce fichier `phpinfo.php` contiendra les 3 lignes ci-dessous
 >phpinfo();
 >?>
 
-Maintenant je retourne consulter le serveur en web à la différence que je rajouter `/phpinfo.php` après l'adresse IP pour consulter le fichier fraichement crée.
+Maintenant je retourne consulter le serveur en web à la différence que je rajoute `/phpinfo.php` après l'adresse IP pour consulter le fichier fraichement crée.
 ![image-20220405214617141](C:\Users\medaey\AppData\Roaming\Typora\typora-user-images\image-20220405214617141.png)
 
-OK PHP à bien interpréter le code en crée cette magnifique page.
+OK PHP à bien interprété car le code à crée cette magnifique page.
 
 # IV Mysql/Mariadb
 
-Pour finir le système de gestion de bases de données j'opte pour Mariadb qui "Une copie Open Source" de Mysql, donc toujours pareille installation du paquet qui va bien.
+Pour finir le système de gestion de bases de données j'opte pour Mariadb qui est "Une copie Open Source" de Mysql, donc toujours pareille installation du paquet qui va bien.
 
 ```bash
 sudo apt install -y mariadb-server
 ```
 
-une fois l'installation finie je vérifie l'installation
+une fois l'installation fini, je vérifi l'installation
 
 ```bash
 sudo mysql
@@ -167,7 +167,7 @@ sudo mysql
 >
 >MariaDB [(none)]>
 
-OK la version 10.5.15 est installée, je vais vérifier que les 3 bases ont bien été créées.
+OK la version 10.5.15 est installé, je vais vérifier que les 3 bases ont bien été créées.
 
 ```mysql
 show databases;
@@ -182,7 +182,7 @@ show databases;
 >+--------------------+
 >3 rows in set (0.000 sec)
 
-Ça semble correct, je quitte donc mariadb.
+Ça semble correcte, je quitte donc mariadb.
 
 ```mysql
 exit;

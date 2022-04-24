@@ -1,7 +1,7 @@
 [TOC]
 
 
-⏩ Par le temps ? Fait un copier-coller de la commande ci-dessous :smile:
+⏩ Tu n'a pas le temps ? Fait un copier-coller du texte ci-dessous :smile:
 
 **Debian 11**
 
@@ -11,10 +11,10 @@ sudo bash -c "echo 'net.ipv6.conf.all.disable_ipv6 = 1' >> /etc/sysctl.conf" && 
 ---
 # I Présentation
 
-L'adressage ipv6 est le successeur du protocole ipv4, celui-ci dispose d'un espace d'adressage bien plus important afin de répondre à la forte demande d'adressage suite la démocratisation d'internet.
+ipv6 est le successeur du protocole ipv4, celui-ci dispose d'un espace d'adressage bien plus important, afin de répondre à la forte demande d'adresse suite la démocratisation d'internet.
 
 **Pourquoi désactiver cet adressage ?**
-Pour une question de simplicité, car quand une addres ipv4 ressemble à ceci `192.168.1.24/24` une adresse ipv6 ressemble à `2a01:cb08:918:5000:a00:27ff:fe6d:de9d/64`. Une est plus rapide à saisir, je vous l'aise deviner laquelle.
+Pour une question de simplicité, car quand une adresse ipv4 ressemble à ceci `192.168.1.24/24` une adresse ipv6 ressemble à `2a01:cb08:918:5000:a00:27ff:fe6d:de9d/64`. Une est plus rapide à saisir, je vous l'aisse deviner laquelle.
 
 # II Désactiver l'adressage ip version 6
 
@@ -36,7 +36,7 @@ Enfin il suffira d'appliquer les modifications
 sudo sysctl -p
 ```
 
-Pour s'assurer que la modification est bien effectivement rien de mieux qu'une vérification à l'œil en affiche les adresses IP.`ip a`
+Pour s'assurer que la modification est bien effective rien de mieux qu'une vérification à l'œil en affichent les adresses avec la commande `ip a`.
 
 📝https://www.memoinfo.fr/tutoriels-linux/desactiver-ipv6-sur-debian/
 📝https://www.itzgeek.com/how-tos/linux/debian/how-to-disable-ipv6-on-debian-9-ubuntu-16-04.html

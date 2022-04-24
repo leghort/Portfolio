@@ -13,7 +13,7 @@ git clone https://github.com/leghort/role-ansible.git
 
 **Qu'est-ce que le DNS ?**
 
-Le DNS à pour but de traduire les noms de domaines en [adresses IP](https://fr.wikipedia.org/wiki/Adresse_IP). Chaque appareil connecté à un réseau dispose d'une adresse IP unique. Grâce aux serveurs  DNS, une adresse IP (par exemple, 172.217.19.238 en IPv4) devient www.google.com c'est tout de même plus simple à mémoriser pour nous autres humain. Pour mettre en place un tel service,  je vais créer un serveur DNS sous debian11  avec l'outil Bind9 dans un réseau privé.
+Le DNS à pour but de traduire les noms de domaines en [adresses IP](https://fr.wikipedia.org/wiki/Adresse_IP). Chaque appareil connecté à un réseau, dispose d'une adresse IP unique. Grâce aux serveurs DNS, une adresse IP (par exemple, 172.217.19.238 en IPv4) devient www.google.com c'est tout de même plus simple à mémoriser pour nous autres humain. Pour mettre en place un tel service,  je vais créer un serveur DNS sous debian11  avec l'outil Bind9.
 
 # II Installation de bind9
 
@@ -35,7 +35,8 @@ Déjà il est préférable que le nom du serveur porte le même nom que la zone 
 sudo hostnamectl set-hostname cossu.tech
 ```
 
-Puis changer la résolution de nom local pour cela il va falloir connaitre l'adresse ip du serveur j'utiliser la commande.
+Puis changer la résolution de nom local pour cela il va falloir connaitre l'adresse IP du serveur.
+J'utilise la commande
 
 ```bash
 ip a
@@ -50,7 +51,7 @@ ip a
 >inet 192.168.1.24/24 brd 192.168.1.255 scope global dynamic enp0s3
 >valid_lft 84835sec preferred_lft 84835sec
 
-192.168.1.24 est donc l'adresse ip du serveur, il ne reste plus qu'à la renseigné dans le fichier.
+192.168.1.24 est donc l'adresse ip du serveur, il me reste à la renseigné dans le fichier.
 
 ```bash
 sudo nano /etc/hosts
@@ -60,7 +61,7 @@ sudo nano /etc/hosts
 >127.0.1.1       cossu.tech
 >192.168.1.24    cossu.tech
 
-Pour effectuer des tests j'indique au serveur de faire appel à lui mếme "192.168.1.24".
+Pour effectuer des test j'indique au serveur de faire appel à lui mếme "192.168.1.24".
 ```bash
 sudo nano /etc/resolv.conf
 ```
@@ -76,7 +77,7 @@ Je redémarre le service resolved pour appliquer les modifications.
 sudo systemctl restart systemd-resolved
 sudo systemctl enable systemd-resolved
 ```
-Petite vérification du bon fonctionnement du service resolved
+Vérification du bon fonctionnement du service resolved
 ```bash
 systemd-resolve --status
 ```
@@ -92,7 +93,7 @@ Visiblement tout va bien.
 
 # III Configuration de la zone
 
-Je vais modifier la configuration de bind 9 pour lui indiquer que tous les noms qu'il ne connait pas seront à transférer à une autre serveur DNS par exemple 8.8.8.8 (le DNS de google).
+Je vais modifier la configuration de bind 9 pour lui indiquer que tous les noms qu'il ne connait pas seront à transférer à un autre serveur DNS par exemple 8.8.8.8 (le DNS de google).
 
 ```bash
 sudo nano /etc/bind/named.conf.options
@@ -177,7 +178,7 @@ sudo nano /etc/bind/db.1.168.192.in-addr.arpa
 >18      IN      PTR    linuxPortable.cossu.tech.
 >45      IN      PTR    win10.cossu.tech.
 
- Je vérifie la syntaxe du fichier *db.1.168.192.in-addr.arpa*
+ Je vérifi la syntaxe du fichier *db.1.168.192.in-addr.arpa*
 
 ```bash
 sudo named-checkzone 1.168.192.in-addr.arpa /etc/bind/db.1.168.192.in-addr.arpa
@@ -191,7 +192,7 @@ Tout va bien, il est temps de redémarrer le service bind9
 ```bash
 sudo systemctl restart bind9
 ```
-Le moment fatidique est arrivé, voire si la résolution de nom fonctionne. Pour cela, la commande *nslookup* est un allié de choix.
+Le moment fatidique est arrivé, voir si la résolution de nom fonctionne. Pour cela, la commande *nslookup* est une alliée de choix.
 
 ```bash
 nslookup linux.cossu.tech
@@ -203,7 +204,7 @@ nslookup linux.cossu.tech
 >Name:	linux.cossu.tech
 >Address: 192.168.1.14
 
-Le serveur DNS 192.168.1.24 dit que le nom `linux.cossu.tech` est égal à l'adresse `192.168.1.14`, ça fonctionne ! Aller au tour de la zone inverse.
+Le serveur DNS 192.168.1.24 dit que le nom `linux.cossu.tech` est égal à l'adresse `192.168.1.14`, ça fonctionne ! Allé maintenant il faut tester la zone inverse.
 
 ```bash
 nslookup 192.168.1.14

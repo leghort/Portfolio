@@ -10,10 +10,10 @@ QEMU est une solution d'émulation de processeur et d'architecture qui est à la
 
 Pour créer cette Machine virtuelle (VM) il faudra définir les éléments suivants :
 
-- Crée un disque virtuel et ça taille
+- Crée un disque virtuel et définir ça taille
 - L'architecture du système de la VM
 - Définir la RAM de la VM
-- Indiquer les fichiers iso à utiliser
+- Indiquer le fichier iso à utiliser
 
 Dans un premier temps il me faut créer un disque virtuel qui va stocker toutes les données de la VM.
 
@@ -21,7 +21,7 @@ Dans un premier temps il me faut créer un disque virtuel qui va stocker toutes 
 qemu-img create debian.img 8G
 ```
 
-Au tour de l'architecture, celle que je vais utiliser est une architecture 64 bits *qemu-system-x86_64* mais il en existe d'autres *qemu-system-i386, qemu-system-arm,...* Il faut donc indiquer la bonne architecture. Par exemple, amr64 pour des raspbian.
+Au tour de l'architecture, celle que je vais utiliser est une architecture 64 bits *qemu-system-x86_64* mais il en existe d'autres *qemu-system-i386, qemu-system-arm,...* Il faut donc indiquer la bonne architecture. Par exemple, amr64 pour raspbian.
 
 Et enfin la RAM, 1024Mo devrait suffire pour une debian sans interface graphique.
 
@@ -35,7 +35,7 @@ Une magnifique interface nommée QEMU apparaît 🥳
 
 ![image-20220313013113297](qemu.assets/image-20220313013113297.png)
 
-Une fois toutes les étapes d'installation effectuée, j'arrête la machiner est la redémarrer avec la commande ci-dessous.
+Une fois toutes les étapes d'installation effectué, j'arrête la machiner est la redémarre avec la commande ci-dessous.
 
 ```bash
 qemu-system-x86_64.exe -hda image.img --cdrom debian-11.2.0-amd64-netinst.iso -m 1024M

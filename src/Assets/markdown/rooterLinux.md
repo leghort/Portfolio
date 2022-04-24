@@ -8,7 +8,7 @@ Nous allons transformer un système Debian en routeur afin d'interconnecter 2 r�
 
 # Préparation des machines virtuelles
 
-Pour effectuer ce routage nous allons prépare un environnement virtuel composé de 2 machines à l'aide de l'outil Virtualbox.
+Pour effectuer ce routage nous allons préparer un environnement virtuel composé de 2 machines à l'aide de l'outil Virtualbox.
 
 ## Client
 
@@ -40,7 +40,7 @@ Redémarrage du pc
 sudo reboot
 ```
 
-Et enfin l'on vérifie que les modifications ont bien été prises en compte 
+Et enfin l'on vérifi que les modifications ont bien été prises en compte 
 
 ```bash
 ip a
@@ -48,11 +48,11 @@ ip a
 
 ![image-20211128001308915](./rooterLinux/image-20211128001308915.png)
 
-Ici l'interface enp0s3 possède bien l'adresse IP 172.20.228.2, la nouvelle configuration à donc été appliquée.
+Ici l'interface enp0s3 possède bien l'adresse IP 172.20.228.2, la nouvelle configuration à donc été appliqué.
 
 ## Routeur
 
-Le routeur va avoir besoin de 2 cartes réseau, une pare réseau, il faut donc activer 2 cartes réseau.
+Le routeur va avoir besoin de 2 cartes réseau, une pour chaque réseau, il faut donc activer 2 cartes réseau.
 
 Adapter 1 en réseau interne cette interface est dans un réseau isolé avec les clients
 
@@ -92,8 +92,8 @@ ip a # Lister les interfaces réseau
 Le résultat de la commande `ip a` nous informe qu'il y a 3 interfaces réseau (lo, enp0s3, enp0s8)
 
 - lo = La boucle locale du système
-- enp0s3 = Cette interface à récupérer une adresse IP 192.168.1.26 c'est donc l'interface en accès par pont  (adapter 1)
-- enp0s8 = C'est donc l'interface configurer en réseau interne
+- enp0s3 = Cette interface à récupéré une adresse IP 192.168.1.26 c'est donc l'interface en accès par pont  (adapter 1)
+- enp0s8 = C'est donc l'interface configuré pour le réseau interne
 
 *Dans notre exemple l'identification des interfaces est simple, car un serveur DHCP a fourni une adresse IP à l'interface en accès par pont.*
 
@@ -156,7 +156,7 @@ Maintenant l'on va vérifié que la nouvelle configuration a bien était prise e
        valid_lft forever preferred_lft forever
 ```
 
-La nouvelle configuration à bien était appliquée, maintenant l'on vérifie la bonne communication de l'interface enp0s3 avec la passerelle. Pour cela on lance un ping depuis le router.
+La nouvelle configuration à bien était appliqué, maintenant vérification la bonne communication de l'interface enp0s3 avec la passerelle. Pour cela on lance un ping depuis le router.
 
 ```bash
 ping 192.168.1.1

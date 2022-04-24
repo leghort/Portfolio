@@ -8,8 +8,8 @@ Un **serveur de messagerie électronique** est un [logiciel](https://fr.wikipedi
 
 ## DNS
 
-Pour le fonctionnement de toute cette infrastructure, il va falloir dans un premier temps disposer d'un serveur DNS ! 
-Je vous donc procéder à la création d'une zone DNS locale avec l'outil [Bind9](https://cossu.tech/bind9) assister par [Ansible](https://cossu.tech/ansible) histoire de pouvoir prendre un ☕ le temps que la zone DNS s'installe.
+Pour le fonctionnement de toute cette infrastructure, il va falloir disposer d'un serveur DNS ! 
+Je vais donc procéder à la création d'une zone DNS locale avec l'outil [Bind9](https://cossu.tech/bind9) assisté par [Ansible](https://cossu.tech/ansible) histoire de pouvoir prendre un ☕ le temps que la zone DNS s'installe.
 
 Dans un premier temps je téléchargement mes rôles Ansible qui sont stockés sur GitHub.
 
@@ -31,7 +31,7 @@ Au tour du fichier `/bind9/vars/main.yml` qui contient les variables du rôle An
 
 ![image-20220325223202017](mail.assets/image-20220325223202017.png)
 
-Maintenant j'exécuté le rôle Ansible et je pars prendre un ☕. 
+Maintenant j'exécute le rôle Ansible et je pars prendre mon ☕. 
 ```bash
 ansible-playbook bind9.yml -i hosts
 ```
@@ -40,7 +40,7 @@ Alors Ansible dit qu'il a fait 10 changements est que tout est OK pour lui.
 
 ![image-20220325224038153](mail.assets/image-20220325224038153.png)
 
-Bon je vais faire tout de même faire une vérification. Donc connexion en ssh sur le serveur.
+Bon je vais tout de même faire une vérification. Donc connexion en ssh sur le serveur.
 
 ```bash
 ssh toor@192.168.1.100
@@ -101,7 +101,7 @@ Il demande ensuite le nom de domaine qu'il va gérer.
 Maintenant je vais configurer le MODE du serveur SMTP il en existe 2 :
 
 [Mbox](https://fr.wikipedia.org/wiki/Mbox) : Chaque utilisateur à un gros fichier dans `/var/mail` qui contient tous ces mails.
-[MailDir](https://fr.wikipedia.org/wiki/Maildir) : Chaque utilisateur a dans son répertoire `/home` une arborescence ![image-20220325214101002](mail.assets/image-20220325214101002.png) et chaque mail est contenu dans un fichier distinct.
+[MailDir](https://fr.wikipedia.org/wiki/Maildir) : Chaque utilisateur a dans son répertoire `/home` une arborescence ![image-20220325214101002](mail.assets/image-20220325214101002.png) et chaque mail est contenu dans des fichier distin.
 
 ℹ️ Le mode [Mbox](https://fr.wikipedia.org/wiki/Mbox) est celui utilisé pas défaut.
 Je préfère le mode [MailDir](https://fr.wikipedia.org/wiki/Maildir), pour l'utiliser il faut ajouter la ligne `home_mailbox = Maildir/` dans le fichier de configuration `/etc/postfix/main.cf`
@@ -110,7 +110,7 @@ Je préfère le mode [MailDir](https://fr.wikipedia.org/wiki/Maildir), pour l'ut
 sudo bash -c 'echo "home_mailbox = Maildir/" >> /etc/postfix/main.cf'
 ```
 
-Maintenant c'est l'heure des tests, donc je crée un utilisateur, par exemple toto.
+Maintenant c'est l'heure des test, donc je crée un utilisateur, par exemple toto.
 
 ```bash
 sudo adduser toto
@@ -137,7 +137,7 @@ Puis je liste tous les dossiers & fichier présent dans le `/home` de toto avec 
 
 ![image-20220325215808436](mail.assets/image-20220325215808436.png)
 
-Tien il y a un fichier dans `Maildir/new`  soyons curieux et regardons sont contenues.
+Tien il y a un fichier dans `Maildir/new`  soyons curieux et regardons sont contenu.
 
 ```bash
 cat Maildir/new/1648241583.V801I255cM57140.cossu.lan
@@ -194,12 +194,12 @@ C'est fini pour la partie [MTA](https://fr.wikipedia.org/wiki/Mail_Transfer_Agen
 
 Pour le moment on peut envoyer / lire des mails avec le terminal, mais avec un [MUA](https://fr.wikipedia.org/wiki/Client_de_messagerie) comment [Thunderbird](https://www.thunderbird.net/fr/) c'est tout de même plus agréable non ?
 
-Donc pour faire ça il faut faire un choix entre  [POP3](https://fr.wikipedia.org/wiki/Post_Office_Protocol) ou [IMAP](https://fr.wikipedia.org/wiki/Internet_Message_Access_Protocol) :
+Donc pour cela il faute choisir entre  [POP3](https://fr.wikipedia.org/wiki/Post_Office_Protocol) ou [IMAP](https://fr.wikipedia.org/wiki/Internet_Message_Access_Protocol) :
 ![image-20220326001938470](mail.assets/image-20220326001938470.png)
 
-IMAP me semble le plus adapter, par contre il faut activé le mode [MAILdir](https://fr.wikipedia.org/wiki/Maildir) ça tombe bien c'est déjà le cas 😏
+IMAP me semble le plus adapter, par contre il faut activer le mode [MAILdir](https://fr.wikipedia.org/wiki/Maildir) ça tombe bien c'est déjà le cas 😏
 
-Donc ces parties installation de courriel-imap
+Donc ces parti installation de courriel-imap
 
 ```bash
 sudo apt install courier-imap -y
@@ -209,7 +209,7 @@ sudo apt install courier-imap -y
 
 ![image-20220328070137503](mail.assets/image-20220328070137503.png)
 
-Redémarre les services postfix, courier-imap et courier-authdaemon
+Redémarre des services postfix, courier-imap et courier-authdaemon
 
 ```bash
 sudo /etc/init.d/postfix restart && sudo /etc/init.d/courier-imap restart && sudo /etc/init.d/courier-authdaemon restart
@@ -228,15 +228,15 @@ Dans mon cas le serveur IMAP est aussi le serveur SMTP, donc je peux utiliser le
 
 ![image-20220326011017193](mail.assets/image-20220326011017193.png)
 
-Ha ils arrivent bien à se connecter au serveur
+Ha il arrivent bien à se connecter au serveur
 
 ![image-20220326011057668](mail.assets/image-20220326011057668.png)
 
-Les mails que toto à reçu s'affiche bien dans Thunderbird !
+Les mails que toto à reçu s'affiche dans Thunderbird !
 
 ![image-20220326011109340](mail.assets/image-20220326011109340.png)
 
-Pour être sûr, je renvoie un mail à toto depuis un autre compte UNIX
+Pour être sûr, je renvoi un mail à toto depuis un autre compte UNIX
 
 ```bash
 mail toto
@@ -244,7 +244,7 @@ mail toto
 
 >Cc:
 >Subject: Mail a voir sur thunderbird
->Ho tu consultes ce mail avec thunderbird ?
+>Ho tu consulte ce mail avec thunderbird ?
 
 ![image-20220326011343932](mail.assets/image-20220326011343932.png)
 

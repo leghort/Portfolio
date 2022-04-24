@@ -39,7 +39,7 @@ function Projects() {
               imgPath={clusterRouterHsrp}
               isBlog={false}
               title="ClusterRouterHsrp"
-              description="Hot Standby Router Protocol (HSRP) est un protocole propriétaire de Cisco implémenté sur les routeurs et les commutateurs de niveau 3 permettant une continuité de service en cas de panne d'un routeur un autre prendra le relay."
+              description="Hot Standby Router Protocol (HSRP) est un protocole propriétaire de Cisco implémenté sur les routeurs et les commutateurs de niveau 3 permettant la continuité de service en cas de panne d'un routeur un autre prendra le relay."
               link="/clusterRouterHsrp"
             />
           </Col>
@@ -49,7 +49,7 @@ function Projects() {
               imgPath={lamp}
               isBlog={false}
               title="Serveur LAMP"
-              description="Serveur web - LAMP. LAMP est un acronyme pour Linux, Apache, MySQL, PHP. C'est une pile logicielle comprenant le système d'exploitation, un serveur HTTP, un système de gestion de bases de données et un langage de programmation interprété, et qui permet de mettre en place un serveur web."
+              description="Serveur web - LAMP. LAMP est un acronyme pour Linux, Apache, MySQL, PHP. C'est une pile logicielle comprenant le système d'exploitation, un serveur HTTP, un système de gestion de bases de données, un langage de programmation interprété le tout permet de mettre en place un serveur web."
               link="/lamp"
             />
           </Col>
@@ -59,7 +59,7 @@ function Projects() {
               imgPath={routageintervlan}
               isBlog={false}
               title="Routage Inter Vlan"
-              description="Chaque VLAN est un domaine de broadcast unique. Les ordinateurs sur des VLAN séparés sont, par défaut, incapables de communiquer. Pour autoriser une communication entre vlan, il faut faire du routage inter-VLAN. Ce routage est faisable avec un périphérique de couche 3. Par exemple un routeur.
+              description="Chaque VLAN est un domaine de broadcast unique. Les ordinateurs sur des VLAN séparés sont, par défaut, incapables de communiquer entre eux. Pour autoriser une communication entre vlan, il faut faire du routage inter-VLAN. Ce routage est faisable avec un périphérique de couche 3. Par exemple un routeur.
               Le switch est un périphérique de couche 2."
               link="/routageintervlan"
             />
@@ -70,7 +70,7 @@ function Projects() {
               imgPath={mail}
               isBlog={false}
               title="Serveur Mail"
-              description="Création d'un serveur pour la réception et l’envoi d’emails au travers d’un serveur IMAP / SMTP basé sur Postfix et Couriel-imap, logiciel libre pour auto hébergement son propre serveur email."
+              description="Création d'un serveur pour la réception et l’envoi d’email au travers d’un serveur IMAP / SMTP basé sur Postfix et Couriel-imap, logiciel libre pour auto héberger son serveur email."
               link="/mail"
             />
           </Col>
@@ -90,7 +90,7 @@ function Projects() {
               imgPath={ansible}
               isBlog={false}
               title="Ansible"
-              description="Outil Open Source d'automatisation informatique qui automatise le provisionnement, la gestion des configurations, le déploiement des applications, l'orchestration et bien d'autres processus informatiques manuels."
+              description="Outil Open Source d'automatisation informatique qui automatise le provisionnement, la gestion des configurations, le déploiement des applications, l'orchestration et bien d'autres processus informatiques."
               link="/ansible"
             />
           </Col>
@@ -119,7 +119,7 @@ function Projects() {
               imgPath={squid}
               isBlog={false}
               title="Squid"
-              description="Proxy libre permettent de sécuriser et d'améliorer l'accès à certaines pages Web en les stockant en cache (ou copie)."
+              description="Proxy libre qui permet de sécuriser et d'améliorer l'accès à certaines pages Web en les stockant en cache."
               link="/squid"
             />
           </Col>
@@ -138,7 +138,7 @@ function Projects() {
               imgPath={dhcp}
               isBlog={false}
               title="ISC DHCP"
-              description="Est une implémentation Open Source du protocole DHCP qui délivre des adresses IP aux équipements qui se connectent sur le réseau. En effet, la plupart du temps, les cartes réseau de ces équipements sont en attente d'une adresse IP leur permettant de communiquer sur le réseau."
+              description="Implémentation Open Source du protocole DHCP qui délivre des adresses IP aux équipements qui se connectent sur le réseau. En effet, la plupart du temps, les cartes réseau de ces équipements sont en attente d'une adresse IP leurs permettant de communiquer."
               link="/iscdhcp"
             />
           </Col>
@@ -148,7 +148,7 @@ function Projects() {
               imgPath={bind9}
               isBlog={false}
               title="Bind 9"
-              description="Serveur de résolution de nom (DNS) le plus utilisé sur Internet, spécialement sur les systèmes de type UNIX et est devenu de facto un standard."
+              description="Serveur de résolution de nom (DNS) le plus utilisé sur Internet, spécialement sur les systèmes de type UNIX, devenu de facto un standard."
               link="/bind9"
             />
           </Col>
@@ -158,7 +158,7 @@ function Projects() {
               imgPath={improveyoutube}
               isBlog={false}
               title="Improve YouTube"
-              description="Extension pour améliorer l'utilisation de YouTube. Lecteur de vidéo plus grand et une interface personnalisable, rangée/cachée des éléments comme les commentaires, les boutons..."
+              description="Extension pour améliorer l'utilisation de YouTube. Lecteur de vidéo plus grand et une interface personnalisable, rangé/caché des éléments comme les commentaires, les boutons..."
               externalLink="https://chrome.google.com/webstore/detail/improve-youtube-video-you/bnomihfieiccainjcjblhegjgglakjdd"
             />
           </Col>
@@ -189,7 +189,7 @@ function Projects() {
               imgPath={sshKey}
               isBlog={false}
               title="SSH via clef"
-              description="Procédure de mise en place d'une connexion SSH, via cle de chiffrement asymétrique"
+              description="Procédure de mise en place d'une connexion SSH, via clef de chiffrement asymétrique"
               link="/project"
             />
           </Col>

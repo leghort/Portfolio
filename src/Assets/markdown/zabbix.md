@@ -4,7 +4,7 @@
 
 **ZABBIX** est un logiciel libre permettant de surveiller l'état de  divers services réseau, serveurs et autres matériels réseau et  produisant des graphiques dynamiques de consommation des ressources.
 
-⏩ Par le temps ? Faire un copier-coller du texte ci-dessous et le serveur zabbix est installé.
+⏩ Pas le temps ? Fait un copier-coller du texte ci-dessous et le serveur zabbix est installé.
 
 ```bash
 cd /tmp/ && wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-1+debian11_all.deb
@@ -24,7 +24,7 @@ Téléchargement du fichier Debian Software package
 cd /tmp/ && wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-1+debian11_all.deb
 ```
 
-Installe le uniquement paquet Zabbix est mise à jour des dépôts.
+Installer le paquet Zabbix est mettre à jour les dépôts.
 ```bash
 sudo dpkg -i zabbix-release_6.0-1+debian11_all.deb && sudo apt update -y
 ```
@@ -50,7 +50,7 @@ Ajouter le mot de passe mysql dans le fichier de configuration
 ```bash
 sudo sed -i 's/\^*# DBPassword=*/DBPassword=zabbix/g' /etc/zabbix/zabbix_server.conf | grep zabbix
 ```
-Redémarre et active les services Zabbix
+Redémarrez et activez les services Zabbix
 ```bash
 sudo systemctl restart zabbix-server zabbix-agent apache2 && sudo systemctl enable zabbix-server zabbix-agent apache2
 ```
@@ -63,7 +63,7 @@ Pour finaliser l'installation il faut se connecter en http sur le serveur avec u
 
 ![image-20220323002715191](./zabbix.assets/image-20220323002715191.png)
 
-À cette étape les identifiants de la base de données sont demandes.
+À cette étape les identifiants de la base de données sont demandé.
 >Utilisateur : zabbix
 >Mot de passe : zabbix
 
@@ -81,7 +81,7 @@ Pour la connexion à la mire web les identifiants par défaut sont,
 
 ![image-20220323002826461](./zabbix.assets/image-20220323002826461.png)
 
-Une fois arriver sur cette mire web, reste à ajouter les machines à superviser via l'agent Zabbix ou par le protocole SNMP.
+Une fois arrivé sur cette mire web, reste à ajouter les machines à superviser via l'agent Zabbix ou par le protocole SNMP.
 
 ![image-20220323002847932](./zabbix.assets/image-20220323002847932.png)
 

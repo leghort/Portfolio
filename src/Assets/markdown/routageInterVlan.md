@@ -1,6 +1,6 @@
 [TOC]
 
-⏩ Par le temps ? Fait un copier-coller des textes ci-dessous dans les bons équipements et le routage inter vlan est terminé😄
+⏩ Pas le temps ? Fait un copier-coller des textes ci-dessous dans les bons équipements et le routage inter vlan est terminé😄
 
 **Router 1841**
 

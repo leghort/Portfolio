@@ -24,7 +24,7 @@ function About() {
         <Codestack />
         <h4 class="stack-title purple">Environnement de développement</h4>
         <Idestack />
-        <h4 class="stack-title purple">Autre</h4>
+        <h4 class="stack-title purple">Autres</h4>
         <Otherstack />
         <Github />
       </Container>

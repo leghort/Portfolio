@@ -77,7 +77,7 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/veilleTechnologique"
+                to="/veille"
                 onClick={() => updateExpanded(false)}>
                 <BsLightbulb style={{ marginBottom: "2px" }} /> Veille
               </Nav.Link>

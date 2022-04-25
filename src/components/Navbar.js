@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
 import { BsBuilding,BsLightbulb } from "react-icons/bs";
+import { FaBlogger,FaSlideshare } from "react-icons/fa";
+import { ExternalLink } from "react-external-link";
+
 
 
 function NavBar() {
@@ -56,8 +59,7 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/about"
-                onClick={() => updateExpanded(false)}
-              >
+                onClick={() => updateExpanded(false)}>
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> Competences
               </Nav.Link>
             </Nav.Item>
@@ -66,8 +68,7 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/project"
-                onClick={() => updateExpanded(false)}
-              >
+                onClick={() => updateExpanded(false)}>
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
@@ -80,9 +81,17 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/veilleTechnologique"
-                onClick={() => updateExpanded(false)}
-              >
+                onClick={() => updateExpanded(false)}>
                 <BsLightbulb style={{ marginBottom: "2px" }} /> Veille
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                href="https://docs.google.com/presentation/d/1lyirwxbsyTCpqb0c5kKBjA6WgeBsBbcDY1DSUK7gs4c/edit?usp=sharing"
+                target="_blank"
+                rel="noreferrer">
+                <FaSlideshare style={{ marginBottom: "2px" }} /> Présentation
               </Nav.Link>
             </Nav.Item>
 
@@ -90,8 +99,7 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/stage"
-                onClick={() => updateExpanded(false)}
-              >
+                onClick={() => updateExpanded(false)}>
                 <BsBuilding style={{ marginBottom: "2px" }} /> Stage
               </Nav.Link>
             </Nav.Item>
@@ -100,9 +108,17 @@ function NavBar() {
               <Nav.Link
                 as={Link}
                 to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
+                onClick={() => updateExpanded(false)}>
                 <CgFileDocument style={{ marginBottom: "2px" }} /> CV
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                href="https://www.gland.fr/"
+                target="_blank"
+                rel="noreferrer">
+                <FaBlogger style={{ marginBottom: "2px" }} /> Blog
               </Nav.Link>
             </Nav.Item>
 

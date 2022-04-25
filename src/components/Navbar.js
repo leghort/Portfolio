@@ -8,9 +8,6 @@ import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from "rea
 import { CgFileDocument } from "react-icons/cg";
 import { BsBuilding,BsLightbulb } from "react-icons/bs";
 import { FaBlogger,FaSlideshare } from "react-icons/fa";
-import { ExternalLink } from "react-external-link";
-
-
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);

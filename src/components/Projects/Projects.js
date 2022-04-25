@@ -18,6 +18,7 @@ import mail from "../../Assets/Projects/mail.webp";
 import routageintervlan from "../../Assets/Projects/routageintervlan.webp";
 import lamp from "../../Assets/Projects/lamp.webp";
 import clusterRouterHsrp from "../../Assets/Projects/clusterRouterHsrp.webp";
+import booktic from "../../Assets/Projects/booktic.webp";
 
 
 
@@ -33,6 +34,16 @@ function Projects() {
 
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+        <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={booktic}
+              isBlog={false}
+              title="Booktic"
+              description=""
+              link="/booktic"
+            />
+          </Col>
 
         <Col md={4} className="project-card">
             <ProjectCard

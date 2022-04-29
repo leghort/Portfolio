@@ -201,7 +201,7 @@ function Projects() {
               isBlog={false}
               title="SSH via clef"
               description="Procédure de mise en place d'une connexion SSH, via clef de chiffrement asymétrique"
-              link="/project"
+              link="/ssh"
             />
           </Col>
 

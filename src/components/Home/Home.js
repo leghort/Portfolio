@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Home2 from "./Home2";
 import Type from "./Type";
-import Tilt from 'react-tilt'
 import myImg from "../../Assets/avatar.png";
 
 function Home() {
@@ -26,9 +25,7 @@ function Home() {
               </div>
             </Col>
             <Col md={3} className="myAvtar">
-                  <Tilt>
                     <img src={myImg} className="img-fluid" alt="avatar" />
-                  </Tilt>
             </Col>
           </Row>
         </Container>

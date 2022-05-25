@@ -6,7 +6,7 @@ import { FcCircuit } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
-import { BsBuilding,BsLightbulb } from "react-icons/bs";
+import { BsLightbulb } from "react-icons/bs";
 import { FaBlogger,FaSlideshare } from "react-icons/fa";
 
 function NavBar() {
@@ -89,15 +89,6 @@ function NavBar() {
                 target="_blank"
                 rel="noreferrer">
                 <FaSlideshare style={{ marginBottom: "2px" }} /> Présentation
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/stage"
-                onClick={() => updateExpanded(false)}>
-                <BsBuilding style={{ marginBottom: "2px" }} /> Stage
               </Nav.Link>
             </Nav.Item>
 

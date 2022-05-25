@@ -5,7 +5,6 @@ import { FaDiscord } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { SiLinkedin } from "react-icons/si";
 
-
 function Home2() {
   return (
     <Container fluid className="home-about-section" id="about">

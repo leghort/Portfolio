@@ -37,16 +37,6 @@ function Projects() {
 
         <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={booktic}
-              isBlog={false}
-              title="Booktic"
-              description=""
-              link="/booktic"
-            />
-          </Col>
-
-        <Col md={4} className="project-card">
-            <ProjectCard
               imgPath={clusterRouterHsrp}
               isBlog={false}
               title="ClusterRouterHsrp"

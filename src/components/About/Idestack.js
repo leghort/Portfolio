@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { ExternalLink } from "react-external-link";
 import { SiVisualstudiocode, SiIntellijidea, SiGitpod, SiPycharm, SiSublimetext } from "react-icons/si";
 import { GiAtom } from "react-icons/gi";
+import { DiGithubBadge } from "react-icons/di";
 
 function Idestack() {
   return (
@@ -11,6 +12,11 @@ function Idestack() {
       <ExternalLink href="https://code.visualstudio.com/">
         <Col xs={4} md={2} className="tech-icons">
           <SiVisualstudiocode />
+        </Col>
+      </ExternalLink>
+      <ExternalLink href="https://github.com/">
+        <Col xs={4} md={2} className="tech-icons">
+          <DiGithubBadge />
         </Col>
       </ExternalLink>
       <ExternalLink href="https://atom.io/">

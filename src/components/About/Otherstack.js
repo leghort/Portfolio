@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { DiWordpress, DiTrello, DiGithubBadge } from "react-icons/di"
+import { DiWordpress, DiTrello } from "react-icons/di"
 import { ExternalLink } from "react-external-link";
 import { SiAnsible, SiMariadbfoundation, SiNextcloud, SiKeepassxc, SiGitea } from "react-icons/si";
 
@@ -29,12 +29,6 @@ function Otherstack() {
       <ExternalLink href="https://www.ansible.com/">
         <Col xs={4} md={2} className="tech-icons">
           <SiAnsible />
-        </Col>
-      </ExternalLink>
-
-      <ExternalLink href="https://desktop.github.com/">
-        <Col xs={4} md={2} className="tech-icons">
-          <DiGithubBadge />
         </Col>
       </ExternalLink>
 

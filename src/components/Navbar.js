@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
 import { BsLightbulb } from "react-icons/bs";
-import { FaBlogger,FaSlideshare } from "react-icons/fa";
+import { FaBlogger } from "react-icons/fa";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -80,15 +80,6 @@ function NavBar() {
                 to="/veille"
                 onClick={() => updateExpanded(false)}>
                 <BsLightbulb style={{ marginBottom: "2px" }} /> Veille
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                href="https://docs.google.com/presentation/d/1lyirwxbsyTCpqb0c5kKBjA6WgeBsBbcDY1DSUK7gs4c/edit?usp=sharing"
-                target="_blank"
-                rel="noreferrer">
-                <FaSlideshare style={{ marginBottom: "2px" }} /> Présentation
               </Nav.Link>
             </Nav.Item>
 

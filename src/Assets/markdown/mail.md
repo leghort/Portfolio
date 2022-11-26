@@ -14,7 +14,7 @@ Je vais donc procéder à la création d'une zone DNS locale avec l'outil [Bind9
 Dans un premier temps je téléchargement mes rôles Ansible qui sont stockés sur GitHub.
 
 ```bash
-git clone https://github.com/leghort/role-ansible.git
+git clone https://github.com/medaey/role-ansible.git
 ```
 
 J'ouvre le répertoire avec Visual Studio Code pour avoir une vue des fichiers et un terminal à disposition dans la même fenêtre.

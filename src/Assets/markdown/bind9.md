@@ -5,7 +5,7 @@
 **Debian 11**
 
 ```bash
-git clone https://github.com/leghort/role-ansible.git
+git clone https://github.com/medaey/role-ansible.git
 ```
 ---
 

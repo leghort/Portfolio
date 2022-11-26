@@ -201,7 +201,7 @@ function Projects() {
               isBlog={false}
               title="Outils PDT"
               description="Boîte à outils pour les techniciens bureautiques sous Windows, faits uniquement en script .bat ce qui permet de l'exécuter dans une invitation de commande distante. Les outils à disposition sont (Autologon, Pavé numérique au démarrage, installé des logiciels, etc...)"
-              externalLink="https://github.com/leghort/Outils_PDT" target="_blank"
+              externalLink="https://github.com/medaey/Outils_PDT" target="_blank"
             />
           </Col>
         </Row>

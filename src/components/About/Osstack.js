@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { ExternalLink } from 'react-external-link';
-import { SiLinux, SiPfsense, SiCisco } from "react-icons/si";
+import { SiLinux, SiPfsense, SiCisco, SiOpenwrt } from "react-icons/si";
 import { DiWindows, DiRasberryPi } from "react-icons/di";
 import { GrArchlinux } from "react-icons/gr";
 
@@ -42,6 +42,12 @@ function Toolstack() {
       <ExternalLink href="https://fr.wikipedia.org/wiki/Cisco_IOS">
         <Col xs={4} md={2} className="tech-icons">
           <SiCisco />
+        </Col>
+      </ExternalLink>
+
+      <ExternalLink href="https://openwrt.org/">
+        <Col xs={4} md={2} className="tech-icons">
+          <SiOpenwrt/>
         </Col>
       </ExternalLink>
       

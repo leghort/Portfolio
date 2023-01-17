@@ -18,7 +18,7 @@ function Github() {
         Mon activité <strong className="purple">Github</strong>
       </h1>
       <GitHubCalendar
-        username="leghort"
+        username="medaey"
         blockSize={15}
         blockMargin={5}
         theme={colourTheme}

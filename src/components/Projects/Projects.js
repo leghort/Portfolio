@@ -18,10 +18,8 @@ import mail from "../../Assets/Projects/mail.webp";
 import routageintervlan from "../../Assets/Projects/routageintervlan.webp";
 import lamp from "../../Assets/Projects/lamp.webp";
 import clusterRouterHsrp from "../../Assets/Projects/clusterRouterHsrp.webp";
+import firmwareAruba from "../../Assets/Projects/firmware-aruba.webp";
 import booktic from "../../Assets/Projects/booktic.webp";
-
-
-
 import 'reactjs-popup/dist/index.css';
 
 function Projects() {
@@ -34,6 +32,17 @@ function Projects() {
 
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+
+        <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={firmwareAruba}
+              isBlog={false}
+              title="Mise a jour firmware Aruba"
+              description="La mise à jour du firmware des switches Aruba est une étape cruciale pour assurer le bon fonctionnement et la sécurité de votre réseau. Dans cet article, nous vous expliquerons en détail les étapes que j'ai suivie pour effectuer cette mise à jour, en veillant à ce que votre matériel soit à jour et conforme aux normes requises afin d'avoir le matériel nécessaire au remaniement de infrastructure réseau de puiseur centre de formation."
+              link="/firmwareAruba"
+            />
+          </Col>
 
         <Col md={4} className="project-card">
             <ProjectCard

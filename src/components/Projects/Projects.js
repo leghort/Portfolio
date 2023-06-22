@@ -39,7 +39,7 @@ function Projects() {
               imgPath={firmwareAruba}
               isBlog={false}
               title="Mise a jour firmware Aruba"
-              description="La mise à jour du firmware des switches Aruba est une étape cruciale pour assurer le bon fonctionnement et la sécurité de votre réseau. Dans cet article, nous vous expliquerons en détail les étapes que j'ai suivie pour effectuer cette mise à jour, en veillant à ce que votre matériel soit à jour et conforme aux normes requises afin d'avoir le matériel nécessaire au remaniement de infrastructure réseau de puiseur centre de formation."
+              description="La mise à jour du firmware des switches Aruba est une étape cruciale pour assurer le bon fonctionnement et la sécurité de votre réseau."
               link="/firmwareAruba"
             />
           </Col>

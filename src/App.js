@@ -29,6 +29,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import ScrollToTop from "./components/ScrollToTop";
+import firmware from "./components/Projects/Card/firmwareAruba";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -69,6 +70,7 @@ function App() {
           <Route path="/clusterRouterHsrp" component={clusterRouteHsrp} />
           <Route path="/veille" component={veille} />
           <Route path="/booktic" component={booktic} />
+          <Route path="/firmwareAruba" component={firmware} />
         </Switch>
         <Footer />
       </div>

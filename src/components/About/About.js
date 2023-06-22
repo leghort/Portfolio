@@ -26,7 +26,6 @@ function About() {
         <Idestack />
         <h4 class="stack-title purple">Autres</h4>
         <Otherstack />
-        <Github />
       </Container>
     </Container>
   );

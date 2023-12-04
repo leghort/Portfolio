@@ -94,7 +94,7 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                href="https://www.gland.fr/"
+                href="https://www.admindoc.fr/"
                 target="_blank"
                 rel="noreferrer">
                 <FaBlogger style={{ marginBottom: "2px" }} /> Blog

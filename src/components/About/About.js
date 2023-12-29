@@ -6,6 +6,7 @@ import Virtualstack from "./Virtualstack";
 import Codestack from "./Codestack";
 import Osstack from "./Osstack";
 import Idestack from "./Idestack";
+import Networkstack from "./Networkstack";
 
 function About() {
   return (
@@ -18,14 +19,14 @@ function About() {
         <br />
         <h4 class="stack-title purple">Systéme d'exploitation</h4>
         <Osstack />
+        <h4 class="stack-title purple">Réseau informatique</h4>
+        <Networkstack />
         <h4 class="stack-title purple">Solution de virtualisation</h4>
         <Virtualstack />
-        <h4 class="stack-title purple">Réseau informatique</h4>
-        <Idestack />
         <h4 class="stack-title purple">Language de programmation</h4>
         <Codestack />
         <h4 class="stack-title purple">Environnement de développement</h4>
-        <Networkstack />
+        <Idestack />
         <h4 class="stack-title purple">Autres</h4>
         <Otherstack />
       </Container>

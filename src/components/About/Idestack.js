@@ -1,9 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { ExternalLink } from "react-external-link";
-import { SiVisualstudiocode, SiIntellijidea, SiGitpod, SiPycharm, SiSublimetext } from "react-icons/si";
-import { GiAtom } from "react-icons/gi";
-import { DiGithubBadge } from "react-icons/di";
+import { SiVisualstudiocode, SiIntellijidea, SiGitpod, SiPycharm, SiSublimetext, SiAtom, SiGithub } from "react-icons/si";
 
 function Idestack() {
   return (
@@ -16,12 +14,12 @@ function Idestack() {
       </ExternalLink>
       <ExternalLink href="https://github.com/">
         <Col xs={4} md={2} className="tech-icons">
-          <DiGithubBadge />
+          <SiGithub />
         </Col>
       </ExternalLink>
       <ExternalLink href="https://atom.io/">
         <Col xs={4} md={2} className="tech-icons">
-          <GiAtom />
+          <SiAtom />
         </Col>
       </ExternalLink>
       <ExternalLink href="https://www.sublimetext.com/">

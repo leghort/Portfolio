@@ -5,9 +5,9 @@ import Container from "react-bootstrap/Container";
 import { FcCircuit } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from "react-icons/ai";
-import { CgFileDocument } from "react-icons/cg";
 import { BsLightbulb } from "react-icons/bs";
-import { FaBlogger } from "react-icons/fa";
+import { MdWork } from "react-icons/md";
+import { FaBook } from "react-icons/fa6";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -88,7 +88,7 @@ function NavBar() {
                 as={Link}
                 to="/resume"
                 onClick={() => updateExpanded(false)}>
-                <CgFileDocument style={{ marginBottom: "2px" }} /> CV
+                <MdWork style={{ marginBottom: "2px" }} /> CV
               </Nav.Link>
             </Nav.Item>
 
@@ -97,7 +97,7 @@ function NavBar() {
                 href="https://www.admindoc.fr/"
                 target="_blank"
                 rel="noreferrer">
-                <FaBlogger style={{ marginBottom: "2px" }} /> Blog
+                <FaBook style={{ marginBottom: "2px" }} /> Mes documentations informatiques
               </Nav.Link>
             </Nav.Item>
 

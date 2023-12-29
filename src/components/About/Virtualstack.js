@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { ExternalLink } from 'react-external-link';
 import { DiDocker } from "react-icons/di";
-import { SiVagrant, SiVirtualbox, SiVmware, SiQemu } from "react-icons/si";
+import { SiProxmox, SiVagrant, SiVirtualbox, SiVmware, SiQemu } from "react-icons/si";
 import { TiVendorMicrosoft } from "react-icons/ti";
 
 function Toolstack() {
@@ -42,6 +42,12 @@ function Toolstack() {
       <ExternalLink href="https://www.qemu.org/">
         <Col xs={4} md={2} className="tech-icons">
           <SiQemu />
+        </Col>
+      </ExternalLink>
+
+      <ExternalLink href="https://www.proxmox.com/">
+        <Col xs={4} md={2} className="tech-icons">
+          <SiProxmox/>
         </Col>
       </ExternalLink>
 

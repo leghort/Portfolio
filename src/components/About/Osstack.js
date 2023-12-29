@@ -1,12 +1,10 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { ExternalLink } from 'react-external-link';
-import { SiLinux, SiPfsense, SiCisco, SiOpenwrt, SiOpnsense } from "react-icons/si";
+import { SiDebian, SiAlpinelinux, SiPfsense, SiCisco, SiOpenwrt, SiOpnsense } from "react-icons/si";
 import { DiWindows, DiRasberryPi } from "react-icons/di";
 import { GrArchlinux } from "react-icons/gr";
-import { SiProxmox } from "react-icons/si";
 import { GrAruba } from "react-icons/gr";
-import { SiAlpinelinux } from "react-icons/si";
 
 function Toolstack() {
   return (
@@ -20,7 +18,7 @@ function Toolstack() {
 
       <ExternalLink href="https://www.debian.org/index.fr.html">
         <Col xs={4} md={2} className="tech-icons">
-          <SiLinux />
+          <SiDebian />
       </Col>
       </ExternalLink>
 
@@ -65,13 +63,7 @@ function Toolstack() {
           <SiOpnsense/>
         </Col>
       </ExternalLink>
-
-      <ExternalLink href="https://www.proxmox.com/">
-        <Col xs={4} md={2} className="tech-icons">
-          <SiProxmox/>
-        </Col>
-      </ExternalLink>
-      
+   
       <ExternalLink href="https://www.arubanetworks.com/fr/produits/commutateurs/">
         <Col xs={4} md={2} className="tech-icons">
           <GrAruba/>

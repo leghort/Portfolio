@@ -4,6 +4,8 @@ import { ExternalLink } from 'react-external-link';
 import { SiLinux, SiPfsense, SiCisco, SiOpenwrt, SiOpnsense } from "react-icons/si";
 import { DiWindows, DiRasberryPi } from "react-icons/di";
 import { GrArchlinux } from "react-icons/gr";
+import { SiProxmox } from "react-icons/si";
+import { GrAruba } from "react-icons/gr";
 
 function Toolstack() {
   return (
@@ -56,10 +58,21 @@ function Toolstack() {
           <SiOpnsense/>
         </Col>
       </ExternalLink>
+
+      <ExternalLink href="https://www.proxmox.com/">
+        <Col xs={4} md={2} className="tech-icons">
+          <SiProxmox/>
+        </Col>
+      </ExternalLink>
+      
+      <ExternalLink href="https://www.proxmox.com/">
+        <Col xs={4} md={2} className="tech-icons">
+          <GrAruba/>
+        </Col>
+      </ExternalLink>
       
     </Row>
   );
 }
 
 export default Toolstack;
-

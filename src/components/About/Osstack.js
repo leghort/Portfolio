@@ -1,9 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { ExternalLink } from 'react-external-link';
-import { SiDebian, SiAlpinelinux } from "react-icons/si";
-import { DiWindows, DiRasberryPi } from "react-icons/di";
-import { GrArchlinux } from "react-icons/gr";
+import { SiDebian, SiAlpinelinux, SiArchlinux, SiWindows11, SiRaspberrypi } from "react-icons/si";
 
 function Toolstack() {
   return (
@@ -11,7 +9,7 @@ function Toolstack() {
 
       <ExternalLink href="https://www.microsoft.com/fr-fr/windows">
         <Col xs={4} md={2} className="tech-icons">
-          <DiWindows />
+          <SiWindows11 />
       </Col>
       </ExternalLink>
 
@@ -29,13 +27,13 @@ function Toolstack() {
 
       <ExternalLink href="https://archlinux.fr/">
         <Col xs={4} md={2} className="tech-icons">
-          <GrArchlinux />
+          <SiArchlinux />
       </Col>
       </ExternalLink>
 
       <ExternalLink href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/">
         <Col xs={4} md={2} className="tech-icons">
-          <DiRasberryPi />
+          <SiRaspberrypi />
         </Col>
       </ExternalLink>
        

@@ -19,7 +19,6 @@ import routageintervlan from "../../Assets/Projects/routageintervlan.webp";
 import lamp from "../../Assets/Projects/lamp.webp";
 import clusterRouterHsrp from "../../Assets/Projects/clusterRouterHsrp.webp";
 import firmwareAruba from "../../Assets/Projects/firmware-aruba.webp";
-import booktic from "../../Assets/Projects/booktic.webp";
 import 'reactjs-popup/dist/index.css';
 
 function Projects() {

@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Github from "./Github";
 import Otherstack from "./Otherstack";
 import Virtualstack from "./Virtualstack";
 import Codestack from "./Codestack";

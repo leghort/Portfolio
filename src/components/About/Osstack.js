@@ -6,6 +6,7 @@ import { DiWindows, DiRasberryPi } from "react-icons/di";
 import { GrArchlinux } from "react-icons/gr";
 import { SiProxmox } from "react-icons/si";
 import { GrAruba } from "react-icons/gr";
+import { SiAlpinelinux } from "react-icons/si";
 
 function Toolstack() {
   return (
@@ -20,6 +21,12 @@ function Toolstack() {
       <ExternalLink href="https://www.debian.org/index.fr.html">
         <Col xs={4} md={2} className="tech-icons">
           <SiLinux />
+      </Col>
+      </ExternalLink>
+
+      <ExternalLink href="https://www.alpinelinux.org/">
+        <Col xs={4} md={2} className="tech-icons">
+          <SiAlpinelinux />
       </Col>
       </ExternalLink>
 
@@ -65,7 +72,7 @@ function Toolstack() {
         </Col>
       </ExternalLink>
       
-      <ExternalLink href="https://www.proxmox.com/">
+      <ExternalLink href="https://www.arubanetworks.com/fr/produits/commutateurs/">
         <Col xs={4} md={2} className="tech-icons">
           <GrAruba/>
         </Col>

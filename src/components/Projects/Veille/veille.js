@@ -9,13 +9,6 @@ function ResumeNew() {
     
     <div>
     <Container fluid className="resume-section">
-      <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button variant="primary" href={pdf} target="_blank">
-            <AiOutlineDownload />
-            &nbsp;Télécharger
-          </Button>
-      </Row>
-
       <Row className="resume">
         <object 
         style={{ justifyContent: "center", position: "relative"}}

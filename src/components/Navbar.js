@@ -68,11 +68,18 @@ function NavBar() {
                 onClick={() => updateExpanded(false)}>
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
-                />{" "}
-                Projets
+                />{" "} Projets
               </Nav.Link>
             </Nav.Item>
             
+            <Nav.Item>
+              <Nav.Link
+                href="https://www.admindoc.fr/"
+                target="_blank"
+                rel="noreferrer">
+                <FaBook style={{ marginBottom: "2px" }} /> Mes documentations
+              </Nav.Link>
+            </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
@@ -89,15 +96,6 @@ function NavBar() {
                 to="/resume"
                 onClick={() => updateExpanded(false)}>
                 <MdWork style={{ marginBottom: "2px" }} /> CV
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                href="https://www.admindoc.fr/"
-                target="_blank"
-                rel="noreferrer">
-                <FaBook style={{ marginBottom: "2px" }} /> Mes documentations
               </Nav.Link>
             </Nav.Item>
 

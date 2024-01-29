@@ -1,7 +1,7 @@
+import pdf from "../../../Assets/pdf/veilleTechnologique.pdf";
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import pdf from "../../../Assets/pdf/veilleTechnologique.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 
 function ResumeNew() {

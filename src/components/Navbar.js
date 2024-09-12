@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from "react-icons/ai";
 import { BsLightbulb } from "react-icons/bs";
 import { MdWork } from "react-icons/md";
-import { FaBook } from "react-icons/fa6";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);

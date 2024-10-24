@@ -5,11 +5,9 @@
 <br/>
 
 <center>
-
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://fr.reactjs.org/) &nbsp;
 ![GitHub Repo stars](https://img.shields.io/github/stars/leghort/Portfolio?color=red&logo=github&style=for-the-badge) &nbsp;
 ![GitHub forks](https://img.shields.io/github/forks/leghort/Portfolio?color=red&logo=github&style=for-the-badge)
-
 </center>
 
 ## Projet héberger et construit sur Versel

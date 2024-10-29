@@ -26,7 +26,6 @@ yarn && yarn start && yarn build
 Mon portfolio <a href="http://cossu.tech/" target="_blank">cossu.tech</a> certains de mes projets ainsi que mon CV et mes compétences techniques.<br/>
 
 Ce projet a été construit en utilisant ces technologies.
-
 - React.js
 - Node.js
 - Express.js

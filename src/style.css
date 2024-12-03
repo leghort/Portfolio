@@ -247,9 +247,6 @@ html {
 .home-section {
   position: relative;
   z-index: -1;
-  background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
-  background-position: top center;
-  background-repeat: no-repeat;
   padding-bottom: 30px !important;
   padding-top: 30px !important;
   margin-bottom: -10%;
@@ -395,11 +392,14 @@ html {
 /* Footer */
 /* --------- */
 .footer {
-  background-color: rgb(10, 4, 22);
-  bottom: 0 !important;
+  position: fixed;               /* Position fixe */
+  bottom: 0;                      /* Coller en bas de l'écran */
+  left: 0;                        /* Aligner à gauche */
+  width: 100%;                    /* Prendre toute la largeur de l'écran */
+  background-color: rgb(19, 8, 41);
   padding-top: 10px !important;
-  padding-bottom: 8px !important ;
-  margin-top: 4%;
+  padding-bottom: 8px !important;
+  text-align: center !important;
 }
 .footer-copywright {
   text-align: center !important;
@@ -739,3 +739,8 @@ html {
 
 .popup-content {  margin: auto;  background: rgb(255, 255, 255);  width: 50%;  padding: 5px;}.popup-arrow {  color: rgb(255, 255, 255);}[role='tooltip'].popup-content {  width: 200px;  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;}
 .popup-overlay {  background: rgba(0, 0, 0, 0.5);}[data-popup='tooltip'].popup-overlay {  background: transparent;}
+
+/* Ajouter de l'espace au bas de la page pour compenser le footer fixe */
+body {
+  padding-bottom: 50px; /* Ajustez cette valeur en fonction de la hauteur du footer */
+}

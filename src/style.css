@@ -401,14 +401,15 @@ html {
 /* Footer */
 /* --------- */
 .footer {
-  position: fixed;               /* Position fixe */
-  bottom: 0;                      /* Coller en bas de l'écran */
   width: 100%;                    /* Prendre toute la largeur de l'écran */
   background-color: rgb(19, 8, 41);
   padding-top: 10px !important;
   padding-bottom: 10px !important;
   text-align: center !important;
+  margin-top: auto;                /* Permet au footer de se déplacer en bas du contenu */
+  /* Positionnement selon la hauteur du contenu */
 }
+
 
 .footer-copywright {
   text-align: center !important;

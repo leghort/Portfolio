@@ -245,6 +245,11 @@ html {
 }
 
 .home-section {
+  display: flex;
+  justify-content: center;  /* Centrer horizontalement */
+  align-items: center;      /* Centrer verticalement */
+  min-height: 100vh;         /* Hauteur minimale de l'écran */
+  padding: 0;                /* Supprime les marges si nécessaire */
   position: relative;
   z-index: -1;
   padding-bottom: 30px !important;
@@ -253,7 +258,7 @@ html {
 }
 
 .home-content {
-  padding: 9rem 0 2rem !important;
+  padding: rem 0 2rem !important;
   color: whitesmoke;
   text-align: left;
 }
@@ -394,13 +399,13 @@ html {
 .footer {
   position: fixed;               /* Position fixe */
   bottom: 0;                      /* Coller en bas de l'écran */
-  left: 0;                        /* Aligner à gauche */
   width: 100%;                    /* Prendre toute la largeur de l'écran */
   background-color: rgb(19, 8, 41);
   padding-top: 10px !important;
-  padding-bottom: 8px !important;
+  padding-bottom: 10px !important;
   text-align: center !important;
 }
+
 .footer-copywright {
   text-align: center !important;
 }
@@ -429,6 +434,10 @@ html {
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
   padding: 0 !important;
+}
+
+.footer-icons i, .footer-icons svg { /* Sélectionne les icônes dans .footer-icons */
+  font-size: 2em; /* Augmente la taille des icônes (vous pouvez ajuster cette valeur) */
 }
 
 .blockquote-footer {
@@ -739,8 +748,3 @@ html {
 
 .popup-content {  margin: auto;  background: rgb(255, 255, 255);  width: 50%;  padding: 5px;}.popup-arrow {  color: rgb(255, 255, 255);}[role='tooltip'].popup-content {  width: 200px;  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;}
 .popup-overlay {  background: rgba(0, 0, 0, 0.5);}[data-popup='tooltip'].popup-overlay {  background: transparent;}
-
-/* Ajouter de l'espace au bas de la page pour compenser le footer fixe */
-body {
-  padding-bottom: 50px; /* Ajustez cette valeur en fonction de la hauteur du footer */
-}

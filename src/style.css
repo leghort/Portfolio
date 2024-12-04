@@ -303,6 +303,10 @@ html {
   padding-top: 3em !important;
 }
 
+.myAvtar img {
+  border-radius: 10%; /* Pour rendre les bord d'image arondie */
+}
+
 @media (max-width: 767px) {
   .myAvtar {
     padding-top: 2em !important;

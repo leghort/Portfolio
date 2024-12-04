@@ -255,6 +255,7 @@ html {
   padding-bottom: 30px !important;
   padding-top: 30px !important;
   margin-bottom: -10%;
+  flex-grow: 1; /* Le contenu grandit pour occuper l'espace restant */
 }
 
 .home-content {
@@ -401,15 +402,13 @@ html {
 /* Footer */
 /* --------- */
 .footer {
-  width: 100%;                    /* Prendre toute la largeur de l'écran */
-  background-color: rgb(19, 8, 41);
+  width: 100%;                 /* Prendre toute la largeur de la page */
+  background-color: rgb(19, 8, 41); /* Fond du footer */
   padding-top: 10px !important;
   padding-bottom: 10px !important;
   text-align: center !important;
-  margin-top: auto;                /* Permet au footer de se déplacer en bas du contenu */
-  /* Positionnement selon la hauteur du contenu */
+  /* Pas besoin de position fixe */
 }
-
 
 .footer-copywright {
   text-align: center !important;
@@ -753,3 +752,13 @@ html {
 
 .popup-content {  margin: auto;  background: rgb(255, 255, 255);  width: 50%;  padding: 5px;}.popup-arrow {  color: rgb(255, 255, 255);}[role='tooltip'].popup-content {  width: 200px;  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;}
 .popup-overlay {  background: rgba(0, 0, 0, 0.5);}[data-popup='tooltip'].popup-overlay {  background: transparent;}
+
+/* Media Query pour grands écrans */
+@media (min-width: 992px) {  /* Vous pouvez ajuster la valeur 992px selon vos besoins */
+  .footer {
+    position: fixed; /* Met le footer en position fixe */
+    bottom: 0; /* Le colle en bas de l'écran */
+    left: 0;
+    width: 100%;
+  }
+}
